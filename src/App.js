@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles, useTheme, ThemeProvider } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
@@ -10,6 +10,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import HomeIcon from '@material-ui/icons/Home';
 import Container from '@material-ui/core/Container';
+import { theme } from './Theme';
 
 import {
   BrowserRouter as Router,
@@ -29,8 +30,8 @@ const useStyles = makeStyles(theme => ({
     background: 'white'
   },
   appBar: {
+    borderTop: '3px solid #444',
     backgroundColor: 'white',
-    color: '#444444',
     fontWeight: 'bold',
     zIndex: theme.zIndex.drawer + 1,
     boxShadow: 'none',
@@ -62,6 +63,7 @@ export default function App() {
   const classes = useStyles();
   return (
     <Router>
+      <ThemeProvider theme={theme}>
       <div className={classes.root}>
         <AppBar
           color={'transparent'}
@@ -123,6 +125,7 @@ export default function App() {
 
         </main>
       </div>
+      </ThemeProvider>
     </Router>
   );
 }
