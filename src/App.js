@@ -11,6 +11,7 @@ import './App.css';
 import About from './sites/aboutus';
 import Home from './sites/home';
 import Samples from './sites/samples';
+import StoreProfile from "./sites/StoreProfile";
 
 export default function App() {
   return (
@@ -39,9 +40,10 @@ export default function App() {
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Home />
           </Route>
+          <Route path="/stores/:storeId" component={StoreProfile} />
         </Switch>
       </div>
     </Router>
