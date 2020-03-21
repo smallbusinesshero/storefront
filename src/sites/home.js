@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container } from "@material-ui/core";
+import { Container, Typography, Divider } from "@material-ui/core";
 
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -22,8 +22,9 @@ const useStyles = makeStyles(theme => ({
     padding: 10,
   },
   divider: {
-    height: 28,
+    height: 30,
     margin: 4,
+    backgroundColor: 'white'
   },
 }));
 
@@ -47,7 +48,14 @@ export default function Home() {
 
     return (<>
         <Container maxWidth={'xs'}>
-
+            <Divider className={classes.divider} />
+            <Typography variant="h6">
+                Lorem Ipsum
+            </Typography>
+            <Typography variant="body1" gutterBottom={true}>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            </Typography>
+            <Divider className={classes.divider} />
             <Paper component="form" className={classes.root}>
                 <InputBase
                     value={kiez} 
