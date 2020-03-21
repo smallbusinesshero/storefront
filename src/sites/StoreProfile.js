@@ -14,9 +14,7 @@ const StoreProfile = props => {
 
     const fetchStoreData = () => {
         const StoreServiceInstance = new StoresService();
-        StoreServiceInstance.getStore(storeId).then(res => {
-            console.log(res)
-        });
+        StoreServiceInstance.getStore(storeId).then(setStoreData);
     };
 
     return (
@@ -24,7 +22,7 @@ const StoreProfile = props => {
             {storeData &&
             <div id="#store-profile">
                 <h1>{storeData.name.de_DE}</h1>
-                <p>{storeId.description.de_DE}</p>
+                <p>{storeData.description.de_DE}</p>
             </div>
             }
         </React.Fragment>

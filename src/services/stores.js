@@ -6,6 +6,6 @@ export default class StoresService extends Base {
     }
 
     getStore(id) {
-        return this.getRequest(`store/${id}`)
+        return this.getRequest(`stores/${id}`)
     }
 }
