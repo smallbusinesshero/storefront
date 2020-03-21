@@ -5,11 +5,24 @@ import StoresService from "../services/stores";
 import "./StoreProfile.css";
 import Fab from "@material-ui/core/Fab";
 import PhoneEnabledIcon from "@material-ui/icons/PhoneEnabled";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faWhatsapp,
+  faTelegramPlane,
+  faTwitter,
+  faFacebook
+} from "@fortawesome/free-brands-svg-icons";
 
 const staticData = {
   id: "d290f1ee-6c54-4b01-90e6-d701748f0851",
   name: { de_DE: "Golden Neukölln" },
   subTitle: { de_DE: "Künstler-Zubehör" },
+  social: {
+    facebook: "https://facebook.com/example",
+    twitter: "https://twitter.com/example",
+    whatsapp: "whatsapp://123456",
+    telegram: "telegram://123456"
+  },
   phone: "0421-123123123",
   description: {
     de_DE: `Bei golden! findest du alles, was dich glücklich macht.
@@ -88,6 +101,10 @@ const StoreProfile = props => {
     return storeData.description.de_DE.split(" ").length > shortWordCount;
   };
 
+  const getAddress = () => {
+    return `${storeData.address.streetName} ${storeData.address.streetNumber}, ${storeData.address.city}`;
+  };
+
   return (
     <>
       {storeData ? (
@@ -111,6 +128,30 @@ const StoreProfile = props => {
             <div id="store-profile">
               <h1 className="sp__title">{storeData.name.de_DE}</h1>
               <h3 className="sp__subtitle">{storeData.subTitle.de_DE}</h3>
+              <div className="sp__subtitle">{getAddress()}</div>
+
+              <div className="sp__icons">
+                {storeData.social.whatsapp && (
+                  <a href={storeData.social.whatsapp} target="_blank">
+                    <FontAwesomeIcon icon={faWhatsapp} />
+                  </a>
+                )}
+                {storeData.social.telegram && (
+                  <a href={storeData.social.telegram} target="_blank">
+                    <FontAwesomeIcon icon={faTelegramPlane} />
+                  </a>
+                )}
+                {storeData.social.twitter && (
+                  <a href={storeData.social.twitter} target="_blank">
+                    <FontAwesomeIcon icon={faTwitter} />
+                  </a>
+                )}
+                {storeData.social.facebook && (
+                  <a href={storeData.social.facebook} target="_blank">
+                    <FontAwesomeIcon icon={faFacebook} />
+                  </a>
+                )}
+              </div>
 
               <p className="sp__description">
                 {shorten ? getShortenedText() : storeData.description.de_DE}

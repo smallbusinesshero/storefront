@@ -40,9 +40,10 @@
   margin-top: 0;
   text-align: center;
   font-weight: 300;
-  margin-bottom: 1.3em;
+  margin-bottom: 0;
 }
 .sp__description {
+  margin-top: 1.3em;
   padding-bottom: 1em;
   line-height: 1.4;
 }
@@ -102,4 +103,16 @@
   right: 2px;
   top: 10px;
   pointer-events: none;
+}
+
+.sp__icons {
+  padding: 1em 0;
+  font-size: 2em;
+  text-align: center;
+}
+
+.sp__icons a {
+  color: #53514f;
+  text-decoration: none;
+  padding: 0 0.5em;
 }
