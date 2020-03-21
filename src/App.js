@@ -10,6 +10,7 @@ import './App.css';
 
 import About from './sites/aboutus';
 import Home from './sites/home';
+import Samples from './sites/samples';
 
 export default function App() {
   return (
@@ -23,12 +24,18 @@ export default function App() {
             <li>
               <Link to="/about">About</Link>
             </li>
+            <li>
+              <Link to="/samples">Samples</Link>
+            </li>
           </ul>
         </nav>
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
+          <Route path="/samples">
+            <Samples />
+          </Route>
           <Route path="/about">
             <About />
           </Route>
