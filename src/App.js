@@ -29,6 +29,7 @@ import {
 import About from './sites/aboutus';
 import Home from './sites/home';
 import Samples from './sites/samples';
+import StoreProfile from "./sites/StoreProfile";
 
 const drawerWidth = 240;
 
@@ -181,6 +182,7 @@ export default function App() {
             {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
             <Switch>
+              <Route path="/stores/:storeId" component={StoreProfile} />
               <Route path="/samples">
                 <Samples />
               </Route>
