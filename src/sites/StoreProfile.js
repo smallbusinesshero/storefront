@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import PropTypes from 'prop-types';
+import StoresService from "../services/stores";
 
 const StoreProfile = props => {
 
@@ -12,14 +13,21 @@ const StoreProfile = props => {
     },[]);
 
     const fetchStoreData = () => {
-        console.log(storeId)
+        const StoreServiceInstance = new StoresService();
+        StoreServiceInstance.getStore(storeId).then(res => {
+            console.log(res)
+        });
     };
 
     return (
-        <div id="#store-profile">
-            <h1>Store</h1>
-            {storeId}
-        </div>
+        <React.Fragment>
+            {storeData &&
+            <div id="#store-profile">
+                <h1>{storeData.name.de_DE}</h1>
+                <p>{storeId.description.de_DE}</p>
+            </div>
+            }
+        </React.Fragment>
     );
 };
 
