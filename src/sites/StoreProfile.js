@@ -120,6 +120,7 @@ const StoreProfile = props => {
                       <span>… </span>
                       <a
                         href=""
+                        className="sp__readmore"
                         onClick={e => {
                           setShorten(false);
                           e.preventDefault();
@@ -133,6 +134,7 @@ const StoreProfile = props => {
                       {" "}
                       <a
                         href=""
+                        className="sp__readmore"
                         onClick={e => {
                           setShorten(true);
                           e.preventDefault();

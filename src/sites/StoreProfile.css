@@ -1,12 +1,15 @@
 .header {
   position: relative;
 }
-
+.MuiContainer-root.MuiContainer-maxWidthLg {
+  overflow: hidden;
+}
 .sp-header-background {
   background-size: cover;
 
   background-position: center;
   height: 25em;
+  margin: 0 -3em;
 
   clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
 }
@@ -19,8 +22,10 @@
   color: white;
   background-color: #0491ef !important;
 }
-.sp__content {
-  padding: 0 1.5em;
+
+.sp__readmore {
+  color: #0491ef;
+  text-decoration: none;
 }
 
 .sp__title {
@@ -39,6 +44,7 @@
 }
 .sp__description {
   padding-bottom: 1em;
+  line-height: 1.4;
 }
 
 .sp_goods {
@@ -47,7 +53,7 @@
 }
 
 .sp_goods-good {
-  width: calc(50% - 1.5em);
+  width: calc(50% - 1em);
   position: relative;
   margin-bottom: 3em;
   overflow: hidden;

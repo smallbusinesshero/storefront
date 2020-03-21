@@ -48,9 +48,7 @@ const useStyles = makeStyles(theme => ({
   },
   content: {
     backgroundColor: "white",
-    flexGrow: 1,
-    padding: theme.spacing(3),
-    paddingTop: "40px"
+    flexGrow: 1
   }
 }));
 
