@@ -12,11 +12,13 @@ import About from "./sites/aboutus";
 import Home from "./sites/home";
 import Samples from "./sites/samples";
 import StoreProfile from "./sites/StoreProfile";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
-    background: "white"
+    background: "white",
   },
   appBar: {
     borderTop: "3px solid #75cca2",
@@ -41,7 +43,7 @@ const useStyles = makeStyles(theme => ({
   toolbar: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "flex-end",
+    justifyContent: "space-between",
     padding: theme.spacing(0, 1),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar
@@ -63,22 +65,13 @@ export default function App() {
             position="fixed"
             className={classes.appBar}
           >
-            <Toolbar>
-              <Container maxWidth={"xs"}>
-                <Link to="/" className={classes.logo}>
-                  <Typography
-                    variant="h5"
-                    noWrap
-                    align="center"
-                    gutterBottom={true}
-                  >
-                    small business <br />
-                    <strong>
-                      <i><span className={classes.subLogo}>hero</span></i>
-                    </strong>
-                  </Typography>
-                </Link>
-              </Container>
+            <Toolbar className={classes.toolbar}>
+              <FontAwesomeIcon icon={faBars} />
+              <Link to="/" className={classes.logo}>
+                {/*  Placeholder text for logo*/}
+                <Typography variant="h4">SIMPLY</Typography>
+              </Link>
+              <FontAwesomeIcon icon={faShoppingCart} />
             </Toolbar>
           </AppBar>
           <main className={classes.content}>
