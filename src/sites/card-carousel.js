@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    display: "flex", 
+    display: "flex",
     flexDirection: "column",
     marginBottom: "20px",
   },
@@ -29,8 +29,8 @@ export default function CardCarousel(props) {
   return (
     <>
       <div className={classes.root}>
-        {storeData.map(store => (
-          <Link to={`/stores/${store.id}`} style={{ textDecoration: 'none' }}>
+        {storeData.map((store,index) => (
+          <Link key={index} to={`/stores/${store.id}`} style={{ textDecoration: 'none' }}>
             <Card className={classes.card}>
               <CardActionArea>
                 <CardMedia
