@@ -47,6 +47,11 @@ const useStyles = makeStyles(theme => ({
   content: {
     backgroundColor: "white",
     flexGrow: 1
+  },
+  appname: {
+    color: "black",
+    fontSize: "1.1em",
+    margin: "0"
   }
 }));
 
@@ -65,7 +70,17 @@ export default function App() {
               <Container maxWidth="xs" className={classes.header}>
                 <FontAwesomeIcon icon={faBars} />
                 <Link to="/" className={classes.logo}>
-                  <Typography variant="h6">small business hero</Typography>
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <img
+                      className="app__logo"
+                      src="/assets/images/logo.png"
+                      style={{
+                        width: "64px",
+                        height: "auto"
+                      }}
+                    ></img>
+                    <h6 className={classes.appname}>small business hero</h6>
+                  </div>
                 </Link>
                 <FontAwesomeIcon icon={faShoppingCart} />
               </Container>

@@ -40,11 +40,15 @@
   text-align: center;
   font-weight: 300;
   margin-bottom: 0;
+
+  color: #53514f;
 }
 .sp__description {
   margin-top: 1.3em;
   padding-bottom: 1em;
   line-height: 1.4;
+
+  color: #53514f;
 }
 
 .sp_goods {
