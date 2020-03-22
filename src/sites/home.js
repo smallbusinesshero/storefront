@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Typography, Divider } from "@material-ui/core";
+import { Container, Typography, Divider, Grid } from "@material-ui/core";
 import StoresService from "../services/stores";
 import { makeStyles } from "@material-ui/core/styles";
 import CardCarousel from "./card-carousel";
@@ -128,36 +128,33 @@ export default function Home() {
                 value={kiez}
                 placeholder="Wähle einen Ort…"
                 autoComplete="new-password"
-                onBlur={() => setFilteredLocations([])}
                 onChange={e => {
                   setKiez(e.target.value);
                   setFilteredLocations(e.target.value ?
-                    kiezList.filter((location) => location.toLowerCase().match(e.target.value.toLowerCase())) : []);
+                    kiezList.filter((location) => location.toLowerCase().match(e.target.value.toLowerCase())).slice(0, 5) : []);
                 }}
               />
             </div>
+            {filteredLocations &&
+            <Grid container direction="column">
+              {filteredLocations.map((location) => (
+                <Grid item wrap="wrap" onClick={e => {
+                  e.preventDefault();
+                  console.log("option", location);
+                  setKiez(location);
+                  setFilteredLocations([]);
+                  fetchStoreData(location);
+                }}>
+                  <Typography variant="body1" color="textSecondary">{location}</Typography>
+                </Grid>
+              ))}
+            </Grid>
+            }
             <button className="home__submit-btn" onClick={(e) => {
               e.preventDefault();
               fetchStoreData(kiez)
             }}>Suchen
             </button>
-            {filteredLocations &&
-            <ul className="home__selection-list">
-              {filteredLocations.map(option => (
-                <li
-                  className="home__selection-list-item"
-                  onClick={e => {
-                    e.preventDefault();
-                    console.log("option", option);
-                    setKiez(option);
-                    setFilteredLocations([]);
-                    fetchStoreData(option);
-                  }}
-                >
-                  {option}
-                </li>
-              ))}
-            </ul>}
           </form>
         </div>
         {storeData.length > 0 ?
