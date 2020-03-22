@@ -84,6 +84,12 @@ export default function Home() {
     locale.toLowerCase().includes(kiez.toLowerCase())
   );
 
+  const onSearchKeyUp = (event) => {
+      if(event.key === 'Enter'){
+          fetchStoreData(event);
+      }
+  };
+
   return (
     <>
       <Container maxWidth={"xs"}>
@@ -95,7 +101,7 @@ export default function Home() {
           Please join us on this mission- save our friends!
         </Typography>
         <Divider className={classes.divider} />
-        <Paper elevation={2} component="form" className={classes.root}>
+        <Paper elevation={2} className={classes.root} onKeyUp={onSearchKeyUp}>
           <InputBase
             value={kiez}
             onChange={e => setKiez(e.target.value)}
