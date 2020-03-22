@@ -39,10 +39,11 @@ const useStyles = makeStyles(theme => ({
   },
   logoSubtitle: {
     color: "#888",
-    fontWeight: "bold"
+    fontWeight: "normal"
   },
   logoSubtitleHighlight: {
-    color: "#006735"
+    color: "#006735",
+    fontWeight: 'bold'
   },
   toolbar: {
     display: "flex",
