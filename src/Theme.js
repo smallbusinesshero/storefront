@@ -1,13 +1,27 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
-const baseTextColor = '#444';
+const baseTextColor = '#cdcdcd';
 
 const theme = createMuiTheme({
     palette: {
         text: {
             primary: baseTextColor
+        },
+        primary: {
+            main: '#75cca2',
+            light: '#75cca2',
+            dark: '#75cca2',
         }
     },
+    overrides: {
+        MuiButton: { // Name of the component ⚛️ / style sheet
+          text: { // Name of the rule
+            color: 'white', // Some CSS
+             // Some CSS
+            background: '#75cca2',
+          },
+        },
+      },
     typography: {
         h1: {
             color: baseTextColor

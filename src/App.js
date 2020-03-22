@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     background: "white"
   },
   appBar: {
-    borderTop: "3px solid #444",
+    borderTop: "3px solid #75cca2",
     backgroundColor: "white",
     fontWeight: "bold",
     zIndex: theme.zIndex.drawer + 1,
@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
     textDecoration: "none"
   },
   subLogo: {
-    color: '#0491ef'
+    color: '#75cca2'
   },
   menuButton: {
     marginRight: 36
