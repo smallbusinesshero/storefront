@@ -74,7 +74,6 @@ export default function Home() {
   const [storeData, setStoreData] = useState([]);
 
   const fetchStoreData = async location => {
-    console.log("location", location);
     const StoreServiceInstance = new StoresService();
     setStoreData(await StoreServiceInstance.getStores(location));
   };
@@ -94,7 +93,6 @@ export default function Home() {
             className="home__form"
             onSubmit={e => {
               e.preventDefault();
-              console.log("lole", kiez);
               fetchStoreData(kiez);
             }}
           >
@@ -133,7 +131,6 @@ export default function Home() {
                       className="home__selection-list-item"
                       onClick={e => {
                         e.preventDefault();
-                        console.log("clicked");
                         setKiez(option);
                         setFilteredLocations([]);
                         fetchStoreData(option);
