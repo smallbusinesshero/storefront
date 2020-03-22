@@ -27,6 +27,7 @@
 }
 
 .sp__title {
+  margin-top: 1em!important;
   font-size: 1.5em;
   margin-bottom: 0;
   text-align: center;
@@ -120,7 +121,7 @@
 }
 
 .sp__icons a {
-  color: #53514f;
+  color: #006735;
   text-decoration: none;
   padding: 0 0.5em;
 }
