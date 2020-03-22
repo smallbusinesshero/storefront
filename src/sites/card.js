@@ -44,10 +44,9 @@ export default function CardCarousel(props){
     useEffect(() => {
         if (embla) {
           embla.on("select", () => {
-            console.log(`Current index is ${embla.selectedScrollSnap()}`);
           });
         }
-        console.log(storeData)
+
       }, [embla]);
     
 return(
