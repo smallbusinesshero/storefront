@@ -139,15 +139,9 @@ const StoreProfile = props => {
           </div>
           <div className="sp__content">
             <div id="store-profile">
-              <Typography variant="h4" className="sp__title">
-                {storeData.name?.de_DE}
-              </Typography>
-              <Typography variant="h6" className="sp__subtitle">
-                {storeData.shopOwnerName}
-              </Typography>
-              <Typography variant="body1" className="sp__subtitle">
-                {getAddress()}
-              </Typography>
+              <h4 className="sp__title">{storeData.name?.de_DE}</h4>
+              <h6 className="sp__subtitle">{storeData.shopOwnerName}</h6>
+              <p className="sp__subtitle">{getAddress()}</p>
 
               <div className="sp__icons">
                 {storeData?.homepage && (
@@ -187,7 +181,7 @@ const StoreProfile = props => {
                 )}
               </div>
 
-              <Typography variant="body1" className="sp__description">
+              <p className="sp__description">
                 {shorten ? getShortenedText() : storeData.description.de_DE}
                 {isShortened() &&
                   (shorten ? (
@@ -219,7 +213,7 @@ const StoreProfile = props => {
                       </Link>
                     </>
                   ))}
-              </Typography>
+              </p>
             </div>
 
             <div className="sp_goods">
@@ -234,18 +228,11 @@ const StoreProfile = props => {
                     ></div>
                   </div>
                   <div className="sp_goods-good-info">
-                    <Typography variant="h6" className="sp_goods-good-name">
-                      {good.name?.de_DE}
-                    </Typography>
-                    <Typography
-                      variant="body1"
-                      className="sp_goods-good-description"
-                    >
+                    <h6 className="sp_goods-good-name">{good.name?.de_DE}</h6>
+                    <p className="sp_goods-good-description">
                       {good.description?.de_DE}
-                    </Typography>
-                    <Typography variant="body1" className="sp_goods-good-price">
-                      {good.price.value} €
-                    </Typography>
+                    </p>
+                    <p className="sp_goods-good-price">{good.price.value} €</p>
                   </div>
                   <div className="sp_goods-good-iconbar">
                     <span className="sp_goods-good-shopping-card">
