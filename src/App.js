@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
     alignItems: "center"
   },
   appBar: {
-    borderTop: "3px solid #75cca2",
+    borderTop: `3px solid #006735`,
     backgroundColor: "white",
     fontWeight: "bold",
     zIndex: theme.zIndex.drawer + 1,
@@ -36,6 +36,13 @@ const useStyles = makeStyles(theme => ({
   },
   logo: {
     textDecoration: "none"
+  },
+  logoSubtitle: {
+    color: '#888',
+    fontWeight: 'bold'
+  },
+  logoSubtitleHighlight: {
+    color: '#006735',
   },
   toolbar: {
     display: "flex",
@@ -66,7 +73,7 @@ export default function App() {
                 <FontAwesomeIcon icon={faBars} />
                 <Link to="/" className={classes.logo}>
                   {/*  Placeholder text for logo*/}
-                  <Typography variant="h6">SIMPLY</Typography>
+                  <Typography variant="h6" className={classes.logoSubtitle}>small business <span className={classes.logoSubtitleHighlight}>hero</span></Typography>
                 </Link>
                 <FontAwesomeIcon icon={faShoppingCart} />
               </Container>

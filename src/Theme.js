@@ -1,6 +1,7 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
-const baseTextColor = '#cdcdcd';
+const baseTextColor = '#666666';
+const baseHeadlineColor = '#5f5f5f';
 
 const theme = createMuiTheme({
     palette: {
@@ -8,13 +9,13 @@ const theme = createMuiTheme({
             primary: baseTextColor
         },
         primary: {
-            main: '#75cca2',
-            light: '#75cca2',
-            dark: '#75cca2',
+            main: '#006735',
+            light: '#006735',
+            dark: '#006735',
         }
     },
     overrides: {
-        MuiButton: { // Name of the component ⚛️ / style sheet
+        MuiButton: { 
             text: { // Name of the rule
                 color: 'white', // Some CSS
                 background: '#75cca2',
@@ -23,28 +24,28 @@ const theme = createMuiTheme({
     },
     typography: {
         h1: {
-            color: baseTextColor
+            color: baseHeadlineColor
         },
         h2: {
-            color: baseTextColor
+            color: baseHeadlineColor
         },
         h3: {
-            color: baseTextColor
+            color: baseHeadlineColor
         },
         h4: {
-            color: baseTextColor
+            color: baseHeadlineColor
         },
         h5: {
-            color: baseTextColor
+            color: baseHeadlineColor
         },
         h6: {
-            color: baseTextColor
+            color: baseHeadlineColor
         },
         subtitle1: {
-            color: baseTextColor
+            color: baseHeadlineColor
         },
         subtitle2: {
-            color: baseTextColor
+            color: baseHeadlineColor
         },
         body1: {
             color: baseTextColor
