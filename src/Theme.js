@@ -15,13 +15,12 @@ const theme = createMuiTheme({
     },
     overrides: {
         MuiButton: { // Name of the component ⚛️ / style sheet
-          text: { // Name of the rule
-            color: 'white', // Some CSS
-             // Some CSS
-            background: '#75cca2',
-          },
+            text: { // Name of the rule
+                color: 'white', // Some CSS
+                background: '#75cca2',
+            },
         },
-      },
+    },
     typography: {
         h1: {
             color: baseTextColor

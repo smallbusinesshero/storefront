@@ -18,6 +18,7 @@ import {
 import {
   faEnvelope
 } from "@fortawesome/free-regular-svg-icons";
+import { Typography, Link } from "@material-ui/core";
 
 const staticData = {
   id: "d290f1ee-6c54-4b01-90e6-d701748f0851",
@@ -135,14 +136,15 @@ const StoreProfile = props => {
                 className="sp__telephone-button"
               >
                 <PhoneEnabledIcon />
+                
               </Fab>
             </a>
           </div>
           <div className="sp__content">
             <div id="store-profile">
-              <h1 className="sp__title">{storeData.name?.de_DE}</h1>
-              <h3 className="sp__subtitle">{storeData.shopOwnerName}</h3>
-              <div className="sp__subtitle">{getAddress()}</div>
+              <Typography variant="h4" className="sp__title">{storeData.name?.de_DE}</Typography>
+              <Typography variant="h6" className="sp__subtitle">{storeData.shopOwnerName}</Typography>
+              <Typography variant="body1" className="sp__subtitle">{getAddress()}</Typography>
 
               <div className="sp__icons">
               {storeData?.homepage && (
@@ -182,13 +184,13 @@ const StoreProfile = props => {
                 )}
               </div>
 
-              <p className="sp__description">
+              <Typography variant="body1" className="sp__description">
                 {shorten ? getShortenedText() : storeData.description.de_DE}
                 {isShortened() &&
                   (shorten ? (
                     <>
                       <span>… </span>
-                      <a
+                      <Link
                         href=""
                         className="sp__readmore"
                         onClick={e => {
@@ -197,12 +199,12 @@ const StoreProfile = props => {
                         }}
                       >
                         weiterlesen
-                      </a>
+                      </Link>
                     </>
                   ) : (
                     <>
                       {" "}
-                      <a
+                      <Link
                         href=""
                         className="sp__readmore"
                         onClick={e => {
@@ -211,10 +213,10 @@ const StoreProfile = props => {
                         }}
                       >
                         weniger
-                      </a>
+                      </Link>
                     </>
                   ))}
-              </p>
+              </Typography>
             </div>
 
             <div className="sp_goods">
@@ -227,11 +229,11 @@ const StoreProfile = props => {
                     ></div>
                   </div>
                   <div className="sp_goods-good-info">
-                    <div className="sp_goods-good-name">{good.name?.de_DE}</div>
-                    <div className="sp_goods-good-description">{good.description?.de_DE}</div>
-                    <div className="sp_goods-good-price">
+                    <Typography variant="h6" className="sp_goods-good-name">{good.name?.de_DE}</Typography>
+                    <Typography variant="body1" className="sp_goods-good-description">{good.description?.de_DE}</Typography>
+                    <Typography variant="body1" className="sp_goods-good-price">
                       {good.price.value} €
-                    </div>
+                    </Typography>
                   </div>
                   <div className="sp_goods-good-iconbar">
                     <span className="sp_goods-good-shopping-card">

@@ -19,12 +19,10 @@
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  color: white;
-  background-color: #0491ef !important;
+  color: white!important;
 }
 
 .sp__readmore {
-  color: #0491ef;
   text-decoration: none;
 }
 
@@ -88,13 +86,11 @@
 .sp_goods-good-name {
   font-weight: bold;
   text-align: left;
-  color: #53514f;
   padding-top: 5px;
 }
 
 .sp_goods-good-description {
   text-align: left;
-  color: #53514f;
   padding-top: 3px;
 }
 
@@ -102,7 +98,6 @@
   padding-top: 5px;
   text-align: end;
   font-weight: bold;
-  color: #53514f;
 }
 
 .sp_goods-good-iconbar {
