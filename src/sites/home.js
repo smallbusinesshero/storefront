@@ -71,7 +71,7 @@ export default function Home() {
   const classes = useStyles();
   const [kiez, setKiez] = useState("");
 
-  const [storeData, setStoreData] = useState("");
+  const [storeData, setStoreData] = useState(null);
 
   const fetchStoreData = event => {
     event.preventDefault();
@@ -112,7 +112,7 @@ export default function Home() {
           </IconButton>
         </Paper>
         {!!kiez && kiez!== kiezFilter[0] && !!kiezFilter.length &&(
-          <Paper 
+          <Paper
             elevation={2}
             className={classes.root}
             style={{ flexDirection: "column", marginTop: "10px" }}
@@ -126,8 +126,8 @@ export default function Home() {
             })}
           </Paper>
         )}
-        {storeData === [] && "No results"}
-        {!!storeData.length && <CardCarousel storeData={storeData} />}
+        {storeData && storeData.length === 0 && "No results"}
+        {storeData && !!storeData.length && <CardCarousel storeData={storeData} />}
       </Container>
     </>
   );
