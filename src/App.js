@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     background: "white"
   },
   appBar: {
-    borderTop: "3px solid #444",
+    borderTop: "3px solid #75cca2",
     backgroundColor: "white",
     fontWeight: "bold",
     zIndex: theme.zIndex.drawer + 1,
@@ -28,6 +28,9 @@ const useStyles = makeStyles(theme => ({
   },
   logo: {
     textDecoration: "none"
+  },
+  subLogo: {
+    color: '#75cca2'
   },
   menuButton: {
     marginRight: 36
@@ -71,7 +74,7 @@ export default function App() {
                   >
                     small business <br />
                     <strong>
-                      <i>hero</i>
+                      <i><span className={classes.subLogo}>hero</span></i>
                     </strong>
                   </Typography>
                 </Link>
