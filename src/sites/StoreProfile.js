@@ -151,7 +151,7 @@ const StoreProfile = props => {
                   </a>
                 )}
                 {storeData?.email && (
-                  <a href={storeData.email} target="_blank">
+                  <a href={`mailto:${storeData.email}`} target="_blank">
                     <FontAwesomeIcon icon={faEnvelope} />
                   </a>
                 )}
@@ -227,7 +227,7 @@ const StoreProfile = props => {
                     ></div>
                   </div>
                   <div className="sp_goods-good-info">
-                    <div className="sp_goods-good-name">{good.name.deDE}</div>
+                    <div className="sp_goods-good-name">{good.name?.de_DE}</div>
                     <div className="sp_goods-good-price">
                       {good.price / 100} €
                     </div>
