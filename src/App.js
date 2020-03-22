@@ -65,8 +65,7 @@ export default function App() {
               <Container maxWidth="xs" className={classes.header}>
                 <FontAwesomeIcon icon={faBars} />
                 <Link to="/" className={classes.logo}>
-                  {/*  Placeholder text for logo*/}
-                  <Typography variant="h6">SIMPLY</Typography>
+                  <Typography variant="h6">small business hero</Typography>
                 </Link>
                 <FontAwesomeIcon icon={faShoppingCart} />
               </Container>
