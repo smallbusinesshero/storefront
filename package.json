@@ -12,6 +12,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "embla-carousel-react": "^1.2.19",
     "install": "^0.13.0",
     "material-ui-image": "^3.2.3",
     "npm": "^6.14.3",

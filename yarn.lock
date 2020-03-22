@@ -4165,6 +4165,20 @@ elliptic@^6.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.0"
 
+embla-carousel-react@^1.2.19:
+  version "1.2.19"
+  resolved "https://registry.yarnpkg.com/embla-carousel-react/-/embla-carousel-react-1.2.19.tgz#0ac0fc544a79ab27f34a160c07e35d9d099616ff"
+  integrity sha512-7ZfbD/Eevssx9cRxUxhQBCLLBNlILwf05PLTwh9hLbBsidVC48qaICK6xEqClAfAhTACneRxMD1gazF38tEZsg==
+  dependencies:
+    embla-carousel "^2.8.1"
+    react "^16.8.6"
+    react-dom "^16.8.6"
+
+embla-carousel@^2.8.1:
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/embla-carousel/-/embla-carousel-2.8.1.tgz#f0d363cfa8789acbe1a1028bc55ac8a880803978"
+  integrity sha512-dRnRKYiJg/24xkFdX9AKA0BQJ3+ZlFU6uzhYzZbiQA6nSEdUz5yjE4K6cCA7EbGp2WQvq7qdOjIwFfSbzX2iag==
+
 emoji-regex@^7.0.1, emoji-regex@^7.0.2:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-7.0.3.tgz#933a04052860c85e83c122479c4748a8e4c72156"
@@ -7237,12 +7251,12 @@ load-json-file@^4.0.0:
     strip-bom "^3.0.0"
 
 loader-fs-cache@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/loader-fs-cache/-/loader-fs-cache-1.0.2.tgz#54cedf6b727e1779fd8f01205f05f6e88706f086"
-  integrity sha512-70IzT/0/L+M20jUlEqZhZyArTU6VKLRTYRDAYN26g4jfzpJqjipLL3/hgYpySqI9PwsVRHHFja0LfEmsx9X2Cw==
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/loader-fs-cache/-/loader-fs-cache-1.0.3.tgz#f08657646d607078be2f0a032f8bd69dd6f277d9"
+  integrity sha512-ldcgZpjNJj71n+2Mf6yetz+c9bM4xpKtNds4LbqXzU/PTdeAX0g3ytnU1AJMEcTk2Lex4Smpe3Q/eCTsvUBxbA==
   dependencies:
     find-cache-dir "^0.1.1"
-    mkdirp "0.5.1"
+    mkdirp "^0.5.1"
 
 loader-runner@^2.4.0:
   version "2.4.0"
@@ -7685,11 +7699,6 @@ minimatch@3.0.4, minimatch@^3.0.4:
   dependencies:
     brace-expansion "^1.1.7"
 
-minimist@0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
-  integrity sha1-hX/Kv8M5fSYluCKCYuhqp6ARsF0=
-
 minimist@^1.1.1, minimist@^1.2.0, minimist@^1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
@@ -7769,13 +7778,6 @@ mixin-object@^2.0.1:
   dependencies:
     for-in "^0.1.3"
     is-extendable "^0.1.1"
-
-mkdirp@0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
-  integrity sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
-  dependencies:
-    minimist "0.0.8"
 
 mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@^0.5.3, mkdirp@~0.5.0, mkdirp@~0.5.1:
   version "0.5.3"
@@ -9949,7 +9951,7 @@ react-dev-utils@^10.2.0:
     strip-ansi "6.0.0"
     text-table "0.2.0"
 
-react-dom@^16.13.1:
+react-dom@^16.13.1, react-dom@^16.8.6:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.13.1.tgz#c1bd37331a0486c078ee54c4740720993b2e0e7f"
   integrity sha512-81PIMmVLnCNLO/fFOQxdQkvEq/+Hfpv24XNJfpyZhTRfO0QcmQIF/PgCa1zCOj2w1hrn12MFLyaJ/G0+Mxtfag==
@@ -10068,7 +10070,7 @@ react-transition-group@^4.3.0:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react@^16.13.1:
+react@^16.13.1, react@^16.8.6:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
   integrity sha512-YMZQQq32xHLX0bz5Mnibv1/LHb3Sqzngu7xstSM+vrkE5Kzr9xE0yMByK5kMoTK30YVJE61WfbxIFFvfeDKT1w==
