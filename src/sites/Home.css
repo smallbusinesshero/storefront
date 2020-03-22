@@ -23,7 +23,7 @@
   position: relative;
   z-index: 10;
   background-color: white;
-  margin-bottom: 2em;
+  margin-bottom: 5em;
 }
 
 .home__align-right.home__align-right {
@@ -108,4 +108,12 @@
 .home__selection-list-item {
   padding: 0.5em 2em;
   -webkit-appearance: none;
+}
+
+.home__container {
+  background-image: url("/assets/images/package.jpg");
+  min-height: 110vh;
+  background-size: contain;
+  background-position: bottom;
+  background-repeat: no-repeat;
 }

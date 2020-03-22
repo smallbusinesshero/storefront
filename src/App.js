@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
     textDecoration: "none"
   },
   subLogo: {
-    color: '#75cca2'
+    color: "#75cca2"
   },
   menuButton: {
     marginRight: 36
@@ -74,14 +74,19 @@ export default function App() {
                   >
                     small business <br />
                     <strong>
-                      <i><span className={classes.subLogo}>hero</span></i>
+                      <i>
+                        <span className={classes.subLogo}>hero</span>
+                      </i>
                     </strong>
                   </Typography>
                 </Link>
               </Container>
             </Toolbar>
           </AppBar>
-          <main className={classes.content}>
+          <main
+            className={classes.content}
+            style={{ position: "relative", overflow: "hidden" }}
+          >
             <div className={classes.toolbar} />
             <Container>
               {/* A <Switch> looks through its children <Route>s and

@@ -87,7 +87,7 @@ export default function Home() {
 
   return (
     <>
-      <Container maxWidth={"xs"} style={{ overflow: "hidden" }}>
+      <Container maxWidth={"xs"} class="home__container">
         <Divider className={classes.divider} />
         <div class="home__typo-wrapper"></div>
         <Typography variant="h5" className="home__align-right">
