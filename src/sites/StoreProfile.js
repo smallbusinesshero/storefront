@@ -228,6 +228,7 @@ const StoreProfile = props => {
                   </div>
                   <div className="sp_goods-good-info">
                     <div className="sp_goods-good-name">{good.name?.de_DE}</div>
+                    <div className="sp_goods-good-description">{good.description?.de_DE}</div>
                     <div className="sp_goods-good-price">
                       {good.price.value} €
                     </div>

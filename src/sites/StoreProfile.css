@@ -87,13 +87,21 @@
 
 .sp_goods-good-name {
   font-weight: bold;
-  text-align: end;
+  text-align: left;
+  color: #53514f;
+  padding-top: 5px;
+}
+
+.sp_goods-good-description {
+  text-align: left;
   color: #53514f;
   padding-top: 3px;
 }
 
 .sp_goods-good-price {
+  padding-top: 5px;
   text-align: end;
+  font-weight: bold;
   color: #53514f;
 }
 
