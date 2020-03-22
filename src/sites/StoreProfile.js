@@ -229,7 +229,7 @@ const StoreProfile = props => {
                   <div className="sp_goods-good-info">
                     <div className="sp_goods-good-name">{good.name?.de_DE}</div>
                     <div className="sp_goods-good-price">
-                      {good.price / 100} €
+                      {good.price.value} €
                     </div>
                   </div>
                   <div className="sp_goods-good-iconbar">
