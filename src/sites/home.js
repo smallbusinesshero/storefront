@@ -111,7 +111,7 @@ export default function Home() {
             <SearchIcon />
           </IconButton>
         </Paper>
-        {!!kiez && kiezFilter.length !== 1 && kiez!== kiezFilter && !!kiezFilter.length &&(
+        {!!kiez && kiez!== kiezFilter[0] && !!kiezFilter.length &&(
           <Paper 
             elevation={2}
             className={classes.root}
