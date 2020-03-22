@@ -12,12 +12,10 @@ import {
   faTelegramPlane,
   faTwitter,
   faFacebook,
-  faInstagram,
-  faChrome,
+  faInstagram
 } from "@fortawesome/free-brands-svg-icons";
-import {
-  faEnvelope
-} from "@fortawesome/free-regular-svg-icons";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { Typography, Link } from "@material-ui/core";
 
 const staticData = {
@@ -136,20 +134,25 @@ const StoreProfile = props => {
                 className="sp__telephone-button"
               >
                 <PhoneEnabledIcon />
-                
               </Fab>
             </a>
           </div>
           <div className="sp__content">
             <div id="store-profile">
-              <Typography variant="h4" className="sp__title">{storeData.name?.de_DE}</Typography>
-              <Typography variant="h6" className="sp__subtitle">{storeData.shopOwnerName}</Typography>
-              <Typography variant="body1" className="sp__subtitle">{getAddress()}</Typography>
+              <Typography variant="h4" className="sp__title">
+                {storeData.name?.de_DE}
+              </Typography>
+              <Typography variant="h6" className="sp__subtitle">
+                {storeData.shopOwnerName}
+              </Typography>
+              <Typography variant="body1" className="sp__subtitle">
+                {getAddress()}
+              </Typography>
 
               <div className="sp__icons">
-              {storeData?.homepage && (
+                {storeData?.homepage && (
                   <a href={storeData.homepage} target="_blank">
-                    <FontAwesomeIcon icon={faChrome} />
+                    <FontAwesomeIcon icon={faGlobe} />
                   </a>
                 )}
                 {storeData?.email && (
@@ -162,7 +165,7 @@ const StoreProfile = props => {
                     <FontAwesomeIcon icon={faWhatsapp} />
                   </a>
                 )}
-                 {storeData?.instagram && (
+                {storeData?.instagram && (
                   <a href={storeData.instagram} target="_blank">
                     <FontAwesomeIcon icon={faInstagram} />
                   </a>
@@ -225,12 +228,21 @@ const StoreProfile = props => {
                   <div className="sp_goods-good-image-wrapper">
                     <div
                       className="sp_goods-good-image"
-                      style={{ backgroundImage: `url(${good.masterVariant?.images[0]?.url})` }}
+                      style={{
+                        backgroundImage: `url(${good.masterVariant?.images[0]?.url})`
+                      }}
                     ></div>
                   </div>
                   <div className="sp_goods-good-info">
-                    <Typography variant="h6" className="sp_goods-good-name">{good.name?.de_DE}</Typography>
-                    <Typography variant="body1" className="sp_goods-good-description">{good.description?.de_DE}</Typography>
+                    <Typography variant="h6" className="sp_goods-good-name">
+                      {good.name?.de_DE}
+                    </Typography>
+                    <Typography
+                      variant="body1"
+                      className="sp_goods-good-description"
+                    >
+                      {good.description?.de_DE}
+                    </Typography>
                     <Typography variant="body1" className="sp_goods-good-price">
                       {good.price.value} €
                     </Typography>

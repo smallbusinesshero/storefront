@@ -89,32 +89,31 @@ export default function Home() {
 
   const [storeData, setStoreData] = useState([]);
 
-  const fetchStoreData = async (location) => {
+  const fetchStoreData = async location => {
     const StoreServiceInstance = new StoresService();
     setStoreData(await StoreServiceInstance.getStores(location));
-    console.log(kiez, storeData);
-  };
-
-  const onSearchKeyUp = event => {
-    if (event.key === "Enter") {
-      fetchStoreData(event);
-    }
   };
 
   return (
     <>
-      <Container maxWidth={"xs"} class="home__container">
+      <Container maxWidth={"xs"} className="home__container">
         <Divider className={classes.divider} />
-        <div class="home__typo-wrapper"></div>
+        <div className="home__typo-wrapper"></div>
         <Typography variant="h5" className="home__align-right">
           Your favourite neighborhood stores, now delivering straight to your
           door
         </Typography>
         <Divider className={classes.divider} />
         <div className="home__search_panel">
-          <form class="home__form" onSubmit={e => fetchStoreData(e)}>
+          <form
+            className="home__form"
+            onSubmit={e => {
+              e.preventDefault();
+              fetchStoreData(kiez);
+            }}
+          >
             <div className="home__search-wrapper">
-              <label for="home__search" className="home__search-label">
+              <label htmlFor="home__search" className="home__search-label">
                 Ort
               </label>
               <FontAwesomeIcon
@@ -125,45 +124,59 @@ export default function Home() {
                 id="home__search"
                 className="home__search"
                 type="text"
+                autoComplete="off"
                 value={kiez}
                 placeholder="Wähle einen Ort…"
-                autoComplete="new-password"
-                onBlur={() => setFilteredLocations([])}
                 onChange={e => {
                   setKiez(e.target.value);
-                  setFilteredLocations(e.target.value ?
-                    kiezList.filter((location) => location.toLowerCase().match(e.target.value.toLowerCase())) : []);
+                  setFilteredLocations(
+                    e.target.value
+                      ? kiezList.filter(location =>
+                          location
+                            .toLowerCase()
+                            .match(e.target.value.toLowerCase())
+                        )
+                      : []
+                  );
                 }}
               />
+              {kiez && filteredLocations && filteredLocations.length > 0 && (
+                <ul className="home__selection-list">
+                  {filteredLocations.map(option => (
+                    <li
+                      className="home__selection-list-item"
+                      onClick={e => {
+                        e.preventDefault();
+                        setKiez(option);
+                        setFilteredLocations([]);
+                        fetchStoreData(option);
+                      }}
+                    >
+                      {option}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
-            <button className="home__submit-btn" onClick={(e) => {
-              e.preventDefault();
-              fetchStoreData(kiez)
-            }}>Suchen
+            <button
+              className="home__submit-btn"
+              type="submit"
+              onClick={e => {
+                //e.preventDefault();
+                fetchStoreData(kiez);
+              }}
+            >
+              Suchen
             </button>
-            {filteredLocations &&
-            <ul className="home__selection-list">
-              {filteredLocations.map(option => (
-                <li
-                  className="home__selection-list-item"
-                  onClick={e => {
-                    e.preventDefault();
-                    console.log("option", option);
-                    setKiez(option);
-                    setFilteredLocations([]);
-                    fetchStoreData(option);
-                  }}
-                >
-                  {option}
-                </li>
-              ))}
-            </ul>}
           </form>
         </div>
-        {storeData.length > 0 ?
+        {storeData.length > 0 ? (
           <>
             <CardCarousel storeData={storeData} />
-          </> : "No results"}
+          </>
+        ) : (
+          kiez.length > 0 && `Keine Ergebnisse für Suche nach "${kiez}"`
+        )}
       </Container>
     </>
   );
