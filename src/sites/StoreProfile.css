@@ -1,0 +1,118 @@
+.header {
+  position: relative;
+}
+.MuiContainer-root.MuiContainer-maxWidthLg {
+  overflow: hidden;
+}
+.sp-header-background {
+  background-size: cover;
+
+  background-position: center;
+  height: 25em;
+  margin: 0 -3em;
+
+  clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
+}
+
+.sp__telephone-button {
+  position: absolute !important;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  color: white;
+  background-color: #0491ef !important;
+}
+
+.sp__readmore {
+  color: #0491ef;
+  text-decoration: none;
+}
+
+.sp__title {
+  font-size: 1.5em;
+  margin-bottom: 0;
+  text-align: center;
+  font-weight: 500;
+  color: #53514f;
+}
+.sp__subtitle {
+  font-size: 1.3em;
+  margin-top: 0;
+  text-align: center;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+.sp__description {
+  margin-top: 1.3em;
+  padding-bottom: 1em;
+  line-height: 1.4;
+}
+
+.sp_goods {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sp_goods-good {
+  width: calc(50% - 1em);
+  position: relative;
+  margin-bottom: 3em;
+  overflow: hidden;
+}
+.sp_goods-good:nth-child(even) {
+  margin-left: 1em;
+}
+.sp_goods-good:nth-child(odd) {
+  margin-right: 1em;
+}
+.sp_goods-good-image-wrapper {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.sp_goods-good-image {
+  width: 100%;
+  min-width: 100%;
+  height: 15em;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.6s;
+  cursor: pointer;
+}
+
+.sp_goods-good-image:hover {
+  transform: scale(1.05);
+}
+
+.sp_goods-good-name {
+  font-weight: bold;
+  text-align: end;
+  color: #53514f;
+  padding-top: 3px;
+}
+
+.sp_goods-good-price {
+  text-align: end;
+  color: #53514f;
+}
+
+.sp_goods-good-iconbar {
+  position: absolute;
+  color: white;
+  right: 2px;
+  top: 10px;
+  pointer-events: none;
+}
+
+.sp__icons {
+  padding: 1em 0;
+  font-size: 2em;
+  text-align: center;
+}
+
+.sp__icons a {
+  color: #53514f;
+  text-decoration: none;
+  padding: 0 0.5em;
+}
