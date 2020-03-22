@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import { Container, Typography, Divider } from "@material-ui/core";
 import StoresService from "../services/stores";
 import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
-import InputBase from "@material-ui/core/InputBase";
-import IconButton from "@material-ui/core/IconButton";
-import SearchIcon from "@material-ui/icons/Search";
 import CardCarousel from "./card-carousel";
+import "./Home.css";
+import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const kiezList = [
   "Körtekiez",
@@ -71,10 +70,12 @@ export default function Home() {
   const classes = useStyles();
   const [kiez, setKiez] = useState("");
 
-  const [storeData, setStoreData] = useState("");
+  const [storeData, setStoreData] = useState(null);
 
   const fetchStoreData = event => {
-    event.preventDefault();
+    if (event) {
+      event.preventDefault();
+    }
     const StoreServiceInstance = new StoresService();
     StoreServiceInstance.getStores(kiez).then(setStoreData);
     console.log(kiez, storeData);
@@ -84,50 +85,74 @@ export default function Home() {
     locale.toLowerCase().includes(kiez.toLowerCase())
   );
 
+  const onSearchKeyUp = event => {
+    if (event.key === "Enter") {
+      fetchStoreData(event);
+    }
+  };
+
   return (
     <>
-      <Container maxWidth={"xs"}>
+      <Container maxWidth={"xs"} class="home__container">
         <Divider className={classes.divider} />
-        <Typography variant="h6">Are you ready to save the city?</Typography>
-        <Typography variant="body1" gutterBottom={true}>
-          Today is a wonderful day, because you get to save your neighborhood,
-          and better yet, you can do it by buying the things you would anyway!
-          Please join us on this mission- save our friends!
+        <div class="home__typo-wrapper"></div>
+        <Typography variant="h5" className="home__align-right">
+          Your favourite neighborhood stores, now delivering straight to your
+          door
         </Typography>
         <Divider className={classes.divider} />
-        <Paper elevation={2} component="form" className={classes.root}>
-          <InputBase
-            value={kiez}
-            onChange={e => setKiez(e.target.value)}
-            className={classes.input}
-            placeholder="Placeholder text"
-            inputProps={{ "aria-label": "Placeholder text" }}
-          />
-          <IconButton
-            className={classes.iconButton}
-            aria-label="search"
-            onClick={event => fetchStoreData(event)}
-          >
-            <SearchIcon />
-          </IconButton>
-        </Paper>
-        {!!kiez && kiez!== kiezFilter[0] && !!kiezFilter.length &&(
-          <Paper 
-            elevation={2}
-            className={classes.root}
-            style={{ flexDirection: "column", marginTop: "10px" }}
-          >
-            {kiezFilter.map(option => {
-              return (
-                <Typography onClick={() => setKiez(option)}>
-                  {option}
-                </Typography>
-              );
-            })}
-          </Paper>
-        )}
+        <div className="home__search_panel">
+          <form class="home__form" onSubmit={e => fetchStoreData(e)}>
+            <div className="home__search-wrapper">
+              <label for="home__search" className="home__search-label">
+                Ort
+              </label>
+              <FontAwesomeIcon
+                className="home__search-marker"
+                icon={faMapMarkerAlt}
+              />
+              <input
+                id="home__search"
+                className="home__search"
+                type="text"
+                value={kiez}
+                placeholder="Wähle einen Ort…"
+                autocomplete="new-password"
+                onChange={e => {
+                  setKiez(e.target.value);
+                }}
+              ></input>
+            </div>
+            <button className="home__submit-btn">Suchen</button>
+            {!!kiez &&
+              kiezFilter.length !== 1 &&
+              kiez !== kiezFilter &&
+              !!kiezFilter.length && (
+                <ul className="home__selection-list">
+                  {kiezFilter.map(option => {
+                    return (
+                      <li
+                        className="home__selection-list-item"
+                        onClick={e => {
+                          console.log("option", option);
+                          setKiez(option);
+                          fetchStoreData(e);
+                        }}
+                      >
+                        {option}
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
+          </form>
+        </div>
         {storeData === [] && "No results"}
-        {!!storeData.length && <CardCarousel storeData={storeData} />}
+        {!!storeData.length && (
+          <>
+            <CardCarousel storeData={storeData} />
+          </>
+        )}
       </Container>
     </>
   );

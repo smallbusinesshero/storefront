@@ -12,11 +12,19 @@ import About from "./sites/aboutus";
 import Home from "./sites/home";
 import Samples from "./sites/samples";
 import StoreProfile from "./sites/StoreProfile";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { Collapse } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
     background: "white"
+  },
+  header: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center"
   },
   appBar: {
     borderTop: "3px solid #75cca2",
@@ -29,19 +37,9 @@ const useStyles = makeStyles(theme => ({
   logo: {
     textDecoration: "none"
   },
-  subLogo: {
-    color: '#75cca2'
-  },
-  menuButton: {
-    marginRight: 36
-  },
-  hide: {
-    display: "none"
-  },
   toolbar: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "flex-end",
     padding: theme.spacing(0, 1),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar
@@ -63,25 +61,21 @@ export default function App() {
             position="fixed"
             className={classes.appBar}
           >
-            <Toolbar>
-              <Container maxWidth={"xs"}>
+            <Toolbar className={classes.toolbar}>
+              <Container maxWidth="xs" className={classes.header}>
+                <FontAwesomeIcon icon={faBars} />
                 <Link to="/" className={classes.logo}>
-                  <Typography
-                    variant="h5"
-                    noWrap
-                    align="center"
-                    gutterBottom={true}
-                  >
-                    small business <br />
-                    <strong>
-                      <i><span className={classes.subLogo}>hero</span></i>
-                    </strong>
-                  </Typography>
+                  {/*  Placeholder text for logo*/}
+                  <Typography variant="h6">SIMPLY</Typography>
                 </Link>
+                <FontAwesomeIcon icon={faShoppingCart} />
               </Container>
             </Toolbar>
           </AppBar>
-          <main className={classes.content}>
+          <main
+            className={classes.content}
+            style={{ position: "relative", overflow: "hidden" }}
+          >
             <div className={classes.toolbar} />
             <Container>
               {/* A <Switch> looks through its children <Route>s and
