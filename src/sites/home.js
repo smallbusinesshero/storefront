@@ -112,6 +112,7 @@ export default function Home() {
                 value={kiez}
                 placeholder="Wähle einen Ort…"
                 autoComplete="new-password"
+                onBlur={() => setFilteredLocations([])}
                 onChange={e => {
                   setKiez(e.target.value);
                   setFilteredLocations(e.target.value ?
@@ -122,25 +123,24 @@ export default function Home() {
             <button className="home__submit-btn" onClick={(e) => {
               e.preventDefault();
               fetchStoreData(kiez)
-            }}>Suchen</button>
+            }}>Suchen
+            </button>
             {filteredLocations &&
             <ul className="home__selection-list">
-              {filteredLocations.map(option => {
-                return (
-                  <li
-                    className="home__selection-list-item"
-                    onClick={e => {
-                      e.preventDefault();
-                      console.log("option", option);
-                      setKiez(option);
-                      setFilteredLocations([]);
-                      fetchStoreData(option);
-                    }}
-                  >
-                    {option}
-                  </li>
-                );
-              })}
+              {filteredLocations.map(option => (
+                <li
+                  className="home__selection-list-item"
+                  onClick={e => {
+                    e.preventDefault();
+                    console.log("option", option);
+                    setKiez(option);
+                    setFilteredLocations([]);
+                    fetchStoreData(option);
+                  }}
+                >
+                  {option}
+                </li>
+              ))}
             </ul>}
           </form>
         </div>
