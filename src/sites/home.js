@@ -70,7 +70,7 @@ export default function Home() {
   const classes = useStyles();
   const [kiez, setKiez] = useState("");
 
-  const [storeData, setStoreData] = useState("");
+  const [storeData, setStoreData] = useState(null);
 
   const fetchStoreData = event => {
     if (event) {
@@ -84,6 +84,12 @@ export default function Home() {
   const kiezFilter = kiezList.filter(locale =>
     locale.toLowerCase().includes(kiez.toLowerCase())
   );
+
+  const onSearchKeyUp = event => {
+    if (event.key === "Enter") {
+      fetchStoreData(event);
+    }
+  };
 
   return (
     <>
