@@ -228,11 +228,11 @@ const StoreProfile = props => {
                     ></div>
                   </div>
                   <div className="sp_goods-good-info">
-                    <h6 className="sp_goods-good-name">{good.name?.de_DE}</h6>
+                    <h3 className="sp_goods-good-name">{good.name?.de_DE}</h3>
                     <p className="sp_goods-good-description">
                       {good.description?.de_DE}
                     </p>
-                    <p className="sp_goods-good-price">{good.price.value} €</p>
+                    <p className="sp_goods-good-price">{new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(good.price.value)}</p>
                   </div>
                   <div className="sp_goods-good-iconbar">
                     <span className="sp_goods-good-shopping-card">

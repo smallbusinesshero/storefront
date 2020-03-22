@@ -93,17 +93,14 @@
   color: #006735 !important;
   font-weight: bold;
   text-align: left;
-  padding-top: 5px;
 }
 
 .sp_goods-good-description {
   text-align: left;
-  padding-top: 3px;
 }
 
 .sp_goods-good-price {
   color: #006735!important;
-  padding-top: 5px;
   text-align: end;
   font-weight: bold!important;
 }
