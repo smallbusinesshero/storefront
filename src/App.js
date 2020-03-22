@@ -38,11 +38,11 @@ const useStyles = makeStyles(theme => ({
     textDecoration: "none"
   },
   logoSubtitle: {
-    color: '#888',
-    fontWeight: 'bold'
+    color: "#888",
+    fontWeight: "bold"
   },
   logoSubtitleHighlight: {
-    color: '#006735',
+    color: "#006735"
   },
   toolbar: {
     display: "flex",
@@ -54,6 +54,11 @@ const useStyles = makeStyles(theme => ({
   content: {
     backgroundColor: "white",
     flexGrow: 1
+  },
+  appname: {
+    color: "black",
+    fontSize: "1.1em",
+    margin: "0"
   }
 }));
 
@@ -72,8 +77,23 @@ export default function App() {
               <Container maxWidth="xs" className={classes.header}>
                 <FontAwesomeIcon icon={faBars} />
                 <Link to="/" className={classes.logo}>
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <img
+                      className="app__logo"
+                      src="/assets/images/logo.png"
+                      style={{
+                        width: "64px",
+                        height: "auto"
+                      }}
+                    ></img>
+                    <Typography variant="h6" className={classes.logoSubtitle}>
+                      small business{" "}
+                      <span className={classes.logoSubtitleHighlight}>
+                        hero
+                      </span>
+                    </Typography>
+                  </div>
                   {/*  Placeholder text for logo*/}
-                  <Typography variant="h6" className={classes.logoSubtitle}>small business <span className={classes.logoSubtitleHighlight}>hero</span></Typography>
                 </Link>
                 <FontAwesomeIcon icon={faShoppingCart} />
               </Container>
