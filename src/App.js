@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, useTheme, ThemeProvider } from "@material-ui/core/styles";
+import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import List from "@material-ui/core/List";
@@ -31,6 +31,9 @@ const useStyles = makeStyles(theme => ({
     zIndex: theme.zIndex.drawer + 1,
     boxShadow: "none",
     padding: "10px 0"
+  },
+  logo: {
+    textDecoration: "none"
   },
   menuButton: {
     marginRight: 36
@@ -65,17 +68,19 @@ export default function App() {
           >
             <Toolbar>
               <Container maxWidth={"xs"}>
-                <Typography
-                  variant="h5"
-                  noWrap
-                  align="center"
-                  gutterBottom={true}
-                >
-                  small business <br />
-                  <strong>
-                    <i>hero</i>
-                  </strong>
-                </Typography>
+                <Link to="/" className={classes.logo}>
+                  <Typography
+                    variant="h5"
+                    noWrap
+                    align="center"
+                    gutterBottom={true}
+                  >
+                    small business <br />
+                    <strong>
+                      <i>hero</i>
+                    </strong>
+                  </Typography>
+                </Link>
               </Container>
             </Toolbar>
           </AppBar>
