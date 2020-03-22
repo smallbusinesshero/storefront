@@ -36,8 +36,8 @@ export default function CardCarousel(props) {
     <>
       <EmblaCarouselReact emblaRef={setEmbla} options={{ loop: false }}>
         <div style={{ display: "flex" }}>
-          {storeData.map(store => (
-            <div style={{ flex: "0 0 100%" }}>
+          {storeData.map((store,index) => (
+            <div key={index} style={{ flex: "0 0 100%" }}>
               <Card className={classes.root}>
                 <CardActionArea>
                   <CardMedia
