@@ -69,21 +69,15 @@ const useStyles = makeStyles(theme => ({
 export default function Home() {
   const classes = useStyles();
   const [kiez, setKiez] = useState("");
+  const [filteredLocations, setFilteredLocations] = useState([]);
 
-  const [storeData, setStoreData] = useState(null);
+  const [storeData, setStoreData] = useState([]);
 
-  const fetchStoreData = event => {
-    if (event) {
-      event.preventDefault();
-    }
+  const fetchStoreData = async (location) => {
     const StoreServiceInstance = new StoresService();
-    StoreServiceInstance.getStores(kiez).then(setStoreData);
+    setStoreData(await StoreServiceInstance.getStores(location));
     console.log(kiez, storeData);
   };
-
-  const kiezFilter = kiezList.filter(locale =>
-    locale.toLowerCase().includes(kiez.toLowerCase())
-  );
 
   const onSearchKeyUp = event => {
     if (event.key === "Enter") {
@@ -117,42 +111,43 @@ export default function Home() {
                 type="text"
                 value={kiez}
                 placeholder="Wähle einen Ort…"
-                autocomplete="new-password"
+                autoComplete="new-password"
                 onChange={e => {
                   setKiez(e.target.value);
+                  setFilteredLocations(e.target.value ?
+                    kiezList.filter((location) => location.toLowerCase().match(e.target.value.toLowerCase())) : []);
                 }}
-              ></input>
+              />
             </div>
-            <button className="home__submit-btn">Suchen</button>
-            {!!kiez &&
-              kiezFilter.length !== 1 &&
-              kiez !== kiezFilter &&
-              !!kiezFilter.length && (
-                <ul className="home__selection-list">
-                  {kiezFilter.map(option => {
-                    return (
-                      <li
-                        className="home__selection-list-item"
-                        onClick={e => {
-                          console.log("option", option);
-                          setKiez(option);
-                          fetchStoreData(e);
-                        }}
-                      >
-                        {option}
-                      </li>
-                    );
-                  })}
-                </ul>
-              )}
+            <button className="home__submit-btn" onClick={(e) => {
+              e.preventDefault();
+              fetchStoreData(kiez)
+            }}>Suchen</button>
+            {filteredLocations &&
+            <ul className="home__selection-list">
+              {filteredLocations.map(option => {
+                return (
+                  <li
+                    className="home__selection-list-item"
+                    onClick={e => {
+                      e.preventDefault();
+                      console.log("option", option);
+                      setKiez(option);
+                      setFilteredLocations([]);
+                      fetchStoreData(option);
+                    }}
+                  >
+                    {option}
+                  </li>
+                );
+              })}
+            </ul>}
           </form>
         </div>
-        {storeData === [] && "No results"}
-        {!!storeData.length && (
+        {storeData.length > 0 ?
           <>
             <CardCarousel storeData={storeData} />
-          </>
-        )}
+          </> : "No results"}
       </Container>
     </>
   );
