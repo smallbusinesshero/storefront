@@ -19,21 +19,6 @@ const useStyles = makeStyles(theme => ({
   media: {
     height: 200
   },
-  input: {
-    marginLeft: theme.spacing(1),
-    flex: 1
-  },
-  iconButton: {
-    padding: 10
-  },
-  divider: {
-    height: 28,
-    margin: 4
-  },
-  storeImg: {
-    maxWidth: "200px",
-    maxHeight: "200px"
-  }
 }));
 
 export default function CardCarousel(props) {

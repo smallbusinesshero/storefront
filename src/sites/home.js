@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
     padding: "2px 4px",
     display: "flex",
     alignItems: "center",
-    width: 400
+    maxWidth: 400
   },
   input: {
     marginLeft: theme.spacing(1),
@@ -28,10 +28,6 @@ const useStyles = makeStyles(theme => ({
     margin: 4,
     backgroundColor: 'white'
   },
-  storeImg: {
-maxWidth:'200px',
-maxHeight:'200px',
-  }
 }));
 
 export default function Home() {
