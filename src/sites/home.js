@@ -100,8 +100,9 @@ export default function Home() {
         <Divider className={classes.divider} />
         <div className="home__typo-wrapper"></div>
         <Typography variant="h5" className="home__align-right">
-          Your favourite neighborhood stores, now delivering straight to your
-          door
+        Sei ein Held zu Zeiten von Corona.<br />
+        Rette den Laden bei Dir um die Ecke.<br />
+        Hier kannst Du helfen.
         </Typography>
         <Divider className={classes.divider} />
         <div className="home__search_panel">
