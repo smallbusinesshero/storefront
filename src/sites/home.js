@@ -1,66 +1,82 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import { Container } from "@material-ui/core";
-
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import InputBase from '@material-ui/core/InputBase';
-import IconButton from '@material-ui/core/IconButton';
-import SearchIcon from '@material-ui/icons/Search';
+import StoresService from "../services/stores";
+import { makeStyles } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
+import InputBase from "@material-ui/core/InputBase";
+import IconButton from "@material-ui/core/IconButton";
+import SearchIcon from "@material-ui/icons/Search";
+import Card from './card'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    padding: '2px 4px',
-    display: 'flex',
-    alignItems: 'center',
-    width: 400,
+    padding: "2px 4px",
+    display: "flex",
+    alignItems: "center",
+    width: 400
   },
   input: {
     marginLeft: theme.spacing(1),
-    flex: 1,
+    flex: 1
   },
   iconButton: {
-    padding: 10,
+    padding: 10
   },
   divider: {
     height: 28,
-    margin: 4,
+    margin: 4
   },
+  storeImg: {
+maxWidth:'200px',
+maxHeight:'200px',
+  }
 }));
 
 export default function Home() {
-    const classes = useStyles();
-    const [kiez, setKiez] = useState('');
-    const kiezs = [
-        'neukölln',
-        'kreuzberg',
-        'mitte',
-        'prenzlauerberg'
-    ]
+  const classes = useStyles();
+  const [kiez, setKiez] = useState("");
 
-    async function onSubmit(value) {
-        alert(`${value}`)
-        setKiez('')  // just for now to clear the field
-        let response = await fetch('endpoint');
-        let data = await response.json();
-        return data;
-    }
+  const [storeData, setStoreData] = useState('');
 
-    return (<>
-        <Container maxWidth={'xs'}>
 
-            <Paper component="form" className={classes.root}>
-                <InputBase
-                    value={kiez} 
-                    onChange={e => setKiez(e.target.value)}
-                    className={classes.input}
-                    placeholder="Placeholder text"
-                    inputProps={{ 'aria-label': 'Placeholder text' }}
-                />
-                <IconButton className={classes.iconButton} aria-label="search" onClick={() => onSubmit(kiez)}>
-                    <SearchIcon />
-                </IconButton>
-            </Paper>
-        </Container>
+  const fetchStoreData = event => {
+    event.preventDefault()
+    const StoreServiceInstance = new StoresService();
+    StoreServiceInstance.getStores(kiez).then(setStoreData);
+    console.log(kiez, storeData)
+  };
 
-    </>)
+  // async function onSubmit(value) {
+  //   alert(`${value}`);
+
+  //   let response = await fetch("endpoint");
+  //   let data = await response.json();
+  //   return data;
+  // }
+
+  return (
+    <>
+      <Container maxWidth={"md"}>
+        <Paper component="form" className={classes.root}>
+          <InputBase
+            value={kiez}
+            onChange={e => setKiez(e.target.value)}
+            className={classes.input}
+            placeholder="Placeholder text"
+            inputProps={{ "aria-label": "Placeholder text" }}
+          />
+          <IconButton
+            className={classes.iconButton}
+            aria-label="search"
+            onClick={(event) => fetchStoreData(event)}
+          >
+            <SearchIcon />
+          </IconButton>
+        </Paper>
+      {storeData ===[] && 'No results'}
+       {!!storeData.length && <Card storeData={storeData}/>
+      }
+      </Container>
+    </>
+  );
 }
