@@ -116,7 +116,7 @@ const StoreProfile = props => {
   };
 
   const getAddress = () => {
-    return `${storeData.address.streetName} ${storeData.address.streetNumber}, ${storeData.address.city}`;
+    return `${storeData.address.streetName} ${storeData.address.streetNumber}, ${storeData.address.postalCode} ${storeData.address.city}`;
   };
 
   return (
