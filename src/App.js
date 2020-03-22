@@ -29,6 +29,9 @@ const useStyles = makeStyles(theme => ({
   logo: {
     textDecoration: "none"
   },
+  subLogo: {
+    color: '#0491ef'
+  },
   menuButton: {
     marginRight: 36
   },
@@ -71,7 +74,7 @@ export default function App() {
                   >
                     small business <br />
                     <strong>
-                      <i>hero</i>
+                      <i><span className={classes.subLogo}>hero</span></i>
                     </strong>
                   </Typography>
                 </Link>
