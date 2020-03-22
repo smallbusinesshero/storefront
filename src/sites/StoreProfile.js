@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PropTypes from "prop-types";
+import ProductsService from "../services/products";
 import StoresService from "../services/stores";
 import "./StoreProfile.css";
 import Fab from "@material-ui/core/Fab";
@@ -10,8 +11,13 @@ import {
   faWhatsapp,
   faTelegramPlane,
   faTwitter,
-  faFacebook
+  faFacebook,
+  faInstagram,
+  faChrome,
 } from "@fortawesome/free-brands-svg-icons";
+import {
+  faEnvelope
+} from "@fortawesome/free-regular-svg-icons";
 
 const staticData = {
   id: "d290f1ee-6c54-4b01-90e6-d701748f0851",
@@ -74,6 +80,7 @@ const staticData = {
 
 const StoreProfile = props => {
   const [storeData, setStoreData] = useState(null);
+  const [productsData, setProductsData] = useState(null);
   const { storeId } = useParams();
 
   const [shorten, setShorten] = useState(true);
@@ -82,12 +89,19 @@ const StoreProfile = props => {
 
   useEffect(() => {
     fetchStoreData();
+    fetchProductsData();
   }, []);
 
+  const fetchProductsData = () => {
+    //setStoreData(staticData);
+    const ProductsServiceInstance = new ProductsService();
+    ProductsServiceInstance.getProducts(storeId).then(setProductsData);
+  };
+
   const fetchStoreData = () => {
-    setStoreData(staticData);
-    //const StoreServiceInstance = new StoresService();
-    //StoreServiceInstance.getStore(storeId).then(setStoreData);
+    //setStoreData(staticData);
+    const StoreServiceInstance = new StoresService();
+    StoreServiceInstance.getStore(storeId).then(setStoreData);
   };
 
   const getShortenedText = () => {
@@ -107,12 +121,12 @@ const StoreProfile = props => {
 
   return (
     <>
-      {storeData ? (
+      {storeData && productsData ? (
         <>
           <div className="header">
             <div
               className="sp-header-background"
-              style={{ backgroundImage: `url(${storeData.image})` }}
+              style={{ backgroundImage: `url(${storeData?.profileImageURL})` }}
             ></div>
             <a href={`tel:${storeData.phone}`}>
               <Fab
@@ -126,28 +140,43 @@ const StoreProfile = props => {
           </div>
           <div className="sp__content">
             <div id="store-profile">
-              <h1 className="sp__title">{storeData.name.de_DE}</h1>
-              <h3 className="sp__subtitle">{storeData.subTitle.de_DE}</h3>
+              <h1 className="sp__title">{storeData.name?.de_DE}</h1>
+              <h3 className="sp__subtitle">{storeData.shopOwnerName}</h3>
               <div className="sp__subtitle">{getAddress()}</div>
 
               <div className="sp__icons">
-                {storeData.social.whatsapp && (
-                  <a href={storeData.social.whatsapp} target="_blank">
+              {storeData?.homepage && (
+                  <a href={storeData.homepage} target="_blank">
+                    <FontAwesomeIcon icon={faChrome} />
+                  </a>
+                )}
+                {storeData?.email && (
+                  <a href={storeData.email} target="_blank">
+                    <FontAwesomeIcon icon={faEnvelope} />
+                  </a>
+                )}
+                {storeData?.whatsapp && (
+                  <a href={storeData.whatsapp} target="_blank">
                     <FontAwesomeIcon icon={faWhatsapp} />
                   </a>
                 )}
-                {storeData.social.telegram && (
-                  <a href={storeData.social.telegram} target="_blank">
+                 {storeData?.instagram && (
+                  <a href={storeData.instagram} target="_blank">
+                    <FontAwesomeIcon icon={faInstagram} />
+                  </a>
+                )}
+                {storeData?.telegram && (
+                  <a href={storeData.telegram} target="_blank">
                     <FontAwesomeIcon icon={faTelegramPlane} />
                   </a>
                 )}
-                {storeData.social.twitter && (
-                  <a href={storeData.social.twitter} target="_blank">
+                {storeData?.twitter && (
+                  <a href={storeData.twitter} target="_blank">
                     <FontAwesomeIcon icon={faTwitter} />
                   </a>
                 )}
-                {storeData.social.facebook && (
-                  <a href={storeData.social.facebook} target="_blank">
+                {storeData?.facebook && (
+                  <a href={storeData.facebook} target="_blank">
                     <FontAwesomeIcon icon={faFacebook} />
                   </a>
                 )}
@@ -189,16 +218,16 @@ const StoreProfile = props => {
             </div>
 
             <div className="sp_goods">
-              {storeData.goods.map(good => (
-                <div className="sp_goods-good">
+              {productsData.map((good, index) => (
+                <div className="sp_goods-good" key={index}>
                   <div className="sp_goods-good-image-wrapper">
                     <div
                       className="sp_goods-good-image"
-                      style={{ backgroundImage: `url(${good.image})` }}
+                      style={{ backgroundImage: `url(${good.masterVariant?.images[0]?.url})` }}
                     ></div>
                   </div>
                   <div className="sp_goods-good-info">
-                    <div className="sp_goods-good-name">{good.name}</div>
+                    <div className="sp_goods-good-name">{good.name.deDE}</div>
                     <div className="sp_goods-good-price">
                       {good.price / 100} €
                     </div>
