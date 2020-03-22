@@ -6,7 +6,7 @@ import Paper from "@material-ui/core/Paper";
 import InputBase from "@material-ui/core/InputBase";
 import IconButton from "@material-ui/core/IconButton";
 import SearchIcon from "@material-ui/icons/Search";
-import Card from './card'
+import CardCarousel from './card-carousel'
 
 
 const useStyles = makeStyles(theme => ({
@@ -76,7 +76,7 @@ export default function Home() {
           </IconButton>
         </Paper>
       {storeData ===[] && 'No results'}
-       {!!storeData.length && <Card storeData={storeData}/>
+       {!!storeData.length && <CardCarousel storeData={storeData}/>
       }
       </Container>
     </>
