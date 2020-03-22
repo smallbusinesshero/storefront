@@ -14,11 +14,17 @@ import Samples from "./sites/samples";
 import StoreProfile from "./sites/StoreProfile";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { Collapse } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
     background: "white",
+  },
+  header: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   appBar: {
     borderTop: "3px solid #75cca2",
@@ -31,19 +37,9 @@ const useStyles = makeStyles(theme => ({
   logo: {
     textDecoration: "none"
   },
-  subLogo: {
-    color: '#75cca2'
-  },
-  menuButton: {
-    marginRight: 36
-  },
-  hide: {
-    display: "none"
-  },
   toolbar: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "space-between",
     padding: theme.spacing(0, 1),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar
@@ -66,12 +62,14 @@ export default function App() {
             className={classes.appBar}
           >
             <Toolbar className={classes.toolbar}>
-              <FontAwesomeIcon icon={faBars} />
-              <Link to="/" className={classes.logo}>
-                {/*  Placeholder text for logo*/}
-                <Typography variant="h4">SIMPLY</Typography>
-              </Link>
-              <FontAwesomeIcon icon={faShoppingCart} />
+              <Container maxWidth="xs" className={classes.header}>
+                <FontAwesomeIcon icon={faBars} />
+                <Link to="/" className={classes.logo}>
+                  {/*  Placeholder text for logo*/}
+                  <Typography variant="h6">SIMPLY</Typography>
+                </Link>
+                <FontAwesomeIcon icon={faShoppingCart} />
+              </Container>
             </Toolbar>
           </AppBar>
           <main className={classes.content}>
