@@ -12,19 +12,19 @@ import About from "./sites/aboutus";
 import Home from "./sites/home";
 import Samples from "./sites/samples";
 import StoreProfile from "./sites/StoreProfile";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-import { Collapse } from '@material-ui/core';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { Collapse } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
-    background: "white",
+    background: "white"
   },
   header: {
     display: "flex",
     justifyContent: "space-between",
-    alignItems: "center",
+    alignItems: "center"
   },
   appBar: {
     borderTop: "3px solid #75cca2",
@@ -72,7 +72,10 @@ export default function App() {
               </Container>
             </Toolbar>
           </AppBar>
-          <main className={classes.content}>
+          <main
+            className={classes.content}
+            style={{ position: "relative", overflow: "hidden" }}
+          >
             <div className={classes.toolbar} />
             <Container>
               {/* A <Switch> looks through its children <Route>s and
