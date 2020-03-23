@@ -75,7 +75,7 @@ export default function App() {
             className={classes.appBar}
           >
             <Toolbar className={classes.toolbar}>
-              <Container maxWidth="xs" className={classes.header}>
+              <Container className={classes.header}>
                 <FontAwesomeIcon icon={faBars} />
                 <Link to="/" className={classes.logo}>
                   <div style={{ display: "flex", alignItems: "center" }}>
