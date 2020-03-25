@@ -17,13 +17,13 @@
 <br />
 <p align="center">
   <a href="https://github.com/Diconium-WirVsVirus/dds-wvv-frontend/repo">
-    <img src="logo.png" alt="Logo" width="125" height="125">
+    <img src="logo.png" alt="Logo" width="250" height="250">
   </a>
 
   <h3 align="center">Small Business Hero</h3>
 
   <p align="center">
-    YOUR_SHORT_DESCRIPTION
+    Check out our Devpost story: https://devpost.com/software/16_lokaleunternehmen_1605_smallbusinesshero
     <br />
     <a href="https://github.com/Diconium-WirVsVirus/dds-wvv-frontend/repo"><strong>Explore the docs »</strong></a>
     <br />
