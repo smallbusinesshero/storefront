@@ -101,10 +101,6 @@ npm install
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
-
 <!-- ROADMAP -->
 ## Roadmap
 
@@ -152,7 +148,9 @@ Project Link: [https://github.com/Diconium-WirVsVirus/dds-wvv-frontend/](https:/
 * [Paul Boeck](https://www.linkedin.com/in/paul-boeck/)
 * [Florencia Rodriguez](https://www.linkedin.com/in/florencia-r-816a9138/)
 * [Sebastian Wohlrapp](https://www.linkedin.com/in/wohlrapp/)
-* []()
+* [Mehmet Arziman](https://www.linkedin.com/in/mehmet-arziman-b334bb10a/)
+* [Claudia Nasenberg](https://www.linkedin.com/in/claudianasenberg/)
+* [Connor Lanigan](https://www.linkedin.com/in/connorlanigan/)
 
 
 
