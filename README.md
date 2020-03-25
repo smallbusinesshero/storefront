@@ -87,7 +87,7 @@ npm install npm@latest -g
  
 1. Clone the repo
 ```sh
-git clone https://github.com/github_username/repo.git
+git clone https://github.com/Diconium-WirVsVirus/dds-wvv-frontend.git
 ```
 2. Install NPM packages
 ```sh
@@ -131,12 +131,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-TODO: Add some represantives here
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
-
-Project Link: [https://github.com/Diconium-WirVsVirus/dds-wvv-frontend/](https://github.com/Diconium-WirVsVirus/dds-wvv-frontend/repo/issues)
-
-
+* [Jonathan Wiens](https://www.linkedin.com/in/jonathan-wiens-022459142/)
+* [Thomas Haug](https://www.linkedin.com/in/thomas-haug-931728133/)
+* [Paul Boeck](https://www.linkedin.com/in/paul-boeck/)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
