@@ -23,7 +23,9 @@
   <h3 align="center">Small Business Hero</h3>
 
   <p align="center">
-    Check out our Devpost story: https://devpost.com/software/16_lokaleunternehmen_1605_smallbusinesshero
+    Check out our Devpost story: <br />
+    https://devpost.com/software/16_lokaleunternehmen_1605_smallbusinesshero
+    <br />
     <br />
     <a href="https://github.com/Diconium-WirVsVirus/dds-wvv-frontend/repo"><strong>Explore the docs »</strong></a>
     <br />
