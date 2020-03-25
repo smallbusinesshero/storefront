@@ -168,4 +168,4 @@ Project Link: [https://github.com/Diconium-WirVsVirus/dds-wvv-frontend/](https:/
 [issues-url]: https://github.com/Diconium-WirVsVirus/dds-wvv-frontend/issues
 [license-shield]: https://img.shields.io/github/license/Diconium-WirVsVirus/dds-wvv-frontend.svg?style=flat-square
 [license-url]: https://github.com/Diconium-WirVsVirus/dds-wvv-frontend/blob/master/LICENSE.txt
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: preview.png
