@@ -20,7 +20,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Small Business Hero - Frontend</h3>
+  <h3 align="center">Small Business Hero</h3>
 
   <p align="center">
     YOUR_SHORT_DESCRIPTION
@@ -62,9 +62,9 @@
 
 ### Built With
 
-* []()
-* []()
-* []()
+* [React](https://reactjs.org/)
+* [Commerce Tools](https://commercetools.com/de/)
+* [Spring Boot](https://spring.io/projects/spring-boot)
 
 
 
@@ -133,6 +133,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
+TODO: Add some represantives here
 Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
 
 Project Link: [https://github.com/Diconium-WirVsVirus/dds-wvv-frontend/](https://github.com/Diconium-WirVsVirus/dds-wvv-frontend/repo/issues)
@@ -142,8 +143,13 @@ Project Link: [https://github.com/Diconium-WirVsVirus/dds-wvv-frontend/](https:/
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* []()
-* []()
+* [Anja Hendel](https://www.linkedin.com/in/anja-hendel-97921322/)
+* [Jonathan Wiens](https://www.linkedin.com/in/jonathan-wiens-022459142/)
+* [Thomas Haug](https://www.linkedin.com/in/thomas-haug-931728133/)
+* [Katharina Schätz](https://www.linkedin.com/in/katharina-sch%C3%A4tz-3b784b131/)
+* [Paul Boeck](https://www.linkedin.com/in/paul-boeck/)
+* [Florencia Rodriguez](https://www.linkedin.com/in/florencia-r-816a9138/)
+* [Sebastian Wohlrapp](https://www.linkedin.com/in/wohlrapp/)
 * []()
 
 
