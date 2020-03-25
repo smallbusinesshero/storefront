@@ -60,7 +60,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://www.youtube.com/watch?time_continue=2&v=umg0Hjc02SM&feature=emb_logo){:target="_blank"}
+[![Product Name Screen Shot][product-screenshot]](https://www.youtube.com/watch?time_continue=2&v=umg0Hjc02SM&feature=emb_logo)
 
 ### Built With
 
