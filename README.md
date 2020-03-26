@@ -77,22 +77,19 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-```sh
-npm install npm@latest -g
-```
+You need to install [Node.JS](https://nodejs.org/) in order develop this software.
 
 ### Installation
  
 1. Clone the repo
-```sh
-git clone https://github.com/Diconium-WirVsVirus/dds-wvv-frontend.git
-```
+   ```sh
+   git clone https://github.com/Diconium-WirVsVirus/dds-wvv-frontend.git
+   cd dds-wvv-frontend
+   ```
 2. Install NPM packages
-```sh
-npm install
-```
+   ```sh
+   npm install
+   ```
 
 
 
@@ -104,14 +101,14 @@ Use this space to show useful examples of how a project can be used. Additional 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/Diconium-WirVsVirus/dds-wvv-frontend/repo/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/Diconium-WirVsVirus/dds-wvv-frontend/issues) for a list of proposed features (and known issues).
 
 
 
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -148,6 +145,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 * [Mehmet Arziman](https://www.linkedin.com/in/mehmet-arziman-b334bb10a/)
 * [Claudia Nasenberg](https://www.linkedin.com/in/claudianasenberg/)
 * [Connor Lanigan](https://www.linkedin.com/in/connorlanigan/)
+* [Jannis Ötjengerdes](https://www.linkedin.com/in/jannis-%C3%B6tjengerdes-85360413b/)
 
 
 
