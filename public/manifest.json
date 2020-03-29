@@ -1,21 +1,31 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Small Business Hero",
+  "name": "Unterstütze Deinen Laden um die Ecke",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "src": "assets/images/favicon_16x16.ico",
+      "sizes": "16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src": "assets/images/favicon_32x32.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
     },
     {
-      "src": "logo512.png",
+      "src": "assets/images/favicon_48x48.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "assets/images/logo300.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "300x300"
+    },
+    {
+      "src": "assets/images/logo600.png",
+      "type": "image/png",
+      "sizes": "600x600"
     }
   ],
   "start_url": ".",
