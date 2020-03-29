@@ -23,10 +23,13 @@ export default makeStyles((theme: Theme) => ({
 		backgroundColor: '#d8f0ed'
 	},
 	intro: {
-		color: theme.palette.primary.main,
 		fontSize: '1.1rem',
 		fontWeight: 'normal',
 		margin: '0 0 1.8em'
+	},
+	introHeadline: {
+		color: theme.palette.primary.light,
+		fontWeight: 'bold'
 	},
 	searchWrapper: {
 		position: 'relative',
@@ -60,21 +63,8 @@ export default makeStyles((theme: Theme) => ({
 		top: '-0.8em',
 		left: '0.5em',
 		backgroundColor: 'white',
-		color: theme.palette.primary.main,
+		color: theme.palette.primary.dark,
 		fontSize: '12px',
-	},
-	btnPrimary: {
-		color: theme.palette.primary.main,
-		fontSize: '0.9rem',
-		letterSpacing: '0.1rem',
-		backgroundColor: 'transparent',
-		padding: '0.8em 1em',
-		alignSelf: 'center',
-		display: 'inline-block',
-		marginTop: '2em',
-		border: '2px solid currentColor',
-		width: '100%',
-		cursor: 'pointer'
 	},
 	selectionList: {
 		backgroundColor: 'white',

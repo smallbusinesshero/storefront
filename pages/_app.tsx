@@ -11,12 +11,11 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faBars, faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 import Link from '../components/atoms/Link';
-
 import BackgroundImg from './../assets/images/main-bg.jpg';
+import {SvgIcon} from "@material-ui/core";
+
+import BasketIcon from '../assets/icons/ecommerce/Basket.svg';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -45,12 +44,12 @@ const useStyles = makeStyles(theme => ({
 		fontWeight: 'normal'
 	},
 	logoSubtitleHighlight: {
-		color: '#006735',
+		color: '#00944a',
 		fontWeight: 'bold'
 	},
 	toolbar: {
-		backgroundColor: 'rgba(255, 255, 255, 0.9)',
-		color: '#006735',
+		backgroundColor: 'rgba(255, 255, 255, 1)',
+		color: '#00944a',
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'space-between',
@@ -121,7 +120,7 @@ const SmallBusinessHeroApp = ({Component, pageProps}) => {
 							</div>
 							{/*  Placeholder text for logo*/}
 						</Link>
-						<FontAwesomeIcon icon={faShoppingCart} width='24'/>
+						<SvgIcon viewBox={"0 0 55 55"} fontSize={'large'}><BasketIcon /></SvgIcon>
 					</Toolbar>
 				</AppBar>
 				<CssBaseline/>

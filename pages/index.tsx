@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Container } from '@material-ui/core';
+import { Container, SvgIcon } from '@material-ui/core';
 import StoresService from '../services/stores';
 import CardCarousel from '../components/molecules/CardCarousel';
 import useStyles from './index/styles';
 import mockData from './index/mock-data';
-import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import AddressIcon from '../assets/icons/ecommerce/Address.svg';
+import {Button, Typography} from '@material-ui/core';
 
 export default function Home() {
 	const classes = useStyles();
@@ -22,10 +22,10 @@ export default function Home() {
 	return (
 		<Container maxWidth={'md'} className={classes.wrapper}>
 			<div className={classes.searchPanel}>
-				<h5 className={classes.intro}>
-					Sei ein Held zu Zeiten von Corona. Rette den Laden bei Dir um die
+				<Typography className={classes.intro}>
+					<span className={classes.introHeadline}>Sei ein Held zu Zeiten von Corona.</span> <br />Rette den Laden bei Dir um die
 					Ecke. Hier kannst Du helfen.
-				</h5>
+				</Typography>
 				<form
 					className={classes.form}
 					onSubmit={e => {
@@ -37,11 +37,7 @@ export default function Home() {
 						<label htmlFor='home__search' className={classes.searchLabel}>
 							Ort
 						</label>
-						<FontAwesomeIcon
-							className={classes.searchMarker}
-							icon={faMapMarkerAlt}
-							width='16'
-						/>
+						<SvgIcon className={classes.searchMarker} viewBox={"0 0 20 50"}><AddressIcon /></SvgIcon>
 						<input
 							id='home__search'
 							className={classes.search}
@@ -81,16 +77,11 @@ export default function Home() {
 							</ul>
 						)}
 					</div>
-					<button
-						className={classes.btnPrimary}
-						type='submit'
-						onClick={e => {
-							//e.preventDefault();
-							fetchStoreData(kiez);
-						}}
-					>
-						Suchen
-					</button>
+					<br />
+					<Button fullWidth={true} disableFocusRipple={true} disableRipple={true} onClick={e => {
+						//e.preventDefault();
+						fetchStoreData(kiez);
+					}}>Suchen </Button>
 				</form>
 			</div>
 			{storeData.length > 0 ? (

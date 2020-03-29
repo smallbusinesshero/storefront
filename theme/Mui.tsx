@@ -1,17 +1,34 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
-const baseTextColor = 'black';
+const baseTextColor = '#111';
 
 const theme = createMuiTheme({
 	palette: {
+		common: {
+			black: '#111',
+			white: '#EEE'
+		},
 		text: {
 			primary: baseTextColor,
-			secondary: '#53514f'
+			secondary: '#CCC'
 		},
 		primary: {
-			main: '#006735',
-			light: '#75cca2',
-			dark: '#75cca2'
+			main: '#007a3d',
+			light: '#00944a',
+			dark: '#004e27'
+		},
+		action: {
+			active: 'rgba(0, 123, 61, 0.54)',
+			hover: 'rgba(0, 123, 61, 0.04)',
+			hoverOpacity: 0.9,
+			selected: 'rgba(0, 123, 61, 0.08)',
+			selectedOpacity: 0.9,
+			disabled: 'rgba(0, 123, 61, 0.26)',
+			disabledBackground: 'rgba(0, 123, 61, 0.12)',
+			disabledOpacity: 0.75,
+			focus: 'rgba(0, 123, 61, 0.12)',
+			focusOpacity: 0.9,
+			activatedOpacity: 0.9,
 		}
 	},
 	overrides: {
@@ -20,7 +37,12 @@ const theme = createMuiTheme({
 			text: {
 				// Name of the rule
 				color: 'white', // Some CSS
-				background: '#75cca2'
+				background: '#00944a'
+			},
+			root: {
+				"&:hover": {
+					backgroundColor: '#007a3d',
+				}
 			}
 		}
 	},
