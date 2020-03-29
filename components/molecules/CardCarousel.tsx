@@ -1,21 +1,20 @@
-import React from "react";
-import { Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Link from "../atoms/Link"
+import React from 'react';
+import { Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Link from '../atoms/Link'
 
 const useStyles = makeStyles(theme => ({
 	root: {
-		display: "flex",
-		flexDirection: "column",
-		marginBottom: "20px",
+		display: 'flex',
+		flexDirection: 'column',
+		marginBottom: '20px',
 	},
 	card: {
-		marginTop: "10px",
-		maxWidth: 400,
+		marginTop: '10px',
 	},
 	media: {
 		height: 200
@@ -36,11 +35,11 @@ export default function CardCarousel(props) {
 								<CardMedia
 									className={classes.media}
 									image={store.profileImageURL}
-									title={`${store.name["de_DE"]}-profile`}
+									title={`${store.name['de_DE']}-profile`}
 								/>
 								<CardContent>
-									<Typography gutterBottom variant="h5" component="h2">
-										{store.name["de_DE"]}
+									<Typography gutterBottom variant='h5' component='h2'>
+										{store.name['de_DE']}
 									</Typography>
 
 								</CardContent>

@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import { Container } from "@material-ui/core";
-import StoresService from "../services/stores";
-import CardCarousel from "../components/molecules/CardCarousel";
-import useStyles from "./index/styles";
-import mockData from "./index/mock-data";
-import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState } from 'react';
+import { Container } from '@material-ui/core';
+import StoresService from '../services/stores';
+import CardCarousel from '../components/molecules/CardCarousel';
+import useStyles from './index/styles';
+import mockData from './index/mock-data';
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Home() {
 	const classes = useStyles();
-	const [kiez, setKiez] = useState("");
+	const [kiez, setKiez] = useState('');
 	const [filteredLocations, setFilteredLocations] = useState([]);
 
 	const [storeData, setStoreData] = useState([]);
@@ -20,7 +20,7 @@ export default function Home() {
 	};
 
 	return (
-		<Container maxWidth={"xs"} className={classes.wrapper}>
+		<Container maxWidth={'md'} className={classes.wrapper}>
 			<div className={classes.searchPanel}>
 				<h5 className={classes.intro}>
 					Sei ein Held zu Zeiten von Corona. Rette den Laden bei Dir um die
@@ -34,21 +34,21 @@ export default function Home() {
 					}}
 				>
 					<div className={classes.searchWrapper}>
-						<label htmlFor="home__search" className={classes.searchLabel}>
+						<label htmlFor='home__search' className={classes.searchLabel}>
 							Ort
 						</label>
 						<FontAwesomeIcon
 							className={classes.searchMarker}
 							icon={faMapMarkerAlt}
-							width="16"
+							width='16'
 						/>
 						<input
-							id="home__search"
+							id='home__search'
 							className={classes.search}
-							type="text"
-							autoComplete="off"
+							type='text'
+							autoComplete='off'
 							value={kiez}
-							placeholder="Wähle einen Ort…"
+							placeholder='Wähle einen Ort…'
 							onChange={e => {
 								setKiez(e.target.value);
 								setFilteredLocations(
@@ -83,7 +83,7 @@ export default function Home() {
 					</div>
 					<button
 						className={classes.btnPrimary}
-						type="submit"
+						type='submit'
 						onClick={e => {
 							//e.preventDefault();
 							fetchStoreData(kiez);
@@ -98,7 +98,7 @@ export default function Home() {
 					<CardCarousel storeData={storeData} />
 				</>
 			) : (
-				kiez.length > 0 && `Keine Ergebnisse für Suche nach "${kiez}"`
+				kiez.length > 0 && `Keine Ergebnisse für Suche nach '${kiez}'`
 			)}
 		</Container>
 	);

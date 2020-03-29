@@ -1,11 +1,10 @@
-import {makeStyles, Theme} from "@material-ui/core/styles";
+import {makeStyles, Theme} from '@material-ui/core/styles';
 
 export default makeStyles((theme: Theme) => ({
 	root: {
-		padding: "2px 4px",
-		display: "flex",
-		alignItems: "center",
-		maxWidth: 400
+		padding: '2px 4px',
+		display: 'flex',
+		alignItems: 'center',
 	},
 	input: {
 		marginLeft: theme.spacing(1),
@@ -19,6 +18,9 @@ export default makeStyles((theme: Theme) => ({
 	searchPanel: {
 		backgroundColor: 'rgba(255, 255, 255, 0.9)',
 		padding: '2rem'
+	},
+	bg: {
+		backgroundColor: '#d8f0ed'
 	},
 	intro: {
 		color: '#006735',

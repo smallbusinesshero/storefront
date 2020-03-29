@@ -1,21 +1,21 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState} from 'react';
 import {useRouter} from 'next/router'
-import ProductsService from "../../services/products";
-import StoresService from "../../services/stores";
-import Fab from "@material-ui/core/Fab";
-import PhoneEnabledIcon from "@material-ui/icons/PhoneEnabled";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import ProductsService from '../../services/products';
+import StoresService from '../../services/stores';
+import Fab from '@material-ui/core/Fab';
+import PhoneEnabledIcon from '@material-ui/icons/PhoneEnabled';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
 	faWhatsapp,
 	faTelegramPlane,
 	faTwitter,
 	faFacebook,
 	faInstagram
-} from "@fortawesome/free-brands-svg-icons";
-import {faGlobe} from "@fortawesome/free-solid-svg-icons";
-import {faEnvelope} from "@fortawesome/free-regular-svg-icons";
-import {Link} from "@material-ui/core";
-import useStyles from "./styles";
+} from '@fortawesome/free-brands-svg-icons';
+import {faGlobe} from '@fortawesome/free-solid-svg-icons';
+import {faEnvelope} from '@fortawesome/free-regular-svg-icons';
+import {Link} from '@material-ui/core';
+import useStyles from './styles';
 
 const StoreId = props => {
 	const classes = useStyles();
@@ -47,13 +47,13 @@ const StoreId = props => {
 
 	const getShortenedText = () => {
 		return storeData.description.de_DE
-			.split(" ")
+			.split(' ')
 			.slice(0, shortWordCount)
-			.join(" ");
+			.join(' ');
 	};
 
 	const isShortened = () => {
-		return storeData.description.de_DE.split(" ").length > shortWordCount;
+		return storeData.description.de_DE.split(' ').length > shortWordCount;
 	};
 
 	const getAddress = () => {
@@ -71,8 +71,8 @@ const StoreId = props => {
 						/>
 						<a href={`tel:${storeData.phone}`}>
 							<Fab
-								color="primary"
-								aria-label="phone_enabled"
+								color='primary'
+								aria-label='phone_enabled'
 								className={classes.telephoneButton}
 							>
 								<PhoneEnabledIcon/>
@@ -80,82 +80,84 @@ const StoreId = props => {
 						</a>
 					</div>
 					<div>
-						<div id="store-profile">
+						<div id='store-profile' className={classes.storeProfile}>
 							<h4 className={classes.title}>{storeData.name?.de_DE}</h4>
 							<h6 className={classes.subtitle}>{storeData.shopOwnerName}</h6>
 							<p className={classes.subtitle}>{getAddress()}</p>
 
 							<div className={classes.icons}>
 								{storeData?.homepage && (
-									<a href={storeData.homepage} target="_blank">
-										<FontAwesomeIcon icon={faGlobe} width="32" />
+									<a href={storeData.homepage} target='_blank'>
+										<FontAwesomeIcon icon={faGlobe} width='32' />
 									</a>
 								)}
 								{storeData?.email && (
-									<a href={`mailto:${storeData.email}`} target="_blank">
-										<FontAwesomeIcon icon={faEnvelope} width="32" />
+									<a href={`mailto:${storeData.email}`} target='_blank'>
+										<FontAwesomeIcon icon={faEnvelope} width='32' />
 									</a>
 								)}
 								{storeData?.whatsapp && (
-									<a href={storeData.whatsapp} target="_blank">
-										<FontAwesomeIcon icon={faWhatsapp} width="32" />
+									<a href={storeData.whatsapp} target='_blank'>
+										<FontAwesomeIcon icon={faWhatsapp} width='32' />
 									</a>
 								)}
 								{storeData?.instagram && (
-									<a href={storeData.instagram} target="_blank">
-										<FontAwesomeIcon icon={faInstagram} width="32" />
+									<a href={storeData.instagram} target='_blank'>
+										<FontAwesomeIcon icon={faInstagram} width='32' />
 									</a>
 								)}
 								{storeData?.telegram && (
-									<a href={storeData.telegram} target="_blank">
-										<FontAwesomeIcon icon={faTelegramPlane} width="32" />
+									<a href={storeData.telegram} target='_blank'>
+										<FontAwesomeIcon icon={faTelegramPlane} width='32' />
 									</a>
 								)}
 								{storeData?.twitter && (
-									<a href={storeData.twitter} target="_blank">
-										<FontAwesomeIcon icon={faTwitter} width="32" />
+									<a href={storeData.twitter} target='_blank'>
+										<FontAwesomeIcon icon={faTwitter} width='32' />
 									</a>
 								)}
 								{storeData?.facebook && (
-									<a href={storeData.facebook} target="_blank">
-										<FontAwesomeIcon icon={faFacebook} width="32" />
+									<a href={storeData.facebook} target='_blank'>
+										<FontAwesomeIcon icon={faFacebook} width='32' />
 									</a>
 								)}
 							</div>
 
-							<p className={classes.description}>
-								{shorten ? getShortenedText() : storeData.description.de_DE}
-								{isShortened() &&
-								(shorten ? (
-									<>
-										<span>… </span>
-										<Link
-											href=""
-											className={classes.readmore}
-											onClick={e => {
-												setShorten(false);
-												e.preventDefault();
-											}}
-										>
-											weiterlesen
-										</Link>
-									</>
-								) : (
-									<>
-										{" "}
-										<Link
-											href=""
-											className={classes.readmore}
-											onClick={e => {
-												setShorten(true);
-												e.preventDefault();
-											}}
-										>
-											weniger
-										</Link>
-									</>
-								))}
-							</p>
+							<div className={classes.description}>
+								<p>
+									{shorten ? getShortenedText() : storeData.description.de_DE}
+									{isShortened() &&
+									(shorten ? (
+										<>
+											<span>… </span>
+											<Link
+												href=''
+												className={classes.readmore}
+												onClick={e => {
+													setShorten(false);
+													e.preventDefault();
+												}}
+											>
+												weiterlesen
+											</Link>
+										</>
+									) : (
+										<>
+											{' '}
+											<Link
+												href=''
+												className={classes.readmore}
+												onClick={e => {
+													setShorten(true);
+													e.preventDefault();
+												}}
+											>
+												weniger
+											</Link>
+										</>
+									))}
+								</p>
+							</div>
 						</div>
 
 						<div className={classes.goods}>

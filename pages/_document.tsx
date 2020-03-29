@@ -1,12 +1,11 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import {ServerStyleSheets} from "@material-ui/core/styles";
-import React from "react";
-import SmallBusinessHeroApp from "./_app";
+import {ServerStyleSheets} from '@material-ui/core/styles';
+import React from 'react';
 
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang="de">
+      <Html lang='de'>
         <Head />
         <body>
           <Main />

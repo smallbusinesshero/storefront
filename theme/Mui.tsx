@@ -1,7 +1,6 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import { red } from '@material-ui/core/colors';
 
-const baseTextColor = "black";
+const baseTextColor = 'black';
 
 const theme = createMuiTheme({
 	palette: {
@@ -9,9 +8,9 @@ const theme = createMuiTheme({
 			primary: baseTextColor
 		},
 		primary: {
-			main: "#006735",
-			light: "#75cca2",
-			dark: "#75cca2"
+			main: '#006735',
+			light: '#75cca2',
+			dark: '#75cca2'
 		}
 	},
 	overrides: {
@@ -19,8 +18,8 @@ const theme = createMuiTheme({
 			// Name of the component ⚛️ / style sheet
 			text: {
 				// Name of the rule
-				color: "white", // Some CSS
-				background: "#75cca2"
+				color: 'white', // Some CSS
+				background: '#75cca2'
 			}
 		}
 	},
