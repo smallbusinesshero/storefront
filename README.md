@@ -16,7 +16,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/Diconium-WirVsVirus/dds-wvv-frontend/repo">
+  <a href="https://github.com/smallbusinesshero/dds-wvv-frontend">
     <img src="logo.png" alt="Logo" width="250" height="250">
   </a>
 
@@ -27,14 +27,14 @@
     https://devpost.com/software/16_lokaleunternehmen_1605_smallbusinesshero
     <br />
     <br />
-    <a href="https://github.com/Diconium-WirVsVirus/dds-wvv-frontend/repo"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/smallbusinesshero/dds-wvv-frontend"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="http://www.smallbusinesshero.de/">View Demo</a>
     ·
-    <a href="https://github.com/Diconium-WirVsVirus/dds-wvv-frontend/repo/issues">Report Bug</a>
+    <a href="https://github.com/smallbusinesshero/dds-wvv-frontend/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Diconium-WirVsVirus/dds-wvv-frontend/repo/issues">Request Feature</a>
+    <a href="https://github.com/smallbusinesshero/dds-wvv-frontend/issues">Request Feature</a>
   </p>
 </p>
 
@@ -43,17 +43,18 @@
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
-* [About the Project](#about-the-project)
-  * [Built With](#built-with)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-* [Usage](#usage)
-* [Roadmap](#roadmap)
-* [Contributing](#contributing)
-* [License](#license)
-* [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
+- [Table of Contents](#table-of-contents)
+- [About The Project](#about-the-project)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
 
 
 
@@ -83,7 +84,7 @@ You need to install [Node.JS](https://nodejs.org/) in order develop this softwar
  
 1. Clone the repo
    ```sh
-   git clone https://github.com/Diconium-WirVsVirus/dds-wvv-frontend.git
+   git clone https://github.com/smallbusinesshero/dds-wvv-frontend.git
    cd dds-wvv-frontend
    ```
 2. Install NPM packages
@@ -101,7 +102,7 @@ Use this space to show useful examples of how a project can be used. Additional 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/Diconium-WirVsVirus/dds-wvv-frontend/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/smallbusinesshero/dds-wvv-frontend/issues) for a list of proposed features (and known issues).
 
 
 
@@ -153,12 +154,12 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/Diconium-WirVsVirus/dds-wvv-frontend.svg?style=flat-square
-[contributors-url]: https://github.com/Diconium-WirVsVirus/dds-wvv-frontend/graphs/contributors
-[stars-shield]: https://img.shields.io/github/stars/Diconium-WirVsVirus/dds-wvv-frontend.svg?style=flat-square
-[stars-url]: https://github.com/Diconium-WirVsVirus/dds-wvv-frontend/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Diconium-WirVsVirus/dds-wvv-frontend.svg?style=flat-square
-[issues-url]: https://github.com/Diconium-WirVsVirus/dds-wvv-frontend/issues
-[license-shield]: https://img.shields.io/github/license/Diconium-WirVsVirus/dds-wvv-frontend.svg?style=flat-square
-[license-url]: https://github.com/Diconium-WirVsVirus/dds-wvv-frontend/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/smallbusinesshero/dds-wvv-frontend.svg?style=flat-square
+[contributors-url]: https://github.com/smallbusinesshero/dds-wvv-frontend/graphs/contributors
+[stars-shield]: https://img.shields.io/github/stars/smallbusinesshero/dds-wvv-frontend.svg?style=flat-square
+[stars-url]: https://github.com/smallbusinesshero/dds-wvv-frontend/stargazers
+[issues-shield]: https://img.shields.io/github/issues/smallbusinesshero/dds-wvv-frontend.svg?style=flat-square
+[issues-url]: https://github.com/smallbusinesshero/dds-wvv-frontend/issues
+[license-shield]: https://img.shields.io/github/license/smallbusinesshero/dds-wvv-frontend.svg?style=flat-square
+[license-url]: https://github.com/smallbusinesshero/dds-wvv-frontend/blob/master/LICENSE.txt
 [product-screenshot]: preview.png
