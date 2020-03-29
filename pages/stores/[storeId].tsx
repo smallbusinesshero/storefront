@@ -15,7 +15,7 @@ import {
 import {faGlobe} from '@fortawesome/free-solid-svg-icons';
 import {faEnvelope} from '@fortawesome/free-regular-svg-icons';
 import {Link} from '@material-ui/core';
-import useStyles from './styles';
+import useStyles from '../../assets/styles/stores_styles';
 
 const StoreId = props => {
 	const classes = useStyles();
