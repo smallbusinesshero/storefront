@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Container, SvgIcon } from '@material-ui/core';
 import StoresService from '../services/stores';
 import CardCarousel from '../components/molecules/CardCarousel';
-import useStyles from './index/styles';
-import mockData from './index/mock-data';
+import useStyles from '../assets/styles/styles';
+import mockData from '../assets/mock-data/mock-data';
 import AddressIcon from '../assets/icons/ecommerce/Address.svg';
 import {Button, Typography} from '@material-ui/core';
 
