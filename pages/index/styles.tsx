@@ -23,7 +23,7 @@ export default makeStyles((theme: Theme) => ({
 		backgroundColor: '#d8f0ed'
 	},
 	intro: {
-		color: '#006735',
+		color: theme.palette.primary.main,
 		fontSize: '1.1rem',
 		fontWeight: 'normal',
 		margin: '0 0 1.8em'
@@ -60,11 +60,11 @@ export default makeStyles((theme: Theme) => ({
 		top: '-0.8em',
 		left: '0.5em',
 		backgroundColor: 'white',
-		color: '#006735',
+		color: theme.palette.primary.main,
 		fontSize: '12px',
 	},
 	btnPrimary: {
-		color: '#006735',
+		color: theme.palette.primary.main,
 		fontSize: '0.9rem',
 		letterSpacing: '0.1rem',
 		backgroundColor: 'transparent',

@@ -22,7 +22,7 @@ export default makeStyles((theme: Theme) => ({
 		textDecoration: 'none'
 	},
 	title: {
-		color: '#006735',
+		color: theme.palette.primary.main,
 		margin: 0,
 		fontSize: '1.5em',
 		textAlign: 'center',
@@ -34,12 +34,12 @@ export default makeStyles((theme: Theme) => ({
 		textAlign: 'center',
 		fontWeight: 300,
 		marginBottom: '0',
-		color: '#53514f'
+		color: theme.palette.text.secondary
 	},
 	description: {
 		marginTop: 0,
 		lineHeight: '1.4',
-		color: '#53514f'
+		color: theme.palette.text.secondary
 	},
 	storeProfile:{
 		backgroundColor: 'rgba(255, 255, 255, 0.9)',
@@ -93,7 +93,7 @@ export default makeStyles((theme: Theme) => ({
 	},
 	goodsGoodPrice: {
 		padding: '0 1em',
-		color: '#006735',
+		color: theme.palette.primary.main,
 		textAlign: 'end',
 		fontWeight: 'bold',
 	},
@@ -103,7 +103,7 @@ export default makeStyles((theme: Theme) => ({
 		textAlign: 'center',
 		'& a': {
 			fontSize: '10px',
-			color: '#006735',
+			color: theme.palette.primary.main,
 			textDecoration: 'none',
 			padding: '0 0.5em'
 		}

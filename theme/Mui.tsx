@@ -5,7 +5,8 @@ const baseTextColor = 'black';
 const theme = createMuiTheme({
 	palette: {
 		text: {
-			primary: baseTextColor
+			primary: baseTextColor,
+			secondary: '#53514f'
 		},
 		primary: {
 			main: '#006735',
