@@ -1,68 +1,166 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+[![Contributors][contributors-shield]][contributors-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=smallbusinesshero_dds-wvv-frontend&metric=alert_status)](https://sonarcloud.io/dashboard?id=smallbusinesshero_dds-wvv-frontend)
+[![MIT License][license-shield]][license-url]
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `yarn start`
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/smallbusinesshero/dds-wvv-frontend">
+    <img src="logo.png" alt="Logo" width="250" height="250">
+  </a>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  <h3 align="center">Small Business Hero</h3>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+  <p align="center">
+    Check out our Devpost story: <br />
+    https://devpost.com/software/16_lokaleunternehmen_1605_smallbusinesshero
+    <br />
+    <br />
+    <a href="https://github.com/smallbusinesshero/dds-wvv-frontend"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="http://www.smallbusinesshero.de/">View Demo</a>
+    ·
+    <a href="https://github.com/smallbusinesshero/dds-wvv-frontend/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/smallbusinesshero/dds-wvv-frontend/issues">Request Feature</a>
+  </p>
+</p>
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Table of Contents](#table-of-contents)
+- [About The Project](#about-the-project)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+[![Product Name Screen Shot][product-screenshot]](https://www.youtube.com/watch?time_continue=2&v=umg0Hjc02SM&feature=emb_logo)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Built With
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* [React](https://reactjs.org/)
+* [Commerce Tools](https://commercetools.com/de/)
+* [Spring Boot](https://spring.io/projects/spring-boot)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<!-- GETTING STARTED -->
+## Getting Started
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To get a local copy up and running follow these simple steps.
 
-### Code Splitting
+### Prerequisites
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+You need to install [Node.JS](https://nodejs.org/) in order develop this software.
 
-### Analyzing the Bundle Size
+### Installation
+ 
+1. Clone the repo
+   ```sh
+   git clone https://github.com/smallbusinesshero/dds-wvv-frontend.git
+   cd dds-wvv-frontend
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+<!-- USAGE EXAMPLES -->
+## Usage
 
-### Advanced Configuration
+Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+<!-- ROADMAP -->
+## Roadmap
 
-### Deployment
+See the [open issues](https://github.com/smallbusinesshero/dds-wvv-frontend/issues) for a list of proposed features (and known issues).
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `yarn build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+
+<!-- CONTACT -->
+## Contact
+
+* [Jonathan Wiens](https://www.linkedin.com/in/jonathan-wiens-022459142/)
+* [Thomas Haug](https://www.linkedin.com/in/thomas-haug-931728133/)
+* [Paul Boeck](https://www.linkedin.com/in/paul-boeck/)
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+
+* [Anja Hendel](https://www.linkedin.com/in/anja-hendel-97921322/)
+* [Jonathan Wiens](https://www.linkedin.com/in/jonathan-wiens-022459142/)
+* [Thomas Haug](https://www.linkedin.com/in/thomas-haug-931728133/)
+* [Katharina Schätz](https://www.linkedin.com/in/katharina-sch%C3%A4tz-3b784b131/)
+* [Paul Boeck](https://www.linkedin.com/in/paul-boeck/)
+* [Florencia Rodriguez](https://www.linkedin.com/in/florencia-r-816a9138/)
+* [Sebastian Wohlrapp](https://www.linkedin.com/in/wohlrapp/)
+* [Mehmet Arziman](https://www.linkedin.com/in/mehmet-arziman-b334bb10a/)
+* [Claudia Nasenberg](https://www.linkedin.com/in/claudianasenberg/)
+* [Connor Lanigan](https://www.linkedin.com/in/connorlanigan/)
+* [Jannis Ötjengerdes](https://www.linkedin.com/in/jannis-%C3%B6tjengerdes-85360413b/)
+
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/smallbusinesshero/dds-wvv-frontend.svg?style=flat-square
+[contributors-url]: https://github.com/smallbusinesshero/dds-wvv-frontend/graphs/contributors
+[stars-shield]: https://img.shields.io/github/stars/smallbusinesshero/dds-wvv-frontend.svg?style=flat-square
+[stars-url]: https://github.com/smallbusinesshero/dds-wvv-frontend/stargazers
+[issues-shield]: https://img.shields.io/github/issues/smallbusinesshero/dds-wvv-frontend.svg?style=flat-square
+[issues-url]: https://github.com/smallbusinesshero/dds-wvv-frontend/issues
+[license-shield]: https://img.shields.io/github/license/smallbusinesshero/dds-wvv-frontend.svg?style=flat-square
+[license-url]: https://github.com/smallbusinesshero/dds-wvv-frontend/blob/master/LICENSE.txt
+[product-screenshot]: preview.png
