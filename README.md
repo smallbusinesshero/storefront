@@ -9,6 +9,7 @@
 [![Contributors][contributors-shield]][contributors-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
+[![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=smallbusinesshero_dds-wvv-frontend&metric=alert_status)](https://sonarcloud.io/api/project_badges/measure?project=smallbusinesshero_dds-wvv-frontend&metric=alert_status)
 [![MIT License][license-shield]][license-url]
 
 
