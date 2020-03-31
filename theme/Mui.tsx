@@ -20,15 +20,15 @@ const theme = createMuiTheme({
 		action: {
 			active: 'rgba(0, 123, 61, 0.54)',
 			hover: 'rgba(0, 123, 61, 0.04)',
-			hoverOpacity: 0.9,
+			hoverOpacity: 0.1,
 			selected: 'rgba(0, 123, 61, 0.08)',
-			selectedOpacity: 0.9,
+			selectedOpacity: 0.1,
 			disabled: 'rgba(0, 123, 61, 0.26)',
 			disabledBackground: 'rgba(0, 123, 61, 0.12)',
-			disabledOpacity: 0.75,
+			disabledOpacity: 0.1,
 			focus: 'rgba(0, 123, 61, 0.12)',
-			focusOpacity: 0.9,
-			activatedOpacity: 0.9,
+			focusOpacity: 0.1,
+			activatedOpacity: 0.1,
 		}
 	},
 	overrides: {
