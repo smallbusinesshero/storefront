@@ -102,7 +102,7 @@ export default makeStyles((theme: Theme) => ({
 		fontSize: '2em',
 		textAlign: 'center',
 		'& a': {
-			fontSize: '10px',
+			fontSize: '32px',
 			color: theme.palette.primary.main,
 			textDecoration: 'none',
 			padding: '0 0.5em'

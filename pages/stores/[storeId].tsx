@@ -88,37 +88,37 @@ const StoreId = props => {
 							<div className={classes.icons}>
 								{storeData?.homepage && (
 									<a href={storeData.homepage} target='_blank'>
-										<FontAwesomeIcon icon={faGlobe} width='32' />
+										<FontAwesomeIcon icon={faGlobe} />
 									</a>
 								)}
 								{storeData?.email && (
 									<a href={`mailto:${storeData.email}`} target='_blank'>
-										<FontAwesomeIcon icon={faEnvelope} width='32' />
+										<FontAwesomeIcon icon={faEnvelope} />
 									</a>
 								)}
 								{storeData?.whatsapp && (
 									<a href={storeData.whatsapp} target='_blank'>
-										<FontAwesomeIcon icon={faWhatsapp} width='32' />
+										<FontAwesomeIcon icon={faWhatsapp} />
 									</a>
 								)}
 								{storeData?.instagram && (
 									<a href={storeData.instagram} target='_blank'>
-										<FontAwesomeIcon icon={faInstagram} width='32' />
+										<FontAwesomeIcon icon={faInstagram} />
 									</a>
 								)}
 								{storeData?.telegram && (
 									<a href={storeData.telegram} target='_blank'>
-										<FontAwesomeIcon icon={faTelegramPlane} width='32' />
+										<FontAwesomeIcon icon={faTelegramPlane} />
 									</a>
 								)}
 								{storeData?.twitter && (
 									<a href={storeData.twitter} target='_blank'>
-										<FontAwesomeIcon icon={faTwitter} width='32' />
+										<FontAwesomeIcon icon={faTwitter} />
 									</a>
 								)}
 								{storeData?.facebook && (
 									<a href={storeData.facebook} target='_blank'>
-										<FontAwesomeIcon icon={faFacebook} width='32' />
+										<FontAwesomeIcon icon={faFacebook} />
 									</a>
 								)}
 							</div>
