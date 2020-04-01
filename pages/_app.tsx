@@ -13,9 +13,8 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Link from '../components/atoms/Link';
 import BackgroundImg from './../assets/images/main-bg.jpg';
-import {SvgIcon} from "@material-ui/core";
-
-import BasketIcon from '../assets/icons/ecommerce/Basket.svg';
+//import {SvgIcon} from "@material-ui/core";
+//import BasketIcon from '../assets/icons/ecommerce/Basket.svg';
 
 const useStyles = makeStyles(theme => ({
 	root: {
