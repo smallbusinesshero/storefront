@@ -13,9 +13,8 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Link from '../components/atoms/Link';
 import BackgroundImg from './../assets/images/main-bg.jpg';
-import {SvgIcon} from "@material-ui/core";
-
-import BasketIcon from '../assets/icons/ecommerce/Basket.svg';
+//import {SvgIcon} from "@material-ui/core";
+//import BasketIcon from '../assets/icons/ecommerce/Basket.svg';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -120,7 +119,7 @@ const SmallBusinessHeroApp = ({Component, pageProps}) => {
 							</div>
 							{/*  Placeholder text for logo*/}
 						</Link>
-						<SvgIcon viewBox={"0 0 55 55"} fontSize={'large'}><BasketIcon /></SvgIcon>
+						{/* <SvgIcon viewBox={"0 0 55 55"} fontSize={'large'}><BasketIcon /></SvgIcon> */}
 					</Toolbar>
 				</AppBar>
 				<CssBaseline/>
