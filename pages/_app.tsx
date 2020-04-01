@@ -120,7 +120,7 @@ const SmallBusinessHeroApp = ({Component, pageProps}) => {
 							</div>
 							{/*  Placeholder text for logo*/}
 						</Link>
-						<SvgIcon viewBox={"0 0 55 55"} fontSize={'large'}><BasketIcon /></SvgIcon>
+						{/* <SvgIcon viewBox={"0 0 55 55"} fontSize={'large'}><BasketIcon /></SvgIcon> */}
 					</Toolbar>
 				</AppBar>
 				<CssBaseline/>
