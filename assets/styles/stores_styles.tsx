@@ -8,7 +8,6 @@ export default makeStyles((theme: Theme) => ({
 		backgroundSize: 'cover',
 		backgroundPosition: 'center',
 		height: '25em',
-		margin: '0 -3em',
 		clipPath: 'polygon(0 0, 100% 0%, 100% 85%, 0% 100%)'
 	},
 	telephoneButton: {
