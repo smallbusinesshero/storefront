@@ -53,6 +53,7 @@ export default makeStyles((theme: Theme) => ({
 	},
 	goodsGood: {
 		backgroundColor: 'rgba(255, 255, 255, 0.9)',
+		borderRadius: '10px',
 		width: 'calc(50% - 1em)',
 		position: 'relative',
 		marginBottom: '3em',
