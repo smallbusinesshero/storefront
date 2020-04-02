@@ -1,20 +1,18 @@
-// import App from 'next/app'
 import React from 'react';
 import Head from 'next/head';
-import {makeStyles, ThemeProvider} from '@material-ui/core/styles';
+import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 import theme from '../theme/Mui';
 import './_app.css';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
 import Link from '../components/atoms/Link';
 import BackgroundImg from './../assets/images/main-bg.jpg';
-//import {SvgIcon} from "@material-ui/core";
-//import BasketIcon from '../assets/icons/ecommerce/Basket.svg';
+import Footer from '../components/organism/Footer';
+import { Container } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -22,7 +20,7 @@ const useStyles = makeStyles(theme => ({
 		background: `white url(${BackgroundImg}) no-repeat bottom`,
 		backgroundSize: 'cover',
 		display: 'flex',
-		flexGrow: 1
+		flexDirection: 'column'
 	},
 	header: {
 		display: 'flex',
@@ -57,7 +55,11 @@ const useStyles = makeStyles(theme => ({
 		...theme.mixins.toolbar
 	},
 	content: {
-		flexGrow: 1,
+		flex: '1 0 auto',
+		minHeight: 'auto'
+	},
+	footer: {
+		height: '50px'
 	},
 	appname: {
 		color: 'black',
@@ -69,7 +71,7 @@ const useStyles = makeStyles(theme => ({
 	}
 }));
 
-const SmallBusinessHeroApp = ({Component, pageProps}) => {
+const SmallBusinessHeroApp = ({ Component, pageProps }) => {
 
 	const classes = useStyles();
 
@@ -83,54 +85,59 @@ const SmallBusinessHeroApp = ({Component, pageProps}) => {
 
 	return <React.Fragment>
 		<Head>
-			<meta charSet='utf-8'/>
-			<link rel='icon' type='image/png' href='/favicon_16x16.ico' sizes='16x16'/>
-			<link rel='icon' type='image/png' href='/favicon_32x32.ico' sizes='32x32'/>
-			<link rel='icon' type='image/png' href='/favicon_48x48.ico' sizes='48x48'/>
-			<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap'/>
-			<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'/>
-			<meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width'/>
+			<meta charSet='utf-8' />
+			<link rel='icon' type='image/png' href='/favicon_16x16.ico' sizes='16x16' />
+			<link rel='icon' type='image/png' href='/favicon_32x32.ico' sizes='32x32' />
+			<link rel='icon' type='image/png' href='/favicon_48x48.ico' sizes='48x48' />
+			<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap' />
+			<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons' />
+			<meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width' />
 		</Head>
 		<ThemeProvider theme={theme}>
 			{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-
 			<div className={classes.root}>
-				<AppBar
-					color={'transparent'}
-					position='fixed'
-					className={classes.appBar}
-				>
-					<Toolbar className={classes.toolbar}>
-						<Link href='/' className={classes.logo}>
-							<div style={{display: 'flex', alignItems: 'center'}}>
-								<img
-									src='/assets/images/logo.png'
-									style={{
-										width: '64px',
-										height: 'auto'
-									}}
-								/>
-								<Typography variant='h6' className={classes.logoSubtitle}>
-									small business{' '}
-									<span className={classes.logoSubtitleHighlight}>
-										hero
+				<div className={classes.content}>
+					<AppBar
+						color={'transparent'}
+						position='fixed'
+						className={classes.appBar}
+					>
+						<Toolbar className={classes.toolbar}>
+							<Container>
+								<Link href='/' className={classes.logo}>
+									<div style={{ display: 'flex', alignItems: 'center' }}>
+										<img
+											src='/assets/images/logo.png'
+											style={{
+												width: '64px',
+												height: 'auto'
+											}}
+										/>
+										<Typography variant='h6' className={classes.logoSubtitle}>
+											small business{' '}
+											<span className={classes.logoSubtitleHighlight}>
+												hero
 									</span>
-								</Typography>
-							</div>
-							{/*  Placeholder text for logo*/}
-						</Link>
-						{/* <SvgIcon viewBox={"0 0 55 55"} fontSize={'large'}><BasketIcon /></SvgIcon> */}
-					</Toolbar>
-				</AppBar>
-				<CssBaseline/>
-				<main className={classes.content}>
-					<div className={classes.toolbar}/>
-					<Container className={classes.container}>
-						<Component {...pageProps} />
-					</Container>
-				</main>
+										</Typography>
+									</div>
+									{/*  Placeholder text for logo*/}
+								</Link>
+								{/* Basket icon can be placed here */}
+							</Container>
+						</Toolbar>
+					</AppBar>
+					<CssBaseline />
+					<main>
+						<div className={classes.toolbar} />
+						<div className={classes.container}>
+							<Component {...pageProps} />
+						</div>
+					</main>
+				</div>
+				<footer className={classes.footer}>
+					<Footer />
+				</footer>
 			</div>
-
 		</ThemeProvider>
 	</React.Fragment>
 }
