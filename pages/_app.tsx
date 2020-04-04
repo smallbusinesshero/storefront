@@ -13,8 +13,6 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Link from '../components/atoms/Link';
 import BackgroundImg from './../assets/images/main-bg.jpg';
-//import {SvgIcon} from "@material-ui/core";
-//import BasketIcon from '../assets/icons/ecommerce/Basket.svg';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -119,7 +117,8 @@ const SmallBusinessHeroApp = ({Component, pageProps}) => {
 							</div>
 							{/*  Placeholder text for logo*/}
 						</Link>
-						{/* <SvgIcon viewBox={"0 0 55 55"} fontSize={'large'}><BasketIcon /></SvgIcon> */}
+						<Link href="https://docs.google.com/forms/d/1qVNaUAvrFfpXZvRB3ZKv-1RelD6GTnbejSulJMfqUwg/viewform?edit_requested=true" target="_blank">Registriere deinen Laden</Link>
+						 
 					</Toolbar>
 				</AppBar>
 				<CssBaseline/>
