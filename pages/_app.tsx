@@ -117,7 +117,7 @@ const SmallBusinessHeroApp = ({Component, pageProps}) => {
 							</div>
 							{/*  Placeholder text for logo*/}
 						</Link>
-						<Link href="https://docs.google.com/forms/d/1qVNaUAvrFfpXZvRB3ZKv-1RelD6GTnbejSulJMfqUwg/viewform?edit_requested=true" target="_blank">Registriere deinen Laden</Link>
+						<Link href="https://docs.google.com/forms/d/1qVNaUAvrFfpXZvRB3ZKv-1RelD6GTnbejSulJMfqUwg/viewform?edit_requested=true" target="_blank" rel="noopener">Registriere deinen Laden</Link>
 						 
 					</Toolbar>
 				</AppBar>
