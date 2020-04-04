@@ -5,7 +5,7 @@ export function initializeAnalytics() {
   if (typeof window !== 'undefined') {
     // On local, setup testMode, so data won't go to analytics dashboard
     if (process.env.NODE_ENV === "development") {
-      ReactGA.initialize('UA-162524264-1', { testMode: true, debug: true });
+      ReactGA.initialize('UA-162524264-1', { testMode: true, debug: false });
     } else {
       ReactGA.initialize('UA-162524264-1');
     }

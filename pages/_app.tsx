@@ -70,11 +70,11 @@ const useStyles = makeStyles(theme => ({
 	}
 }));
 
+initializeAnalytics();
+
 const SmallBusinessHeroApp = ({Component, pageProps}) => {
 
 	const classes = useStyles();
-
-	initializeAnalytics();
 
 	useEffect(() => {
 		// Remove the server-side injected CSS.
