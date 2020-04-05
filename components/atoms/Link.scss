@@ -1,0 +1,13 @@
+@use '../outline';
+@use '../colors';
+
+.link {
+  color: colors.$deeplagoon;
+  font-weight: 700;
+  text-decoration: none;
+  @include outline.focus-outline-narrow;
+  &:hover {
+    border-bottom: 2px solid colors.$deeplagoon;
+    margin-bottom: -2px;
+  }
+}
