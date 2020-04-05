@@ -1,0 +1,21 @@
+@use './colors';
+
+@mixin focus-outline {
+  &[data-focus-visible-added] {
+    outline-style: dotted;
+    outline-width: 2px;
+    outline-color: colors.$deeplagoon;
+    outline-offset: 3px;
+  }
+  &::-moz-focus-inner {
+    border: none;
+  }
+}
+@mixin focus-outline-narrow {
+  @include focus-outline;
+  &[data-focus-visible-added] {
+    outline-offset: 0;
+    outline-style: dashed;
+    outline-width: 3px;
+  }
+}

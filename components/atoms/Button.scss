@@ -1,0 +1,84 @@
+@use "../Colors" as colors;
+@use "../typography";
+@use '../outline';
+
+$icon-text-space: 0.5em;
+
+.button {
+  @include typography.copy-size-1;
+  @include outline.focus-outline;
+
+  border-radius: 2px;
+
+  padding: 0.5em 1em;
+
+  transition: all 200ms;
+  transition-property: background-color, color, border-color;
+
+  cursor: pointer;
+
+  border: 1px solid transparent;
+
+  &.primary {
+    background-color: colors.$meteorite;
+    color: colors.$white;
+
+    &:hover {
+      background-color: colors.$black;
+    }
+  }
+
+  &.secondary {
+    background-color: colors.$btnSecondaryBackgroundColor;
+    color: colors.$charcoal;
+    border-color: colors.$charcoal;
+
+    &:hover {
+      border-color: colors.$meteorite;
+      color: colors.$meteorite;
+      background-color: #f2f2f2;
+    }
+  }
+
+  &.link {
+    color: colors.$deeplagoon;
+    font-weight: 700;
+    text-decoration: none;
+    @include outline.focus-outline-narrow;
+
+    background-color: transparent;
+    padding: 0;
+    position: relative;
+
+    &:before {
+      width: 0;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      height: 2px;
+      background-color: colors.$deeplagoon;
+      @media (prefers-reduced-motion: no-preference) {
+        transition: width 300ms;
+      }
+      display: block;
+      content: "";
+    }
+
+    &:hover {
+      margin-bottom: -2px;
+
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+
+  .icon-right {
+    padding-left: $icon-text-space;
+  }
+
+  .icon-left {
+    padding-right: $icon-text-space;
+  }
+}

@@ -1,0 +1,14 @@
+@use '../components/typography';
+@import "../components/fonts";
+
+:global {
+  .js-focus-visible {
+    :focus:not(.focus-visible) {
+      outline: none;
+    }
+  }
+}
+
+p {
+  @include typography.copy-size-1;
+}

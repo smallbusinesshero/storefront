@@ -1,0 +1,40 @@
+$montserrat: "Montserrat", sans-serif;
+$merriweather: "Merriweather", serif;
+
+@mixin copy-size-1 {
+  font-size: 14px;
+  font-family: $montserrat;
+}
+@mixin copy-size-2 {
+  font-size: 16px;
+  font-family: $montserrat;
+}
+@mixin copy-size-3 {
+  font-size: 20px;
+  font-family: $montserrat;
+}
+
+@mixin heading-1 {
+  font-family: $merriweather;
+  font-size: 72pt;
+}
+@mixin heading-2 {
+  font-family: $merriweather;
+  font-size: 48pt;
+}
+@mixin heading-3 {
+  font-family: $merriweather;
+  font-size: 36pt;
+}
+@mixin heading-4 {
+  font-family: $merriweather;
+  font-size: 24pt;
+}
+@mixin heading-5 {
+  font-family: $merriweather;
+  font-size: 21pt;
+}
+@mixin heading-6 {
+  font-family: $merriweather;
+  font-size: 18pt;
+}
