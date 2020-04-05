@@ -1,0 +1,108 @@
+@use "../colors";
+@use '../outline';
+@use '../typography';
+
+$animationDuration: 400ms;
+$width: 80px;
+$paddingCircle: 4px;
+$circleSize: 26px;
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: $width;
+  height: 34px;
+  @include outline.focus-outline;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: colors.$brightwhite; //colors.$white;
+  color: colors.$black;
+  @media (prefers-reduced-motion: no-preference) {
+    transition: background-color $animationDuration;
+  }
+  border-radius: 34px;
+  color: colors.$black;
+  border: 1px solid colors.$coolgrey;
+
+  &:before {
+    position: absolute;
+    content: "";
+    height: $circleSize;
+    width: $circleSize;
+    left: 3px;
+    bottom: $paddingCircle;
+    background-color: colors.$white;
+    @media (prefers-reduced-motion: no-preference) {
+      transition: left $animationDuration, transform $animationDuration;
+    }
+    border-radius: 50%;
+    border: 1px solid colors.$coolgrey;
+    z-index: 11;
+    top: $paddingCircle / 2;
+  }
+}
+
+.switch-text {
+  color: colors.$white;
+  z-index: 10;
+  position: absolute;
+  user-select: none;
+  pointer-events: none;
+  opacity: 100%;
+  @media (prefers-reduced-motion: no-preference) {
+    transition: opacity $animationDuration;
+  }
+  top: 50%;
+  transform: translateY(-50%);
+
+  @include typography.copy-size-1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &.hidden {
+    opacity: 0;
+  }
+
+  &.switch-state-off {
+    color: colors.$black;
+    right: 2 * $paddingCircle;
+  }
+
+  &.switch-state-on {
+    left: 2 * $paddingCircle;
+  }
+}
+
+.btn {
+  border: none;
+  outline: none;
+}
+
+.btn[aria-checked="true"] {
+  & + .slider {
+    background-color: colors.$black;
+  }
+
+  & + .slider:before {
+    left: calc(100% - 3px);
+    transform: translateX(-100%);
+  }
+}
+
+.btn:focus + .slider {
+  box-shadow: 0 0 1px colors.$black;
+}
