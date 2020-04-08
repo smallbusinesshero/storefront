@@ -8,9 +8,9 @@
   "main": "index.js",
   "scripts": {
     "build": "next build",
-    "dev": "next",
+    "dev": "node server.js",
     "heroku-postbuild": "npm run build",
-    "start": "next start -p $PORT"
+    "start": "NODE_ENV=production node server.js"
   },
   "husky": {
     "hooks": {
