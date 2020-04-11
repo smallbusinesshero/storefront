@@ -1,9 +1,17 @@
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      [tagName: string]: any;
+    }
+  }
+}
+
 // import App from 'next/app'
 import React from "react";
 import Head from "next/head";
 import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import theme from "../theme/Mui";
 import "./_app.css";
 
@@ -11,6 +19,8 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Container from "@material-ui/core/Container";
 import Link from "../components/atoms/Link";
+
+import styled, { keyframes } from "styled-components";
 
 import {
   CustomButton,
@@ -76,8 +86,26 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const AnimatedLogoKeyframes = keyframes`
+	0% {
+		letter-spacing: -0.5em;
+		filter: blur(12px);
+		opacity: 0;
+	}
+	100% {
+		filter: blur(0px);
+		opacity: 1;
+	}
+`;
+
+const AnimatedLogo = styled.div`
+  animation: ${AnimatedLogoKeyframes} 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+`;
+
 const SmallBusinessHeroApp = ({ Component, pageProps }) => {
   const classes = useStyles();
+  const [startAnimation, setStartAnimation] = useState(false);
 
   useEffect(() => {
     // Remove the server-side injected CSS.
@@ -85,6 +113,10 @@ const SmallBusinessHeroApp = ({ Component, pageProps }) => {
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
+  });
+
+  useEffect(() => {
+    setStartAnimation(true);
   });
 
   return (
@@ -140,14 +172,18 @@ const SmallBusinessHeroApp = ({ Component, pageProps }) => {
               >
                 #WeVsVirus <span className={classes.wevsvirusHeart}>❤</span>
               </Link>
-              <Link href="/" className={classes.logo}>
+              <Link href="/" className={`${classes.logo} focus-in-expand`}>
                 <div style={{ display: "flex", alignItems: "center" }}>
-                  <span className={classes.logoSubtitle}>
-                    SBH.{" "}
-                    <span className={classes.logoSubtitleHighlight}>
-                      small business hero
-                    </span>
-                  </span>
+                  {Boolean(startAnimation) == true && (
+                    <AnimatedLogo>
+                      <span className={classes.logoSubtitle}>
+                        SBH.{" "}
+                        <span className={classes.logoSubtitleHighlight}>
+                          small business hero
+                        </span>
+                      </span>
+                    </AnimatedLogo>
+                  )}
                 </div>
                 {/*  Placeholder text for logo*/}
               </Link>
