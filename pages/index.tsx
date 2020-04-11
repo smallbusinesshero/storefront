@@ -35,7 +35,7 @@ export default function Home() {
 				>
 					<div className={classes.searchWrapper}>
 						<label htmlFor='home__search' className={classes.searchLabel}>
-							Ort
+							Adresse oder Stadtviertel
 						</label>
 						<SvgIcon className={classes.searchMarker} viewBox={"0 0 20 50"}><AddressIcon /></SvgIcon>
 						<input
@@ -44,7 +44,7 @@ export default function Home() {
 							type='text'
 							autoComplete='off'
 							value={kiez}
-							placeholder='Wähle einen Ort…'
+							placeholder='z.B. Donaustraße, Berlin'
 							onChange={e => {
 								setKiez(e.target.value);
 								setFilteredLocations(
