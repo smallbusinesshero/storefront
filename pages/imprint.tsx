@@ -19,7 +19,17 @@ const DataPrivacy = props => {
             <Paper className={classes.content}>
             <Typography variant="h6" display="block">Impressum</Typography>
                 <br />
-                <Typography variant="body1" display="block">TBD</Typography>
+                <Typography variant="body1" display="block"><b>Small Business Hero</b>
+                <p>Diese Seite/Webapplikation wird betrieben und herausgegeben von:</p>
+                Mehmet Arziman<br></br>
+                Grünewalsdtraße 75<br></br>
+                70469 Stuttgart<br></br>
+                +(49)0711 184 29 271<br></br>
+
+                <p>Kontakt:<br></br>
+                info@smallbusinesshero.de
+                </p>
+                </Typography>
             </Paper>
         </Grid>
     </Container>			
