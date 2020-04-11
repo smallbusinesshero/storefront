@@ -1,15 +1,8 @@
 export default class Base {
 
-	getBaseUrl (): string {
-		let baseUrl:string = process.env.BACKEND_URL;
-		if (!baseUrl || !baseUrl.length) {
-			baseUrl = 'https://dds-wvv-backend.herokuapp.com/';
-		}
-		return baseUrl;
-	}
-
-	readonly baseUrl:string = this.getBaseUrl();
-
+	baseUrl = process.env.BACKEND_URL ||
+			'https://dds-wvv-backend.herokuapp.com/';
+			
 	getRequest = async path => {
 		const response = await fetch(`${this.baseUrl}${path}`, {
 			method: 'GET',
