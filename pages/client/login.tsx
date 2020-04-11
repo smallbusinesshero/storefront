@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Grid, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { RegisterForm } from '../../components/organism/client/register.form';
+import { LoginForm } from '../../components/organism/client/login.form';
 
 const useStyles = makeStyles(theme => ({
     content: {
@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-const ClientRegistration = props => {
+const ClientLogin = props => {
 
     const classes = useStyles();
 
@@ -18,13 +18,13 @@ const ClientRegistration = props => {
         <Container>
             <Grid container item xs={12}>
                 <Paper className={classes.content}>
-                    <RegisterForm {...props} />
+                    <LoginForm {...props} />
                 </Paper>
             </Grid>
         </Container>
     );
 };
 
-ClientRegistration.propTypes = {};
+ClientLogin.propTypes = {};
 
-export default ClientRegistration;
+export default ClientLogin;
