@@ -1,7 +1,8 @@
 // next.config.js
 const withImages = require('next-images');
 const path = require('path');
-module.exports = withImages({
+
+const withImagesConfig = withImages({
   esmodule: true,
   exclude: path.resolve(__dirname, 'assets/icons'),
   webpack(config, options) {
@@ -15,3 +16,12 @@ module.exports = withImages({
     return config
   }
 });
+
+const poweredByHeaderConfig = {
+  poweredByHeader: false
+};
+
+module.exports = {
+  ...withImagesConfig,
+  ...poweredByHeaderConfig
+};
