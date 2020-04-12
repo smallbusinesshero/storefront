@@ -81,6 +81,13 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: "64px",
     paddingLeft: "10px",
     fontWeight: "bold",
+    textDecoration: "none",
+    color: theme.palette.common.black,
+
+    "&:hover": {
+      color: theme.palette.common.black,
+      textDecoration: "none",
+    },
 
     [theme.breakpoints.down("xs")]: {
       fontSize: "0.8em",
@@ -171,14 +178,14 @@ const SmallBusinessHeroApp = ({ Component, pageProps }) => {
             className={classes.appBar}
           >
             <Toolbar className={classes.toolbar} disableGutters={true}>
-              <Link
+              <a
                 href="https://www.youtube.com/watch?v=umg0Hjc02SM"
                 target="_blank"
                 rel="noopener"
                 className={classes.wevsvirus}
               >
                 #WeVsVirus <span className={classes.wevsvirusHeart}>❤</span>
-              </Link>
+              </a>
               <Link href="/" className={classes.logo}>
                 <div style={{ display: "flex", alignItems: "center" }}>
                   {Boolean(startAnimation) == true && (
