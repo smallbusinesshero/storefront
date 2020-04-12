@@ -172,7 +172,7 @@ const SmallBusinessHeroApp = ({ Component, pageProps }) => {
           >
             <Toolbar className={classes.toolbar} disableGutters={true}>
               <Link
-                href="https://docs.google.com/forms/d/1qVNaUAvrFfpXZvRB3ZKv-1RelD6GTnbejSulJMfqUwg/viewform?edit_requested=true"
+                href="https://www.youtube.com/watch?v=umg0Hjc02SM"
                 target="_blank"
                 rel="noopener"
                 className={classes.wevsvirus}
