@@ -52,6 +52,7 @@ export default makeStyles((theme: Theme) => ({
   },
   goodsGood: {
     backgroundColor: "rgba(255, 255, 255, 0.9)",
+    borderRadius: "10px 10px 0 0",
     width: "calc(50% - 1em)",
     position: "relative",
     marginBottom: "3em",
@@ -64,7 +65,7 @@ export default makeStyles((theme: Theme) => ({
     },
   },
   goodsGoodImageWrapper: {
-    borderRadius: "10px",
+    borderRadius: "10px 10px 0 0",
     overflow: "hidden",
     position: "relative",
   },
