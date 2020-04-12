@@ -6,7 +6,6 @@ declare global {
   }
 }
 
-// import App from 'next/app'
 import React from "react";
 import Head from "next/head";
 import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
@@ -20,13 +19,11 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Container from "@material-ui/core/Container";
 import Link from "../components/atoms/Link";
 import Box from "@material-ui/core/Box";
+import { initializeAnalytics } from "../services/analytics";
 
 import styled, { keyframes } from "styled-components";
 
-import {
-  CustomButton,
-  CustomButtonHighlight,
-} from "../components/atoms/Button";
+import { CustomButtonHighlight } from "../components/atoms/Button";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -105,6 +102,8 @@ const AnimatedLogoKeyframes = keyframes`
 		opacity: 1;
 	}
 `;
+
+initializeAnalytics();
 
 const AnimatedLogo = styled.div`
   animation: ${AnimatedLogoKeyframes} 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)
@@ -200,9 +199,12 @@ const SmallBusinessHeroApp = ({ Component, pageProps }) => {
                 {/*  Placeholder text for logo*/}
               </Link>
               <CustomButtonHighlight
-                href="https://docs.google.com/forms/d/1qVNaUAvrFfpXZvRB3ZKv-1RelD6GTnbejSulJMfqUwg/viewform?edit_requested=true"
-                target="_blank"
-                rel="noopener"
+                onClick={() => {
+                  window.open(
+                    "https://docs.google.com/forms/d/1qVNaUAvrFfpXZvRB3ZKv-1RelD6GTnbejSulJMfqUwg/viewform?edit_requested=true",
+                    "_blank"
+                  );
+                }}
                 className={classes.register}
               >
                 Registrieren

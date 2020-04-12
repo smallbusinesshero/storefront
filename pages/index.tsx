@@ -6,8 +6,8 @@ import useStyles from "../assets/styles/index_styles";
 import mockData from "../assets/mock-data/mock-data";
 import AddressIcon from "../assets/icons/ecommerce/Address.svg";
 import { Typography } from "@material-ui/core";
-
 import { CustomButton } from "../components/atoms/Button";
+import { analyticsSearchLocation } from "../services/analytics";
 
 export default function Home() {
   const classes = useStyles();
@@ -76,6 +76,7 @@ export default function Home() {
                       setKiez(option);
                       setFilteredLocations([]);
                       fetchStoreData(option);
+                      analyticsSearchLocation(option);
                     }}
                   >
                     {option}

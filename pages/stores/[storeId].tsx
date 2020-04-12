@@ -16,6 +16,7 @@ import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { Link, Typography } from "@material-ui/core";
 import useStyles from "../../assets/styles/stores_styles";
+import { analyticsSocialMediaRef } from "../../services/analytics";
 
 const StoreId = (props) => {
   const classes = useStyles();
@@ -60,6 +61,29 @@ const StoreId = (props) => {
     return `${storeData.address.streetName} ${storeData.address.streetNumber}, ${storeData.address.postalCode} ${storeData.address.city}`;
   };
 
+  // Send events to google analytics if social-media link is clicked
+  const analyticsEventHomepage = () => {
+    analyticsSocialMediaRef("Homepage", storeData?.id);
+  };
+  const analyticsEventEmail = () => {
+    analyticsSocialMediaRef("Email", storeData?.id);
+  };
+  const analyticsEventWhatsapp = () => {
+    analyticsSocialMediaRef("Whatsapp", storeData?.id);
+  };
+  const analyticsEventInstagram = () => {
+    analyticsSocialMediaRef("Instagram", storeData?.id);
+  };
+  const analyticsEventTelegram = () => {
+    analyticsSocialMediaRef("Telegram", storeData?.id);
+  };
+  const analyticsEventTwitter = () => {
+    analyticsSocialMediaRef("Twitter", storeData?.id);
+  };
+  const analyticsEventFacebook = () => {
+    analyticsSocialMediaRef("Facebook", storeData?.id);
+  };
+
   return (
     <>
       {storeData && productsData ? (
@@ -93,37 +117,65 @@ const StoreId = (props) => {
 
               <div className={classes.icons}>
                 {storeData?.homepage && (
-                  <a href={storeData.homepage} target="_blank">
+                  <a
+                    onClick={analyticsEventHomepage}
+                    href={storeData.homepage}
+                    target="_blank"
+                  >
                     <FontAwesomeIcon icon={faGlobe} />
                   </a>
                 )}
                 {storeData?.email && (
-                  <a href={`mailto:${storeData.email}`} target="_blank">
+                  <a
+                    onClick={analyticsEventEmail}
+                    href={`mailto:${storeData.email}`}
+                    target="_blank"
+                  >
                     <FontAwesomeIcon icon={faEnvelope} />
                   </a>
                 )}
                 {storeData?.whatsapp && (
-                  <a href={storeData.whatsapp} target="_blank">
+                  <a
+                    onClick={analyticsEventWhatsapp}
+                    href={storeData.whatsapp}
+                    target="_blank"
+                  >
                     <FontAwesomeIcon icon={faWhatsapp} />
                   </a>
                 )}
                 {storeData?.instagram && (
-                  <a href={storeData.instagram} target="_blank">
+                  <a
+                    onClick={analyticsEventInstagram}
+                    href={storeData.instagram}
+                    target="_blank"
+                  >
                     <FontAwesomeIcon icon={faInstagram} />
                   </a>
                 )}
                 {storeData?.telegram && (
-                  <a href={storeData.telegram} target="_blank">
+                  <a
+                    onClick={analyticsEventTelegram}
+                    href={storeData.telegram}
+                    target="_blank"
+                  >
                     <FontAwesomeIcon icon={faTelegramPlane} />
                   </a>
                 )}
                 {storeData?.twitter && (
-                  <a href={storeData.twitter} target="_blank">
+                  <a
+                    onClick={analyticsEventTwitter}
+                    href={storeData.twitter}
+                    target="_blank"
+                  >
                     <FontAwesomeIcon icon={faTwitter} />
                   </a>
                 )}
                 {storeData?.facebook && (
-                  <a href={storeData.facebook} target="_blank">
+                  <a
+                    onClick={analyticsEventFacebook}
+                    href={storeData.facebook}
+                    target="_blank"
+                  >
                     <FontAwesomeIcon icon={faFacebook} />
                   </a>
                 )}
@@ -165,7 +217,6 @@ const StoreId = (props) => {
                 </Typography>
               </div>
             </div>
-
             <div className={classes.goods}>
               {productsData.map((good, index) => (
                 <div className={classes.goodsGood} key={index}>
