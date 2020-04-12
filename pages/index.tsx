@@ -11,10 +11,11 @@ import { analyticsSearchLocation } from "../services/analytics";
 
 export default function Home() {
   const classes = useStyles();
-  const [kiez, setKiez] = useState("");
+  const [result, setResult] = useState("");
   const [filteredLocations, setFilteredLocations] = useState([]);
 
   const [storeData, setStoreData] = useState([]);
+  let submit: boolean = false;
 
   const fetchStoreData = async (location) => {
     const StoreServiceInstance = new StoresService();
@@ -35,7 +36,8 @@ export default function Home() {
           className={classes.form}
           onSubmit={(e) => {
             e.preventDefault();
-            fetchStoreData(kiez);
+            fetchStoreData(result);
+            submit = true;
           }}
         >
           <div className={classes.searchWrapper}>
@@ -50,10 +52,10 @@ export default function Home() {
               className={classes.search}
               type="text"
               autoComplete="off"
-              value={kiez}
+              value={result}
               placeholder="z.B. Donaustraße, Berlin"
               onChange={(e) => {
-                setKiez(e.target.value);
+                setResult(e.target.value);
                 setFilteredLocations(
                   e.target.value
                     ? mockData.kiezList.filter((location) =>
@@ -65,7 +67,7 @@ export default function Home() {
                 );
               }}
             />
-            {kiez && filteredLocations && filteredLocations.length > 0 && (
+            {result && filteredLocations && filteredLocations.length > 0 && (
               <ul className={classes.selectionList}>
                 {filteredLocations.map((option) => (
                   <li
@@ -73,7 +75,7 @@ export default function Home() {
                     className={classes.selectionListItem}
                     onClick={(e) => {
                       e.preventDefault();
-                      setKiez(option);
+                      setResult(option);
                       setFilteredLocations([]);
                       fetchStoreData(option);
                       analyticsSearchLocation(option);
@@ -92,7 +94,7 @@ export default function Home() {
             disableRipple={true}
             onClick={(e) => {
               //e.preventDefault();
-              fetchStoreData(kiez);
+              fetchStoreData(result);
             }}
           >
             Suchen{" "}
@@ -104,10 +106,11 @@ export default function Home() {
           <CardCarousel storeData={storeData} />
         </>
       ) : (
-        kiez.length > 0 && (
+        submit &&
+        result.length > 0 && (
           <Grid item xs={12} className={classes.noResults}>
             <Typography variant="body1">
-              Keine Ergebnisse für Suche nach <strong>{kiez}</strong>
+              Keine Ergebnisse für Suche nach <strong>{result}</strong>
             </Typography>
           </Grid>
         )
