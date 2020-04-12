@@ -13,6 +13,9 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Link from '../components/atoms/Link';
 import BackgroundImg from './../assets/images/main-bg.jpg';
+import { initializeAnalytics } from '../services/analytics';
+//import {SvgIcon} from "@material-ui/core";
+//import BasketIcon from '../assets/icons/ecommerce/Basket.svg';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -66,6 +69,8 @@ const useStyles = makeStyles(theme => ({
 		marginTop: '3em'
 	}
 }));
+
+initializeAnalytics();
 
 const SmallBusinessHeroApp = ({Component, pageProps}) => {
 
