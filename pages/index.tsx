@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Container, SvgIcon } from "@material-ui/core";
+import { Container, SvgIcon, Grid } from "@material-ui/core";
 import StoresService from "../services/stores";
 import CardCarousel from "../components/molecules/CardCarousel";
 import useStyles from "../assets/styles/index_styles";
 import mockData from "../assets/mock-data/mock-data";
 import AddressIcon from "../assets/icons/ecommerce/Address.svg";
-import { Button, Typography } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
+import { CustomButton } from "../components/atoms/Button";
 import { analyticsSearchLocation } from "../services/analytics";
 
 export default function Home() {
@@ -87,7 +88,7 @@ export default function Home() {
             )}
           </div>
           <br />
-          <Button
+          <CustomButton
             fullWidth={true}
             disableFocusRipple={true}
             disableRipple={true}
@@ -97,7 +98,7 @@ export default function Home() {
             }}
           >
             Suchen{" "}
-          </Button>
+          </CustomButton>
         </form>
       </div>
       {storeData.length > 0 ? (
@@ -106,8 +107,13 @@ export default function Home() {
         </>
       ) : (
         submit &&
-        result.length > 0 &&
-        `Keine Ergebnisse für Suche nach '${result}'`
+        result.length > 0 && (
+          <Grid item xs={12} className={classes.noResults}>
+            <Typography variant="body1">
+              Keine Ergebnisse für Suche nach <strong>{result}</strong>
+            </Typography>
+          </Grid>
+        )
       )}
     </Container>
   );

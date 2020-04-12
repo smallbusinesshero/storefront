@@ -10,15 +10,15 @@ import {
   faTelegramPlane,
   faTwitter,
   faFacebook,
-  faInstagram
+  faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import { Link } from "@material-ui/core";
+import { Link, Typography } from "@material-ui/core";
 import useStyles from "../../assets/styles/stores_styles";
 import { analyticsSocialMediaRef } from "../../services/analytics";
 
-const StoreId = props => {
+const StoreId = (props) => {
   const classes = useStyles();
   const [storeData, setStoreData] = useState(null);
   const [productsData, setProductsData] = useState(null);
@@ -35,13 +35,13 @@ const StoreId = props => {
     }
   }, [router.query.storeId]);
 
-  const fetchProductsData = storeId => {
+  const fetchProductsData = (storeId) => {
     console.log(storeId);
     const ProductsServiceInstance = new ProductsService();
     ProductsServiceInstance.getProducts(storeId).then(setProductsData);
   };
 
-  const fetchStoreData = storeId => {
+  const fetchStoreData = (storeId) => {
     const StoreServiceInstance = new StoresService();
     StoreServiceInstance.getStore(storeId).then(setStoreData);
   };
@@ -105,9 +105,15 @@ const StoreId = props => {
           </div>
           <div>
             <div id="store-profile" className={classes.storeProfile}>
-              <h4 className={classes.title}>{storeData.name?.de_DE}</h4>
-              <h6 className={classes.subtitle}>{storeData.shopOwnerName}</h6>
-              <p className={classes.subtitle}>{getAddress()}</p>
+              <Typography variant="h4" className={classes.title}>
+                {storeData.name?.de_DE}
+              </Typography>
+              <Typography variant="h6" className={classes.subtitle}>
+                {storeData.shopOwnerName}
+              </Typography>
+              <Typography variant="body1" className={classes.subtitle}>
+                {getAddress()}
+              </Typography>
 
               <div className={classes.icons}>
                 {storeData?.homepage && (
@@ -176,7 +182,7 @@ const StoreId = props => {
               </div>
 
               <div className={classes.description}>
-                <p>
+                <Typography variant="body2">
                   {shorten ? getShortenedText() : storeData.description.de_DE}
                   {isShortened() &&
                     (shorten ? (
@@ -185,7 +191,7 @@ const StoreId = props => {
                         <Link
                           href=""
                           className={classes.readmore}
-                          onClick={e => {
+                          onClick={(e) => {
                             setShorten(false);
                             e.preventDefault();
                           }}
@@ -199,7 +205,7 @@ const StoreId = props => {
                         <Link
                           href=""
                           className={classes.readmore}
-                          onClick={e => {
+                          onClick={(e) => {
                             setShorten(true);
                             e.preventDefault();
                           }}
@@ -208,10 +214,9 @@ const StoreId = props => {
                         </Link>
                       </>
                     ))}
-                </p>
+                </Typography>
               </div>
             </div>
-
             <div className={classes.goods}>
               {productsData.map((good, index) => (
                 <div className={classes.goodsGood} key={index}>
@@ -219,23 +224,29 @@ const StoreId = props => {
                     <div
                       className={classes.goodsGoodImage}
                       style={{
-                        backgroundImage: `url(${good.masterVariant?.images[0]?.url})`
+                        backgroundImage: `url(${good.masterVariant?.images[0]?.url})`,
                       }}
                     />
                   </div>
                   <div>
-                    <h3 className={classes.goodsGoodName}>
+                    <Typography variant="h4" className={classes.goodsGoodName}>
                       {good.name?.de_DE}
-                    </h3>
-                    <p className={classes.goodsGoodDescription}>
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      className={classes.goodsGoodDescription}
+                    >
                       {good.description?.de_DE}
-                    </p>
-                    <p className={classes.goodsGoodPrice}>
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      className={classes.goodsGoodPrice}
+                    >
                       {new Intl.NumberFormat("de-DE", {
                         style: "currency",
-                        currency: "EUR"
+                        currency: "EUR",
                       }).format(good.price.value)}
-                    </p>
+                    </Typography>
                   </div>
                 </div>
               ))}
