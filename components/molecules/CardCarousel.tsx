@@ -35,7 +35,7 @@ export default function CardCarousel(props) {
     <div className={classes.root}>
       <Grid container spacing={3}>
         {storeData.map((store, index) => (
-          <Grid item xs={6} md={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <Link
               key={index}
               href={`/stores/${store.id}`}

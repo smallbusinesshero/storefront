@@ -81,16 +81,16 @@ export default makeStyles((theme: Theme) => ({
     },
   },
   goodsGoodName: {
-    padding: "0 1em",
+    padding: "1em 0",
     fontWeight: "bold",
     textAlign: "left",
   },
   goodsGoodDescription: {
-    padding: "0 1em",
+    padding: "1em 0",
     textAlign: "left",
   },
   goodsGoodPrice: {
-    padding: "0 1em",
+    padding: "1em 0",
     color: theme.palette.primary.main,
     textAlign: "end",
     fontWeight: "bold",

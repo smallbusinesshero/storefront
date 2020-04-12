@@ -19,6 +19,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Container from "@material-ui/core/Container";
 import Link from "../components/atoms/Link";
+import Box from "@material-ui/core/Box";
 
 import styled, { keyframes } from "styled-components";
 
@@ -56,6 +57,9 @@ const useStyles = makeStyles((theme) => ({
   },
   register: {
     height: "64px",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "0.8em",
+    },
   },
   toolbar: {
     backgroundColor: "rgba(255, 255, 255, 1)",
@@ -80,6 +84,10 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: "64px",
     paddingLeft: "10px",
     fontWeight: "bold",
+
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "0.8em",
+    },
   },
   wevsvirusHeart: {
     color: "red",
@@ -172,15 +180,19 @@ const SmallBusinessHeroApp = ({ Component, pageProps }) => {
               >
                 #WeVsVirus <span className={classes.wevsvirusHeart}>❤</span>
               </Link>
-              <Link href="/" className={`${classes.logo} focus-in-expand`}>
+              <Link href="/" className={classes.logo}>
                 <div style={{ display: "flex", alignItems: "center" }}>
                   {Boolean(startAnimation) == true && (
                     <AnimatedLogo>
                       <span className={classes.logoSubtitle}>
                         SBH.{" "}
-                        <span className={classes.logoSubtitleHighlight}>
+                        <Box
+                          component="span"
+                          display={{ xs: "none", sm: "inline" }}
+                          className={classes.logoSubtitleHighlight}
+                        >
                           small business hero
-                        </span>
+                        </Box>
                       </span>
                     </AnimatedLogo>
                   )}
