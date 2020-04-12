@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, SvgIcon } from "@material-ui/core";
+import { Container, SvgIcon, Grid } from "@material-ui/core";
 import StoresService from "../services/stores";
 import CardCarousel from "../components/molecules/CardCarousel";
 import useStyles from "../assets/styles/index_styles";
@@ -104,7 +104,13 @@ export default function Home() {
           <CardCarousel storeData={storeData} />
         </>
       ) : (
-        kiez.length > 0 && `Keine Ergebnisse für Suche nach '${kiez}'`
+        kiez.length > 0 && (
+          <Grid item xs={12} className={classes.noResults}>
+            <Typography variant="body1">
+              Keine Ergebnisse für Suche nach <strong>{kiez}</strong>
+            </Typography>
+          </Grid>
+        )
       )}
     </Container>
   );

@@ -81,4 +81,9 @@ export default makeStyles((theme: Theme) => ({
     padding: "0.5em 0.8em",
     "-webkit-appearance": "none",
   },
+  noResults: {
+    backgroundColor: "white",
+    marginTop: 25,
+    padding: 10,
+  },
 }));
