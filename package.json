@@ -10,7 +10,8 @@
     "build": "next build",
     "dev": "node server.js",
     "heroku-postbuild": "npm run build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node server.js",
+    "prettier": "prettier --write **/*.tsx"
   },
   "husky": {
     "hooks": {
