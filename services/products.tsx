@@ -1,11 +1,11 @@
-import Base from './base';
+import Base from "./base";
 
 export default class ProductsService extends Base {
-	getProducts(storeId) {
-		return this.getRequest(`products/?storeId=${storeId}`)
-	}
+  getProducts(storeId) {
+    return this.getRequest(`products/?storeId=${storeId}`);
+  }
 
-	getProduct(id) {
-		return this.getRequest(`products/${id}`)
-	}
+  getProduct(id) {
+    return this.getRequest(`products/${id}`);
+  }
 }
