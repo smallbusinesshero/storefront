@@ -6,9 +6,9 @@ import RegisterValidationSchema from "./register.validation";
 import AuthService from "../../../services/auth";
 import CustomFormInput from "../../molecules/CustomFormInput";
 import CustomFormSelect from "../../molecules/CustomFormSelect";
-import { CustomButton, CustomButtonHighlight } from "../../atoms/Button";
+import { CustomButtonHighlight } from "../../atoms/Button";
 
-export const RegisterForm = (props) => {
+export const RegisterForm = () => {
   const AuthServiceInstance = AuthService.getInstance();
 
   const previewHandler = (e, name, formikCb) => {
