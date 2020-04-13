@@ -1,335 +1,414 @@
-import { FormControl, InputLabel, MenuItem, OutlinedInput, Typography, Select } from '@material-ui/core';
-import { Container, Grid, Button } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import { Formik } from 'formik';
-import RegisterInitialValues from './register.init';
-import RegisterValidationSchema from './register.validation';
-import AuthService from '../../../services/auth';
-
-const useStyles = makeStyles(theme => ({
-    label: {
-        backgroundColor: 'white',
-        padding: '1px 20px'
-    },
-}));
+import { MenuItem, Typography } from "@material-ui/core";
+import { Container, Grid, Button } from "@material-ui/core";
+import { Formik } from "formik";
+import RegisterInitialValues from "./register.init";
+import RegisterValidationSchema from "./register.validation";
+import AuthService from "../../../services/auth";
+import CustomFormInput from "../../molecules/CustomFormInput";
+import CustomFormSelect from "../../molecules/CustomFormSelect";
+import { CustomButton } from "../../atoms/Button";
 
 export const RegisterForm = (props) => {
-    const {
-        values,
-        errors,
-        touched,
-        handleChange,
-        handleBlur,
-        handleSubmit,
-        isValid,
-        isSubmitting,
-    } = props;
+  const AuthServiceInstance = AuthService.getInstance();
 
-    const classes = useStyles();
-    const AuthServiceInstance = AuthService.getInstance();
+  return (
+    <Container>
+      <Formik
+        initialValues={RegisterInitialValues}
+        validationSchema={RegisterValidationSchema}
+        onSubmit={AuthServiceInstance.register}
+      >
+        {(props) => {
+          const {
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            isValid,
+            isSubmitting,
+          } = props;
+          return (
+            <form onSubmit={handleSubmit} noValidate={true}>
+              <Grid container spacing={3}>
+                <Grid item xs={12}>
+                  <Typography variant="h2" gutterBottom={true}>
+                    Registriere deinen Laden
+                  </Typography>
+                  <Typography variant="body1" gutterBottom={true}>
+                    Werde dank ein paar Infos von mehr Kunden und Besuchern
+                    entdeckt. Beantworte die Fragen und schon geht`s los.
+                    <br />
+                  </Typography>
+                </Grid>
+                <Grid item xs={12} md={7}>
+                  <CustomFormInput
+                    name="store_name"
+                    placeholder="Name des Ladens"
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                  >
+                    Wie heißt dein Laden?
+                  </CustomFormInput>
+                </Grid>
+                <Grid item xs={12} md={5}>
+                  <CustomFormSelect
+                    name="store_category"
+                    placeholder="Bitte wählen"
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                    label="Produktkategorie"
+                  >
+                    <MenuItem value="0">Bitte wählen</MenuItem>
+                    <MenuItem value="10">Home and Living</MenuItem>
+                    <MenuItem value="20">Food</MenuItem>
+                  </CustomFormSelect>
+                </Grid>
+                <Grid item xs={12} md={2}>
+                  <CustomFormInput
+                    name="store_zipcode"
+                    placeholder="54878"
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                  >
+                    PLZ
+                  </CustomFormInput>
+                </Grid>
+                <Grid item xs={12} md={5}>
+                  <CustomFormInput
+                    name="store_address"
+                    placeholder="Max-Muster-Straße 11, 54872 Musterhausen"
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                  >
+                    Wo ist dein Laden?
+                  </CustomFormInput>
+                </Grid>
+                <Grid item xs={12} md={5}>
+                  <CustomFormInput
+                    name="store_city"
+                    placeholder="München"
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                  >
+                    Deine Stadt
+                  </CustomFormInput>
+                </Grid>
+                <Grid item xs={12}>
+                  <CustomFormInput
+                    name="store_description"
+                    placeholder="Beschreibe Deinen Shop"
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                    multiline={true}
+                  >
+                    Hier kannst Du Deinen Laden kurz beschreiben
+                  </CustomFormInput>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <CustomFormInput
+                    name="firstname"
+                    placeholder="Max"
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                  >
+                    Wie ist dein Vorname?
+                  </CustomFormInput>
+                </Grid>
 
-    return (
-        <Container>
-            <Formik
-                initialValues={RegisterInitialValues}
-                validationSchema={RegisterValidationSchema}
-                onSubmit={AuthServiceInstance.register}
-            >
-                {props => {
-                    const {
-                        values,
-                        errors,
-                        touched,
-                        handleChange,
-                        handleBlur,
-                        handleSubmit,
-                        isValid,
-                        isSubmitting,
-                    } = props;
-                    return (
-                        <form onSubmit={handleSubmit} noValidate={true}>
-                            <Grid container spacing={1}>
-                                <Grid item xs={12}>
-                                    <Typography variant="h5">Registriere deinen Laden</Typography>
-                                    <Typography variant="body1">Werde dank ein paar Infos von mehr Kunden und Besuchern entdeckt. Beantworte die Fragen und schon geht`s los.</Typography>
-                                    <Typography variant="h6">Ladeninformationen</Typography>
-                                </Grid>
-                                <Grid item xs={12} md={7}>
+                <Grid item xs={12} md={6}>
+                  <CustomFormInput
+                    name="lastname"
+                    placeholder="Mustermann"
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                  >
+                    Wie ist dein Nachname?
+                  </CustomFormInput>
+                </Grid>
 
-                                    <FormControl fullWidth={true} required={true} variant="outlined">
-                                        <InputLabel htmlFor="store_name" variant="outlined" className={classes.label} error={touched.store_name && Boolean(errors.store_name)}>Name des Ladens</InputLabel>
-                                        <OutlinedInput
-                                            id="store_name"
-                                            name="store_name"
-                                            value={values.store_name}
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            error={touched.store_name && Boolean(errors.store_name)}
-                                            autoFocus={true}
-                                            placeholder="Shop Name"
-                                        />
-                                    </FormControl>
-                                </Grid>
-                                <Grid item xs={12} md={5}>
-                                    <FormControl fullWidth={true} required={true} size='medium' variant="outlined">
-                                        <InputLabel htmlFor="store_category" variant="outlined" className={classes.label} error={touched.store_category && Boolean(errors.store_category)}>Kategorie</InputLabel>
-                                        <Select
-                                            id="store_category"
-                                            name="store_category"
-                                            value={values.store_category}
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            error={touched.store_category && Boolean(errors.store_category)}
-                                            placeholder="Kategorie"
-                                        >
-                                            <MenuItem value="10">Ten</MenuItem>
-                                            <MenuItem value="20">Twenty</MenuItem>
-                                        </Select>
-                                    </FormControl>
-                                </Grid>
-                                <Grid item xs={12} md={2}>
-                                    <FormControl fullWidth={true} required={true} size='medium' variant="outlined">
-                                        <InputLabel htmlFor="store_zipcode" variant="outlined" className={classes.label} error={touched.store_zipcode && Boolean(errors.store_zipcode)}>PLZ</InputLabel>
-                                        <OutlinedInput
-                                            id="store_zipcode"
-                                            name="store_zipcode"
-                                            value={values.store_zipcode}
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            error={touched.store_zipcode && Boolean(errors.store_zipcode)}
-                                            placeholder="Max-Muster-Straße 11, 54872 Musterhausen"
-                                        />
-                                    </FormControl>
-                                </Grid>
-                                <Grid item xs={12} md={5}>
-                                    <FormControl fullWidth={true} required={true} size='medium' variant="outlined">
-                                        <InputLabel htmlFor="store_address" variant="outlined" className={classes.label} error={touched.store_address && Boolean(errors.store_address)}>Straße und Hausnummer</InputLabel>
-                                        <OutlinedInput
-                                            id="store_address"
-                                            name="store_address"
-                                            value={values.store_address}
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            error={touched.store_address && Boolean(errors.store_address)}
-                                            placeholder="Max-Muster-Straße 11, 54872 Musterhausen"
-                                        />
-                                    </FormControl>
-                                </Grid>
-                                <Grid item xs={12} md={5}>
-                                    <FormControl fullWidth={true} required={true} size='medium' variant="outlined">
-                                        <InputLabel htmlFor="store_city" variant="outlined" className={classes.label} error={touched.store_city && Boolean(errors.store_city)}>Stadtteil und Kiez/Viertel</InputLabel>
-                                        <OutlinedInput
-                                            id="store_city"
-                                            name="store_city"
-                                            value={values.store_city}
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            error={touched.store_city && Boolean(errors.store_city)}
-                                            placeholder="München"
-                                        />
-                                    </FormControl>
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <FormControl fullWidth={true} required={true} size='medium' variant="outlined">
-                                        <InputLabel htmlFor="store_description" variant="outlined" className={classes.label} error={touched.store_description && Boolean(errors.store_description)}>Kurze Beschreibung des Laden</InputLabel>
-                                        <OutlinedInput
-                                            style={{ height: '125px' }}
-                                            id="store_description"
-                                            name="store_description"
-                                            value={values.store_description}
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            error={touched.store_description && Boolean(errors.store_description)}
-                                            placeholder="Beschreibe Deinen Shop"
-                                            multiline={true}
-                                        />
-                                    </FormControl>
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <Typography variant="h6">Inhaberkonto</Typography>
-                                </Grid>
-                                <Grid item xs={12} md={6}>
-                                    <FormControl fullWidth={true} required={true} size='medium' variant="outlined">
-                                        <InputLabel htmlFor="firstname" variant="outlined" className={classes.label} error={touched.firstname && Boolean(errors.firstname)}>Vorname</InputLabel>
-                                        <OutlinedInput
-                                            id="firstname"
-                                            name="firstname"
-                                            value={values.firstname}
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            error={touched.firstname && Boolean(errors.firstname)}
-                                            placeholder="Max Mustermann"
-                                        />
-                                    </FormControl>
+                <Grid item xs={12} md={6}>
+                  <CustomFormInput
+                    name="email"
+                    placeholder="max.mustermann@online.de"
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                  >
+                    E-Mail
+                  </CustomFormInput>
+                </Grid>
 
-                                </Grid>
+                <Grid item xs={12} md={6}>
+                  <CustomFormInput
+                    name="email_repeat"
+                    placeholder="max.mustermann@online.de"
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                  >
+                    E-Mail bestätigen
+                  </CustomFormInput>
+                </Grid>
 
-                                <Grid item xs={12} md={6}>
-                                    <FormControl fullWidth={true} required={true} size='medium' variant="outlined">
-                                        <InputLabel htmlFor="lastname" variant="outlined" className={classes.label} error={touched.lastname && Boolean(errors.lastname)}>Nachname</InputLabel>
-                                        <OutlinedInput
-                                            id="lastname"
-                                            name="lastname"
-                                            value={values.lastname}
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            error={touched.lastname && Boolean(errors.lastname)}
-                                            placeholder="Max Mustermann"
-                                        />
-                                    </FormControl>
-                                </Grid>
+                <Grid item xs={12} md={6}>
+                  <CustomFormInput
+                    name="password"
+                    placeholder="*******"
+                    type="password"
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                  >
+                    Passwort
+                  </CustomFormInput>
+                </Grid>
 
-                                <Grid item xs={12} md={6}>
-                                    <FormControl fullWidth={true} required={true} size='medium' variant="outlined">
-                                        <InputLabel htmlFor="email" variant="outlined" className={classes.label} error={touched.email && Boolean(errors.email)}>E-Mail</InputLabel>
-                                        <OutlinedInput
-                                            id="email"
-                                            type="email"
-                                            name="email"
-                                            value={values.email}
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            error={touched.email && Boolean(errors.email)}
-                                            placeholder="******"
-                                        />
-                                    </FormControl>
-                                </Grid>
-
-                                <Grid item xs={12} md={6}>
-                                    <FormControl fullWidth={true} required={true} size='medium' variant="outlined">
-                                        <InputLabel htmlFor="email_repeat" variant="outlined" className={classes.label} error={touched.email_repeat && Boolean(errors.email_repeat)}>E-Mail wiederholen</InputLabel>
-                                        <OutlinedInput
-                                            id="email_repeat"
-                                            type="email"
-                                            name="email_repeat"
-                                            value={values.email_repeat}
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            error={touched.email_repeat && Boolean(errors.email_repeat)}
-                                            placeholder="******"
-                                        />
-                                    </FormControl>
-                                </Grid>
-
-                                <Grid item xs={12} md={6}>
-                                    <FormControl fullWidth={true} required={true} size='medium' variant="outlined">
-                                        <InputLabel htmlFor="password" variant="outlined" className={classes.label} error={touched.password && Boolean(errors.password)}>Passwort</InputLabel>
-                                        <OutlinedInput
-                                            id="password"
-                                            type="password"
-                                            name="password"
-                                            value={values.password}
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            error={touched.password && Boolean(errors.password)}
-                                            placeholder="******"
-                                        />
-                                    </FormControl>
-                                </Grid>
-
-                                <Grid item xs={12} md={6}>
-                                    <FormControl fullWidth={true} required={true} size='medium' variant="outlined">
-                                        <InputLabel htmlFor="password_repeat" variant="outlined" className={classes.label} error={touched.password_repeat && Boolean(errors.password_repeat)}>Passwort wiederholen</InputLabel>
-                                        <OutlinedInput
-                                            id="password_repeat"
-                                            type="password"
-                                            name="password_repeat"
-                                            value={values.password_repeat}
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            error={touched.password_repeat && Boolean(errors.password_repeat)}
-                                            placeholder="******"
-                                        />
-                                    </FormControl>
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <Typography variant="h6">Kontaktmöglichkeiten</Typography>
-                                </Grid>
-                                <Grid item xs={12} md={6}>
-                                    <FormControl fullWidth={true} required={true} size='medium' variant="outlined">
-                                        <InputLabel htmlFor="store_email" variant="outlined" className={classes.label} error={touched.store_email && Boolean(errors.store_email)}>E-Mail</InputLabel>
-                                        <OutlinedInput
-                                            id="store_email"
-                                            type="email"
-                                            name="store_email"
-                                            value={values.store_email}
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            error={touched.store_email && Boolean(errors.store_email)}
-                                            placeholder="max@mustermann.de"
-                                        />
-                                    </FormControl>
-                                </Grid>
-                                <Grid item xs={12} md={6}>
-                                    <FormControl fullWidth={true} required={false} size='medium' variant="outlined">
-                                        <InputLabel htmlFor="store_twitter" variant="outlined" className={classes.label} error={touched.store_twitter && Boolean(errors.store_twitter)}>Twitter</InputLabel>
-                                        <OutlinedInput
-                                            id="store_twitter"
-                                            name="store_twitter"
-                                            value={values.store_twitter}
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            error={touched.store_twitter && Boolean(errors.store_twitter)}
-                                            placeholder="https://"
-                                        />
-                                    </FormControl>
-                                </Grid>
-                                <Grid item xs={12} md={6}>
-                                    <FormControl fullWidth={true} required={false} size='medium' variant="outlined">
-                                        <InputLabel htmlFor="store_facebook" variant="outlined" className={classes.label} error={touched.store_facebook && Boolean(errors.store_facebook)}>Facebook</InputLabel>
-                                        <OutlinedInput
-                                            id="store_facebook"
-                                            name="store_facebook"
-                                            value={values.store_facebook}
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            error={touched.store_facebook && Boolean(errors.facstore_facebookebook)}
-                                            placeholder="https://"
-                                        />
-                                    </FormControl>
-                                </Grid>
-                                <Grid item xs={12} md={6}>
-                                    <FormControl fullWidth={true} required={false} size='medium' variant="outlined">
-                                        <InputLabel htmlFor="store_instagram" variant="outlined" className={classes.label} error={touched.store_instagram && Boolean(errors.store_instagram)}>Instagram</InputLabel>
-                                        <OutlinedInput
-                                            id="store_instagram"
-                                            name="store_instagram"
-                                            value={values.store_instagram}
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            error={touched.store_instagram && Boolean(errors.store_instagram)}
-                                            placeholder="https://"
-                                        />
-                                    </FormControl>
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <Typography variant="h6">Medien</Typography>
-                                    <Typography variant="body2"><strong>Teaser</strong></Typography>
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <FormControl fullWidth={true} required={false} size='medium' variant="outlined">
-                                        <OutlinedInput
-                                            type="file"
-                                            id="store_image"
-                                            name="store_image"
-                                            value={values.store_image}
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            error={touched.store_image && Boolean(errors.store_image)}
-                                        />
-                                    </FormControl>
-                                </Grid>
-                                <Grid item xs={6} md={9}></Grid>
-                                <Grid item xs={6} md={3}>
-                                    <Button type="submit" fullWidth={true} disableFocusRipple={true} disableRipple={true} disabled={isSubmitting || !isValid}>
-                                        Registrieren
-                        </Button>
-                                </Grid>
-                            </Grid>
-                        </form>
-                    );
-                }}
-            </Formik>
-        </Container>
-    );
+                <Grid item xs={12} md={6}>
+                  <CustomFormInput
+                    name="password_repeat"
+                    placeholder="*******"
+                    type="password"
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                  >
+                    Passwort bestätigen
+                  </CustomFormInput>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography variant="h3" gutterBottom={true}>
+                    Wie kann man dich erreichen?
+                  </Typography>
+                  <Typography variant="body1" gutterBottom={true}>
+                    Erreiche noch mehr Leute, indem Du hier Social Media Kanäle
+                    deines Geschäftes hinzufügst.
+                    <br />
+                  </Typography>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <CustomFormInput
+                    name="store_phone"
+                    placeholder="+49"
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                  >
+                    Telefonnummer
+                  </CustomFormInput>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <CustomFormInput
+                    name="store_email"
+                    placeholder="max.mustermann@online.de"
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                  >
+                    E-Mail
+                  </CustomFormInput>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <CustomFormInput
+                    name="store_whatsapp"
+                    placeholder="+49"
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                  >
+                    Whatsapp
+                  </CustomFormInput>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <CustomFormInput
+                    name="store_website"
+                    placeholder="https://"
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                  >
+                    Website
+                  </CustomFormInput>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <CustomFormInput
+                    name="store_twitter"
+                    placeholder="https://"
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                  >
+                    Twitter
+                  </CustomFormInput>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <CustomFormInput
+                    name="store_facebook"
+                    placeholder="https://"
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                  >
+                    Facebook
+                  </CustomFormInput>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <CustomFormInput
+                    name="store_instagram"
+                    placeholder="https://"
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                  >
+                    Instagram
+                  </CustomFormInput>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <CustomFormInput
+                    name="store_facetime"
+                    placeholder="+49"
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                  >
+                    Facetime
+                  </CustomFormInput>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography variant="h3" gutterBottom={true}>
+                    Fotos und Videos
+                  </Typography>
+                  <Typography variant="body1" gutterBottom={true}>
+                    Lorem ipsum ...
+                    <br />
+                  </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography variant="h4" gutterBottom={true}>
+                    Nochmal zu dir...
+                  </Typography>
+                  <Typography variant="body2" gutterBottom={true}>
+                    Zeig dich auf deinem Profil doch von deiner besten Seite.
+                    Hier kannst du ein Foto von dir hochladen, damit deine
+                    Kunden auch wissen, mit wem Sie es zu tun haben. Ansonsten
+                    kannst Du hier auch das Interieur deines Ladens hochladen.
+                    <br />
+                  </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                  <CustomFormInput
+                    name="store_ownerimage"
+                    placeholder=""
+                    type="file"
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                  >
+                    Dein Foto
+                  </CustomFormInput>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography variant="h4" gutterBottom={true}>
+                    Und jetzt dein Laden...
+                  </Typography>
+                  <Typography variant="body2" gutterBottom={true}>
+                    Die Leute in deiner Nachbarschaft kennen deinen Laden - und
+                    besonders von außen. Lad hier ein Foto von deiner Ladenfront
+                    hoch um den Wiedererkennungswert zu erhöhen.
+                    <br />
+                  </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                  <CustomFormInput
+                    name="store_image"
+                    placeholder=""
+                    type="file"
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                  >
+                    Foto des Ladens (vorzugsweise die Ladenfront)
+                  </CustomFormInput>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography variant="h3" gutterBottom={true}>
+                    Produkte
+                  </Typography>
+                  <Typography variant="body1" gutterBottom={true}>
+                    tbd ...
+                    <br />
+                  </Typography>
+                </Grid>
+                <Grid item xs={6} md={9}></Grid>
+                <Grid item xs={6} md={3}>
+                  <CustomButton
+                    type="submit"
+                    fullWidth={true}
+                    disableFocusRipple={true}
+                    disableRipple={true}
+                    disabled={isSubmitting || !isValid}
+                  >
+                    Registrieren
+                  </CustomButton>
+                </Grid>
+              </Grid>
+            </form>
+          );
+        }}
+      </Formik>
+    </Container>
+  );
 };
