@@ -1,15 +1,22 @@
 import { MenuItem, Typography } from "@material-ui/core";
 import { Container, Grid, Button } from "@material-ui/core";
-import { Formik } from "formik";
+import { Formik, FieldArray } from "formik";
 import RegisterInitialValues from "./register.init";
 import RegisterValidationSchema from "./register.validation";
 import AuthService from "../../../services/auth";
 import CustomFormInput from "../../molecules/CustomFormInput";
 import CustomFormSelect from "../../molecules/CustomFormSelect";
-import { CustomButton } from "../../atoms/Button";
+import { CustomButton, CustomButtonHighlight } from "../../atoms/Button";
 
 export const RegisterForm = (props) => {
   const AuthServiceInstance = AuthService.getInstance();
+
+  const previewHandler = (e, name, formikCb) => {
+    console.log(e);
+    const url = URL.createObjectURL(e.target.files[0]);
+    document.getElementById(name).setAttribute("src", url);
+    formikCb(e);
+  };
 
   return (
     <Container>
@@ -84,10 +91,10 @@ export const RegisterForm = (props) => {
                     PLZ
                   </CustomFormInput>
                 </Grid>
-                <Grid item xs={12} md={5}>
+                <Grid item xs={12} md={7}>
                   <CustomFormInput
-                    name="store_address"
-                    placeholder="Max-Muster-Straße 11, 54872 Musterhausen"
+                    name="store_street"
+                    placeholder="Max-Muster-Straße"
                     values={values}
                     errors={errors}
                     touched={touched}
@@ -97,7 +104,20 @@ export const RegisterForm = (props) => {
                     Wo ist dein Laden?
                   </CustomFormInput>
                 </Grid>
-                <Grid item xs={12} md={5}>
+                <Grid item xs={12} md={3}>
+                  <CustomFormInput
+                    name="store_streetnr"
+                    placeholder="11"
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                  >
+                    Haus Nr ?
+                  </CustomFormInput>
+                </Grid>
+                <Grid item xs={12}>
                   <CustomFormInput
                     name="store_city"
                     placeholder="München"
@@ -392,9 +412,102 @@ export const RegisterForm = (props) => {
                     <br />
                   </Typography>
                 </Grid>
+
+                <FieldArray
+                  name="products"
+                  render={(arrayHelpers) => (
+                    <>
+                      {values.products.map((product, index) => (
+                        <Grid
+                          container
+                          item
+                          spacing={3}
+                          xs={12}
+                          key={index}
+                          alignContent="space-around"
+                        >
+                          <Grid item xs={7} sm={10} md={11}>
+                            <Typography variant="h4" gutterBottom={true}>
+                              Produkt #{index + 1}
+                            </Typography>
+                          </Grid>
+                          <Grid item xs={5} sm={2} md={1}>
+                            <CustomButtonHighlight
+                              onClick={() => arrayHelpers.remove(index)}
+                              fullWidth={true}
+                            >
+                              x
+                            </CustomButtonHighlight>
+                          </Grid>
+                          <Grid item xs={4}>
+                            <CustomFormInput
+                              name={`products[${index}].image`}
+                              placeholder=""
+                              type="file"
+                              values={values}
+                              errors={errors}
+                              touched={touched}
+                              handleChange={(e: Event) => {
+                                previewHandler(
+                                  e,
+                                  `products[${index}].image.preview`,
+                                  handleChange
+                                );
+                              }}
+                              handleBlur={handleBlur}
+                            >
+                              Foto
+                            </CustomFormInput>
+                          </Grid>
+                          <Grid item xs={8}>
+                            <img id={`products[${index}].image.preview`} />
+                          </Grid>
+                          <Grid item xs={12} md={8}>
+                            <CustomFormInput
+                              name={`products[${index}].name`}
+                              placeholder="Handtuch"
+                              values={values}
+                              errors={errors}
+                              touched={touched}
+                              handleChange={handleChange}
+                              handleBlur={handleBlur}
+                            >
+                              Name
+                            </CustomFormInput>
+                          </Grid>
+                          <Grid item xs={12} md={4}>
+                            <CustomFormInput
+                              name={`products[${index}].price`}
+                              placeholder="9.99"
+                              values={values}
+                              errors={errors}
+                              touched={touched}
+                              handleChange={handleChange}
+                              handleBlur={handleBlur}
+                            >
+                              Preis
+                            </CustomFormInput>
+                          </Grid>
+                        </Grid>
+                      ))}
+
+                      <Grid item xs={12}>
+                        <CustomButtonHighlight
+                          type="button"
+                          onClick={() =>
+                            arrayHelpers.push({ name: "", age: "" })
+                          }
+                        >
+                          Produkt hinzufügen
+                        </CustomButtonHighlight>
+                      </Grid>
+                    </>
+                  )}
+                />
+
                 <Grid item xs={6} md={9}></Grid>
                 <Grid item xs={6} md={3}>
-                  <CustomButton
+                  <CustomButtonHighlight
                     type="submit"
                     fullWidth={true}
                     disableFocusRipple={true}
@@ -402,7 +515,7 @@ export const RegisterForm = (props) => {
                     disabled={isSubmitting || !isValid}
                   >
                     Registrieren
-                  </CustomButton>
+                  </CustomButtonHighlight>
                 </Grid>
               </Grid>
             </form>

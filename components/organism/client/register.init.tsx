@@ -1,7 +1,8 @@
 export default {
   store_name: "",
   store_zipcode: "",
-  store_address: "",
+  store_street: "",
+  store_streetnr: "",
   store_city: "",
   store_description: "",
   store_email: "",
@@ -21,4 +22,5 @@ export default {
   email_repeat: "",
   password: "",
   password_repeat: "",
+  products: [],
 };

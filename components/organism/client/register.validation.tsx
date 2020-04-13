@@ -3,7 +3,8 @@ import * as Yup from "yup";
 export default Yup.object({
   store_name: Yup.string().required(),
   store_zipcode: Yup.number().min(2).required(),
-  store_address: Yup.string().min(5).required(),
+  store_street: Yup.string().min(5).required(),
+  store_streetnr: Yup.string().min(5).required(),
   store_city: Yup.string().required(),
   store_description: Yup.string().required(),
   store_email: Yup.string().email().required(),
