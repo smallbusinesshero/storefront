@@ -9,8 +9,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default (props) => {
-  const classes = useStyles();
-
   const {
     values,
     errors,
@@ -23,6 +21,8 @@ export default (props) => {
     type,
     multiline,
   } = props;
+
+  const classes = useStyles();
 
   return (
     <FormControl fullWidth={true} required={true} variant="outlined">
@@ -46,6 +46,9 @@ export default (props) => {
         autoFocus={true}
         placeholder={placeholder}
         multiline={multiline || false}
+        rows={multiline ? 5 : 1}
+        rowsMax={multiline ? 5 : 1}
+        style={{ height: multiline ? "150px" : "auto" }}
       />
     </FormControl>
   );

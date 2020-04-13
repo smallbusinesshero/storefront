@@ -14,7 +14,9 @@ export const RegisterForm = () => {
   const previewHandler = (e, name, formikCb) => {
     console.log(e);
     const url = URL.createObjectURL(e.target.files[0]);
-    document.getElementById(name).setAttribute("src", url);
+    const el = document.getElementById(name);
+    el.setAttribute("src", url);
+    el.style.display = "block";
     formikCb(e);
   };
 
@@ -24,6 +26,7 @@ export const RegisterForm = () => {
         initialValues={RegisterInitialValues}
         validationSchema={RegisterValidationSchema}
         onSubmit={AuthServiceInstance.register}
+        validateOnChange={false}
       >
         {(props) => {
           const {
@@ -439,7 +442,33 @@ export const RegisterForm = () => {
                               x
                             </CustomButtonHighlight>
                           </Grid>
-                          <Grid item xs={4}>
+                          <Grid item xs={12} md={6}>
+                            <CustomFormInput
+                              name={`products[${index}].name`}
+                              placeholder="Handtuch"
+                              values={values}
+                              errors={errors}
+                              touched={touched}
+                              handleChange={handleChange}
+                              handleBlur={handleBlur}
+                            >
+                              Name
+                            </CustomFormInput>
+                          </Grid>
+                          <Grid item xs={12} md={2}>
+                            <CustomFormInput
+                              name={`products[${index}].price`}
+                              placeholder="9.99"
+                              values={values}
+                              errors={errors}
+                              touched={touched}
+                              handleChange={handleChange}
+                              handleBlur={handleBlur}
+                            >
+                              Preis
+                            </CustomFormInput>
+                          </Grid>
+                          <Grid item xs={12} md={4}>
                             <CustomFormInput
                               name={`products[${index}].image`}
                               placeholder=""
@@ -459,34 +488,32 @@ export const RegisterForm = () => {
                               Foto
                             </CustomFormInput>
                           </Grid>
-                          <Grid item xs={8}>
-                            <img id={`products[${index}].image.preview`} />
-                          </Grid>
                           <Grid item xs={12} md={8}>
                             <CustomFormInput
-                              name={`products[${index}].name`}
-                              placeholder="Handtuch"
+                              name={`products[${index}].description`}
+                              placeholder="..."
                               values={values}
                               errors={errors}
                               touched={touched}
                               handleChange={handleChange}
                               handleBlur={handleBlur}
+                              multiline={true}
                             >
-                              Name
+                              Beschreibung
                             </CustomFormInput>
                           </Grid>
                           <Grid item xs={12} md={4}>
-                            <CustomFormInput
-                              name={`products[${index}].price`}
-                              placeholder="9.99"
-                              values={values}
-                              errors={errors}
-                              touched={touched}
-                              handleChange={handleChange}
-                              handleBlur={handleBlur}
-                            >
-                              Preis
-                            </CustomFormInput>
+                            <img
+                              id={`products[${index}].image.preview`}
+                              style={{
+                                border: "#CCC 1px solid",
+                                borderRadius: 4,
+                                padding: 15,
+                                width: "100%",
+                                height: 150,
+                                display: "none",
+                              }}
+                            />
                           </Grid>
                         </Grid>
                       ))}

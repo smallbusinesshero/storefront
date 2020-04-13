@@ -1,28 +1,27 @@
-import React from 'react';
-import { Container, Grid, Paper } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import { RegisterForm } from '../../components/organism/client/register.form';
+import React from "react";
+import { Container, Grid, Paper } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import { RegisterForm } from "../../components/organism/client/register.form";
 
-const useStyles = makeStyles(theme => ({
-    content: {
-        width: '100%',
-        padding: '10px'
-    },
+const useStyles = makeStyles(() => ({
+  content: {
+    width: "100%",
+    padding: "10px",
+  },
 }));
 
-const ClientRegistration = props => {
+const ClientRegistration = (props) => {
+  const classes = useStyles();
 
-    const classes = useStyles();
-
-    return (
-        <Container>
-            <Grid container item xs={12}>
-                <Paper className={classes.content}>
-                    <RegisterForm {...props} />
-                </Paper>
-            </Grid>
-        </Container>
-    );
+  return (
+    <Container>
+      <Grid container item xs={12}>
+        <Paper className={classes.content}>
+          <RegisterForm {...props} />
+        </Paper>
+      </Grid>
+    </Container>
+  );
 };
 
 ClientRegistration.propTypes = {};
