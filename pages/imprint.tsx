@@ -21,8 +21,8 @@ const DataPrivacy = props => {
                 <br />
                 <Typography variant="body1" display="block"><b>Small Business Hero</b>
                 <p>Diese Seite/Webapplikation wird betrieben und herausgegeben von:</p>
-                Mehmet Arziman<br></br>
-                Grünewalsdtraße 75<br></br>
+                Small Business Hero GbR<br></br>
+                Grünewaldstraße 75<br></br>
                 70469 Stuttgart<br></br>
                 +(49)0711 184 29 271<br></br>
 
