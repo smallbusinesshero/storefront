@@ -19,6 +19,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Container from "@material-ui/core/Container";
 import Link from "../components/atoms/Link";
 import Box from "@material-ui/core/Box";
+import Footer from "../components/organism/Footer";
 import { initializeAnalytics } from "../services/analytics";
 
 import styled, { keyframes } from "styled-components";
@@ -29,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: "100vh",
     display: "flex",
-    flexGrow: 1,
+    flexDirection: "column",
   },
   header: {
     display: "flex",
@@ -67,7 +68,11 @@ const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
   },
   content: {
-    flexGrow: 1,
+    flex: "1 0 auto",
+    minHeight: "auto",
+  },
+  footer: {
+    height: "50px",
   },
   appname: {
     color: "black",
@@ -170,61 +175,66 @@ const SmallBusinessHeroApp = ({ Component, pageProps }) => {
       </Head>
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-
         <div className={classes.root}>
-          <AppBar
-            color={"transparent"}
-            position="fixed"
-            className={classes.appBar}
-          >
-            <Toolbar className={classes.toolbar} disableGutters={true}>
-              <a
-                href="https://www.youtube.com/watch?v=umg0Hjc02SM"
-                target="_blank"
-                rel="noopener"
-                className={classes.wevsvirus}
-              >
-                #WeVsVirus <span className={classes.wevsvirusHeart}>❤</span>
-              </a>
-              <Link href="/" className={classes.logo}>
-                <div style={{ display: "flex", alignItems: "center" }}>
-                  {Boolean(startAnimation) == true && (
-                    <AnimatedLogo>
-                      <span className={classes.logoSubtitle}>
-                        SBH.{" "}
-                        <Box
-                          component="span"
-                          display={{ xs: "none", sm: "inline" }}
-                          className={classes.logoSubtitleHighlight}
-                        >
-                          small business hero
-                        </Box>
-                      </span>
-                    </AnimatedLogo>
-                  )}
-                </div>
-                {/*  Placeholder text for logo*/}
-              </Link>
-              <CustomButtonHighlight
-                onClick={() => {
-                  window.open(
-                    "https://docs.google.com/forms/d/1qVNaUAvrFfpXZvRB3ZKv-1RelD6GTnbejSulJMfqUwg/viewform?edit_requested=true",
-                    "_blank"
-                  );
-                }}
-                className={classes.register}
-              >
-                Registrieren
-              </CustomButtonHighlight>
-            </Toolbar>
-          </AppBar>
-          <CssBaseline />
-          <main className={classes.content}>
-            <div className={classes.toolbar} />
-            <Container className={classes.container}>
-              <Component {...pageProps} />
-            </Container>
-          </main>
+          <div className={classes.content}>
+            <AppBar
+              color={"transparent"}
+              position="fixed"
+              className={classes.appBar}
+            >
+              <Toolbar className={classes.toolbar} disableGutters={true}>
+                <a
+                  href="https://www.youtube.com/watch?v=umg0Hjc02SM"
+                  target="_blank"
+                  rel="noopener"
+                  className={classes.wevsvirus}
+                >
+                  #WeVsVirus <span className={classes.wevsvirusHeart}>❤</span>
+                </a>
+                <Link href="/" className={classes.logo}>
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    {Boolean(startAnimation) == true && (
+                      <AnimatedLogo>
+                        <span className={classes.logoSubtitle}>
+                          SBH.{" "}
+                          <Box
+                            component="span"
+                            display={{ xs: "none", sm: "inline" }}
+                            className={classes.logoSubtitleHighlight}
+                          >
+                            small business hero
+                          </Box>
+                        </span>
+                      </AnimatedLogo>
+                    )}
+                  </div>
+                  {/*  Placeholder text for logo*/}
+                </Link>
+                <CustomButtonHighlight
+                  onClick={() => {
+                    window.open(
+                      "https://docs.google.com/forms/d/1qVNaUAvrFfpXZvRB3ZKv-1RelD6GTnbejSulJMfqUwg/viewform?edit_requested=true",
+                      "_blank"
+                    );
+                  }}
+                  className={classes.register}
+                >
+                  Registrieren
+                </CustomButtonHighlight>
+              </Toolbar>
+            </AppBar>
+            <CssBaseline />
+            <main className={classes.content}>
+              <div className={classes.toolbar} />
+              <Container className={classes.container}>
+                <Component {...pageProps} />
+              </Container>
+            </main>
+          </div>
+
+          <footer className={classes.footer}>
+            <Footer />
+          </footer>
         </div>
       </ThemeProvider>
     </React.Fragment>
