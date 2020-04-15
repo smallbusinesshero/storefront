@@ -7,11 +7,10 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexShrink: 0,
     height: "50px",
-    background: "white",
   },
   content: {
     lineHeight: "50px",
-    textAlign: "right",
+    textAlign: "center",
   },
 }));
 

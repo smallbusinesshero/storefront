@@ -16,7 +16,7 @@ const DataPrivacy = (props) => {
     <Container>
       <Grid container item xs={12}>
         <Paper className={classes.content}>
-          <Typography variant="h6" display="block">
+          <Typography variant="h1" display="block">
             Impressum
           </Typography>
           <br />
@@ -28,10 +28,16 @@ const DataPrivacy = (props) => {
             Small Business Hero GbR<br></br>
             Grünewaldstraße 75<br></br>
             70469 Stuttgart<br></br>
-            +(49)0711 184 29 271<br></br>
+            +(49) 0711 184 29 271<br></br>
             <p>
               Kontakt:<br></br>
-              info@smallbusinesshero.de
+              <a
+                href="mailto:info@smallbusinesshero.de"
+                target="_blank"
+                rel="noopener"
+              >
+                info@smallbusinesshero.de
+              </a>
             </p>
           </Typography>
         </Paper>

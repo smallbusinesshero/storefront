@@ -16,7 +16,7 @@ const DataPrivacy = (props) => {
     <Container>
       <Grid container item xs={12}>
         <Paper className={classes.content}>
-          <Typography variant="h6" display="block">
+          <Typography variant="h1" display="block">
             Datenschutzerklärung
           </Typography>
           <br />
