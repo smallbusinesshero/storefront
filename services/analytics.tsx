@@ -19,7 +19,7 @@ export function analyticsSearchLocation(placeID: string) {
   ReactGA.event({
     category: "user-input",
     action: "search-location",
-    label: placeID
+    label: placeID,
   });
 }
 
@@ -28,6 +28,6 @@ export function analyticsSocialMediaRef(eventType: string, storeId: string) {
   ReactGA.event({
     category: "social-media-ref",
     action: eventType,
-    label: storeId
+    label: storeId,
   });
 }
