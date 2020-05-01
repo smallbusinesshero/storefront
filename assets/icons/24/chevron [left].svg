@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>icon/24/chevron [left]</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/24/chevron-[left]" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="icon/24/chevron-[right]" transform="translate(12.000000, 12.000000) scale(-1, 1) translate(-12.000000, -12.000000) " stroke="#292925">
+            <g id="chevron" transform="translate(9.000000, 6.000000)">
+                <polyline id="Path" points="0 12 6 6 0 0"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

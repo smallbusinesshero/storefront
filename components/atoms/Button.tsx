@@ -13,9 +13,11 @@ export const CustomButton = styled(Button)`
 `;
 
 export const CustomButtonHighlight = styled(CustomButton)`
-  background-color: #ffd662;
-  color: #2a2925;
+  font-family: "Montserrat";
+  background-color: #19ae9d;
+  color: white;
+  font-weight: 600;
   &:hover {
-    background-color: #ffd662;
+    background-color: #006174;
   }
 `;

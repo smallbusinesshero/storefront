@@ -15,10 +15,8 @@ const ClientRegistration = (props) => {
 
   return (
     <Container>
-      <Grid container item xs={12}>
-        <Paper className={classes.content}>
-          <RegisterForm {...props} />
-        </Paper>
+      <Grid container item>
+        <RegisterForm {...props} />
       </Grid>
     </Container>
   );

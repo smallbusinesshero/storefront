@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>icon/48/arrow/right/dark</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/48/arrow/right/dark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="noun_Arrow_1920819" transform="translate(7.000000, 12.000000)" fill="#2B2B2B">
+            <path d="M33,11.1720655 L22,0.548589342 C21.3571569,-2.01616501e-13 20,-1.11799459e-13 19.7857143,0.548589342 C19.0357143,1.2800418 19.25,2.46429815 20,3.16091954 L28,11 L1.89285714,11 C0.857142857,11 0,11.0764194 0,12.4 C0,13.7235806 0.857142857,14 1.89285714,14 L28,14 L20,21.8303727 C19.25,22.5618251 19.0357143,23.7460815 19.7857143,24.4427029 C20.7295198,25 21.6071429,24.8258447 22,24.4427029 C29.1149977,17.5759218 32.7816643,14.0231528 33,13.7843957 C33.3275035,13.4262601 33.5,13.1262694 33.5,12.460815 C33.5,11.7953607 33.3926975,11.6768689 33,11.1720655 Z" id="Path"></path>
+        </g>
+    </g>
+</svg>

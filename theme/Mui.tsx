@@ -1,4 +1,5 @@
 import { createMuiTheme } from "@material-ui/core/styles";
+import { red } from "@material-ui/core/colors";
 
 const baseTextColor = "#2a2a2a";
 
@@ -15,15 +16,18 @@ const headlineBase = {
 const theme = createMuiTheme({
   palette: {
     common: {
-      black: "#2a2a2a",
+      black: "#2B2B2B",
       white: "#EEE",
     },
     text: {
       primary: baseTextColor,
-      secondary: "#2a2a2a",
+      secondary: "#2B2B2B",
     },
     primary: {
-      main: "#2a2a2a",
+      main: "#2B2B2B",
+    },
+    secondary: {
+      main: "#19ae9d",
     },
     action: {
       active: "rgba(0, 123, 61, 0.54)",
@@ -41,27 +45,27 @@ const theme = createMuiTheme({
   },
   typography: {
     h1: {
-      fontSize: 24,
+      fontSize: 60,
       ...headlineBase,
     },
     h2: {
-      fontSize: 20,
+      fontSize: 48,
       ...headlineBase,
     },
     h3: {
-      fontSize: 18,
+      fontSize: 36,
       ...headlineBase,
     },
     h4: {
-      fontSize: 14,
+      fontSize: 24,
       ...headlineBase,
     },
     h5: {
-      fontSize: 12,
+      fontSize: 18,
       ...headlineBase,
     },
     h6: {
-      fontSize: 10,
+      fontSize: 16,
       ...headlineBase,
     },
     subtitle1: {
@@ -72,9 +76,11 @@ const theme = createMuiTheme({
     },
     body1: {
       ...bodyBase,
+      fontSize: 24,
     },
     body2: {
       ...bodyBase,
+      fontSize: 16,
     },
     button: {
       ...bodyBase,
@@ -92,6 +98,48 @@ const theme = createMuiTheme({
         "&:-webkit-autofill": {
           transitionDelay: "9999s",
           transitionProperty: "background-color, color",
+        },
+        fontSize: 16,
+      },
+    },
+    MuiInputLabel: {
+      root: {
+        fontSize: 14,
+      },
+    },
+    MuiFormControlLabel: {
+      label: {
+        fontSize: 14,
+      },
+    },
+    MuiFormLabel: {
+      asterisk: {
+        color: "red",
+      },
+    },
+    MuiSelect: {
+      root: {
+        fontSize: 14,
+      },
+      select: {
+        fontSize: 14,
+      },
+      selectMenu: {
+        fontSize: 14,
+      },
+    },
+    MuiMenuItem: {
+      root: {
+        fontSize: 14,
+      },
+    },
+    MuiLink: {
+      root: {
+        color: "#19ae9d",
+        fontWeight: 600,
+        "&:hover": {
+          color: "#006174",
+          cursor: "pointer",
         },
       },
     },

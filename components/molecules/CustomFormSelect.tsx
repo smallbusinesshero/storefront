@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   label: {
-    backgroundColor: "white",
+    backgroundColor: "#fafafa",
     padding: "1px 20px",
   },
 }));
@@ -23,10 +23,11 @@ export default (props) => {
     type,
     multiline,
     label,
+    required = false,
   } = props;
 
   return (
-    <FormControl fullWidth={true} required={true} variant="outlined">
+    <FormControl fullWidth={true} required={required} variant="outlined">
       <InputLabel
         htmlFor={name}
         variant="outlined"

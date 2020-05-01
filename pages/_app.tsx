@@ -207,10 +207,7 @@ const SmallBusinessHeroApp = ({ Component, pageProps }) => {
               </Link>
               <CustomButtonHighlight
                 onClick={() => {
-                  window.open(
-                    "https://docs.google.com/forms/d/1qVNaUAvrFfpXZvRB3ZKv-1RelD6GTnbejSulJMfqUwg/viewform?edit_requested=true",
-                    "_blank"
-                  );
+                  window.open("/client/register");
                 }}
                 className={classes.register}
               >
