@@ -8,8 +8,10 @@ import {
   Checkbox,
   SvgIcon,
   Button,
+  IconButton,
 } from "@material-ui/core";
 import TrashIcon from "../../../assets/icons/24/trashcan.svg";
+import InfoIcon from "../../../assets/icons/24/info.svg";
 import { Formik, FieldArray } from "formik";
 import RegisterInitialValues from "./register.init";
 import RegisterValidationSchema from "./register.validation";
@@ -18,6 +20,9 @@ import CustomFormInput from "../../molecules/CustomFormInput";
 import CustomFormSelect from "../../molecules/CustomFormSelect";
 import { CustomButtonHighlight } from "../../atoms/Button";
 import { makeStyles } from "@material-ui/core";
+import DialogWrapper from "../../molecules/Dialog";
+import AboutYouDialog from "./register/dialogs/AboutYou";
+import YourBusinessDialog from "./register/dialogs/YourBusiness";
 
 const useStyles = makeStyles(() => ({
   registerIntroduction: {
@@ -70,6 +75,11 @@ export const RegisterForm = () => {
   const AuthServiceInstance = AuthService.getInstance();
 
   const classes = useStyles();
+
+  const [openAboutYouDialog, setOpenAboutYouDialog] = React.useState(false);
+  const [openYourBusinessDialog, setOpenYourBusinessDialog] = React.useState(
+    false
+  );
 
   const previewHandler = (e, name, formikCb) => {
     console.log(e);
@@ -747,6 +757,14 @@ export const RegisterForm = () => {
                 <Grid item xs={12} md={6}>
                   <Typography variant="h3" gutterBottom={true}>
                     Nochmal zu dir...
+                    <IconButton
+                      size="medium"
+                      onClick={() => setOpenAboutYouDialog(true)}
+                    >
+                      <SvgIcon>
+                        <InfoIcon />
+                      </SvgIcon>
+                    </IconButton>
                   </Typography>
                   <Typography variant="body2" gutterBottom={true}>
                     Zeig dich auf deinem Profil doch von deiner besten Seite.
@@ -773,6 +791,14 @@ export const RegisterForm = () => {
                 <Grid item xs={12} md={6}>
                   <Typography variant="h3" gutterBottom={true}>
                     Und jetzt dein Laden...
+                    <IconButton
+                      size="medium"
+                      onClick={() => setOpenYourBusinessDialog(true)}
+                    >
+                      <SvgIcon>
+                        <InfoIcon />
+                      </SvgIcon>
+                    </IconButton>
                   </Typography>
                   <Typography variant="body2" gutterBottom={true}>
                     Die Leute in deiner Nachbarschaft kennen deinen Laden - und
@@ -979,6 +1005,20 @@ export const RegisterForm = () => {
                   </CustomButtonHighlight>
                 </Grid>
               </Grid>
+              <DialogWrapper
+                open={openAboutYouDialog}
+                title="&nbsp;"
+                stateHandler={setOpenAboutYouDialog}
+              >
+                <AboutYouDialog />
+              </DialogWrapper>
+              <DialogWrapper
+                open={openYourBusinessDialog}
+                title="&nbsp;"
+                stateHandler={setOpenYourBusinessDialog}
+              >
+                <YourBusinessDialog />
+              </DialogWrapper>
             </form>
           );
         }}
