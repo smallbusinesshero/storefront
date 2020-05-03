@@ -23,37 +23,38 @@ import { makeStyles } from "@material-ui/core";
 import DialogWrapper from "../../../molecules/Dialog";
 import AboutYouDialog from "./dialogs/AboutYou";
 import YourBusinessDialog from "./dialogs/YourBusiness";
+import FormikErrorFocus from "formik-error-focus";
 
 const useStyles = makeStyles(() => ({
   registerIntroduction: {
-    marginBottom: 50,
+    marginBottom: 56,
   },
   registerContainer: {
-    marginBottom: 50,
+    marginBottom: 56,
   },
   openingdeliveryIntroduction: {
-    marginBottom: 50,
+    marginBottom: 44,
   },
   openingdeliveryContainer: {
-    marginBottom: 50,
+    marginBottom: 100,
   },
   contactIntroduction: {
-    marginBottom: 50,
+    marginBottom: 56,
   },
   contactContainer: {
-    marginBottom: 50,
+    marginBottom: 100,
   },
   picturesIntroduction: {
-    marginBottom: 50,
+    marginBottom: 56,
   },
   picturesContainer: {
-    marginBottom: 50,
+    marginBottom: 100,
   },
   productsIntroduction: {
-    marginBottom: 50,
+    marginBottom: 56,
   },
   productsContainer: {
-    marginBottom: 50,
+    marginBottom: 56,
   },
   productsImagePreview: {
     borderColor: "#CCC",
@@ -191,7 +192,7 @@ export const RegisterForm = () => {
                     handleBlur={handleBlur}
                     required={true}
                   >
-                    Hausnummer
+                    Haus Nr.
                   </CustomFormInput>
                 </Grid>
 
@@ -975,6 +976,7 @@ export const RegisterForm = () => {
                       <Grid item xs={12} md={4}>
                         <Button
                           variant="contained"
+                          color="primary"
                           disableElevation={true}
                           onClick={() =>
                             arrayHelpers.push({
@@ -994,15 +996,24 @@ export const RegisterForm = () => {
 
                 <Grid item xs={6} md={9}></Grid>
                 <Grid item xs={6} md={3}>
-                  <CustomButtonHighlight
+                  <Button
                     type="submit"
+                    variant="contained"
+                    color="primary"
                     fullWidth={true}
                     disableFocusRipple={true}
                     disableRipple={true}
-                    disabled={isSubmitting || !isValid}
+                    disabled={isSubmitting}
                   >
-                    Registrieren
-                  </CustomButtonHighlight>
+                    Jetzt anmelden
+                  </Button>
+                  <FormikErrorFocus
+                    offset={-100}
+                    align={"top"}
+                    focusDelay={100}
+                    ease={"linear"}
+                    duration={500}
+                  />
                 </Grid>
               </Grid>
               <DialogWrapper
