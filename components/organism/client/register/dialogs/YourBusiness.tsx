@@ -1,4 +1,5 @@
 import { Typography } from "@material-ui/core";
+import YourBusinessCards from "./YourBusinessCards";
 
 export default () => {
   return (
@@ -11,9 +12,7 @@ export default () => {
         wir uns über ein einladendes Bild von der Außenseite deines Ladens
         freuen. Hier ein paar Beispiele zur Inspiration!
       </Typography>
-      <Typography variant="body2" gutterBottom>
-        PLACEHOLDER IMAGES
-      </Typography>
+      <YourBusinessCards />
     </>
   );
 };

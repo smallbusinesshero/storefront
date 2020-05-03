@@ -1,4 +1,5 @@
 import { Typography } from "@material-ui/core";
+import AboutYourCards from "./AboutYouCards";
 
 export default () => {
   return (
@@ -13,15 +14,7 @@ export default () => {
         von der Kamera entfernt positionierst. Vermeide nach Möglichkeit
         Nahaufnahmen, denn sonst wirkt dein Bild auf der Seite zu groß.
       </Typography>
-      <Typography variant="body2" gutterBottom>
-        PLACEHOLDER IMAGES
-      </Typography>
-      <Typography variant="body2">
-        Wenn du ein bisschen kamerascheu bist, dann lade gerne einfach ein Bild
-        vom Inneren deines Ladens hoch (siehe zweite Option). Wir fänden es
-        schön, wenn dein Laden einen hohen optischen Wiedererkennungswert
-        bekommt.
-      </Typography>
+      <AboutYourCards />
     </>
   );
 };

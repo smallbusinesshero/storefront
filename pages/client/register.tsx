@@ -1,7 +1,7 @@
 import React from "react";
-import { Container, Grid, Paper } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { RegisterForm } from "../../components/organism/client/register.form";
+import { RegisterForm } from "../../components/organism/client/register/Form";
 
 const useStyles = makeStyles(() => ({
   content: {

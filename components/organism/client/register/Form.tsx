@@ -10,19 +10,19 @@ import {
   Button,
   IconButton,
 } from "@material-ui/core";
-import TrashIcon from "../../../assets/icons/24/trashcan.svg";
-import InfoIcon from "../../../assets/icons/24/info.svg";
+import TrashIcon from "../../../../assets/icons/24/trashcan.svg";
+import InfoIcon from "../../../../assets/icons/24/info.svg";
 import { Formik, FieldArray } from "formik";
-import RegisterInitialValues from "./register.init";
-import RegisterValidationSchema from "./register.validation";
-import AuthService from "../../../services/auth";
-import CustomFormInput from "../../molecules/CustomFormInput";
-import CustomFormSelect from "../../molecules/CustomFormSelect";
-import { CustomButtonHighlight } from "../../atoms/Button";
+import RegisterInitialValues from "./Init";
+import RegisterValidationSchema from "./Validation";
+import AuthService from "../../../../services/auth";
+import CustomFormInput from "../../../molecules/CustomFormInput";
+import CustomFormSelect from "../../../molecules/CustomFormSelect";
+import { CustomButtonHighlight } from "../../../atoms/Button";
 import { makeStyles } from "@material-ui/core";
-import DialogWrapper from "../../molecules/Dialog";
-import AboutYouDialog from "./register/dialogs/AboutYou";
-import YourBusinessDialog from "./register/dialogs/YourBusiness";
+import DialogWrapper from "../../../molecules/Dialog";
+import AboutYouDialog from "./dialogs/AboutYou";
+import YourBusinessDialog from "./dialogs/YourBusiness";
 
 const useStyles = makeStyles(() => ({
   registerIntroduction: {
