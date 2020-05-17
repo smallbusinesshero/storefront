@@ -1,5 +1,8 @@
 import * as Yup from "yup";
 
+const MAX_FILE_SIZE = 2e6; // 2 MB
+const ALLOWED_UPLOAD_FILE_TYPES = ["image/jpg", "image/jpeg", "image/png"];
+
 export default Yup.object({
   firstname: Yup.string().required(),
   lastname: Yup.string().required(),
@@ -26,8 +29,22 @@ export default Yup.object({
   store_facetime: Yup.string(),
   store_skype: Yup.string().url(),
   store_twitter: Yup.string().url(),
-  store_ownerimage: Yup.mixed().required(),
-  store_image: Yup.string().required(),
+  store_ownerimage: Yup.mixed()
+    .required()
+    .test("fileSize", "Your image is too big", (value) => {
+      return value && value.size <= MAX_FILE_SIZE;
+    })
+    .test("fileType", "Your image format is not allowed", (value) => {
+      return value && ALLOWED_UPLOAD_FILE_TYPES.includes(value.type);
+    }),
+  store_image: Yup.mixed()
+    .required()
+    .test("fileSize", "Your image is too big", (value) => {
+      return value && value.size <= MAX_FILE_SIZE;
+    })
+    .test("fileType", "Your image format is not allowed", (value) => {
+      return value && ALLOWED_UPLOAD_FILE_TYPES.includes(value.type);
+    }),
   store_video: Yup.string().url(),
   products: Yup.array()
     .of(
@@ -35,10 +52,21 @@ export default Yup.object({
         name: Yup.string().required(),
         description: Yup.string().required(),
         price: Yup.number().min(1).required(),
-        image: Yup.mixed().required(),
+        image: Yup.mixed()
+          .required()
+          .test("fileSize", "Your image is too big", (value) => {
+            if (!value) return true; // required will fail in this case
+            return value && value.size <= MAX_FILE_SIZE;
+          })
+          .test("fileType", "Your image format is not allowed", (value) => {
+            if (!value) return true; // required will fail in this case
+            return value && ALLOWED_UPLOAD_FILE_TYPES.includes(value.type);
+          }),
+        preview: Yup.string(),
       })
     )
     .min(3)
+    .max(30)
     .required(),
   // password: Yup.string().required(),
   // password_repeat: Yup.string()

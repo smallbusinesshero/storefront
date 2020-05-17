@@ -121,6 +121,8 @@ const theme = createMuiTheme({
     MuiSelect: {
       root: {
         fontSize: 14,
+        paddingTop: 14,
+        paddingBottom: 14,
       },
       select: {
         fontSize: 14,

@@ -3,8 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   label: {
-    backgroundColor: "#fafafa",
-    padding: "1px 20px",
+    transform: "translate(0, -15px) scale(0.75)",
   },
 }));
 

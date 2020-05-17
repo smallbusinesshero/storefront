@@ -18,7 +18,6 @@ import RegisterValidationSchema from "./Validation";
 import AuthService from "../../../../services/auth";
 import CustomFormInput from "../../../molecules/CustomFormInput";
 import CustomFormSelect from "../../../molecules/CustomFormSelect";
-import { CustomButtonHighlight } from "../../../atoms/Button";
 import { makeStyles } from "@material-ui/core";
 import DialogWrapper from "../../../molecules/Dialog";
 import AboutYouDialog from "./dialogs/AboutYou";
@@ -56,16 +55,6 @@ const useStyles = makeStyles(() => ({
   productsContainer: {
     marginBottom: 56,
   },
-  productsImagePreview: {
-    borderColor: "#CCC",
-    borderWidth: 1,
-    borderStyle: "solid",
-    borderRadius: 4,
-    padding: 0,
-    overflow: "hidden",
-    margin: "0 auto",
-    height: 150,
-  },
   labelOptional: {
     color: "#bbb",
     fontWeight: 600,
@@ -81,16 +70,6 @@ export const RegisterForm = () => {
   const [openYourBusinessDialog, setOpenYourBusinessDialog] = React.useState(
     false
   );
-
-  const previewHandler = (e, name, formikCb) => {
-    console.log(e);
-    const url = URL.createObjectURL(e.target.files[0]);
-    const el = document.getElementById(name);
-    el.setAttribute("src", url);
-    el.style.display = "block";
-    el.style.border = "#CCC 1px solid";
-    formikCb(e);
-  };
 
   return (
     <Container>
@@ -110,6 +89,7 @@ export const RegisterForm = () => {
             handleSubmit,
             isValid,
             isSubmitting,
+            setFieldValue,
           } = props;
           return (
             <form onSubmit={handleSubmit} noValidate={true}>
@@ -335,7 +315,7 @@ export const RegisterForm = () => {
                                     values.store_openinghours[index].days.monday
                                   }
                                   onChange={handleChange}
-                                  name={`store_openinghours[${index}].days.monday`}
+                                  name={`store_openinghours.${index}.days.monday`}
                                   color="secondary"
                                 />
                               }
@@ -350,7 +330,7 @@ export const RegisterForm = () => {
                                       .tuesday
                                   }
                                   onChange={handleChange}
-                                  name={`store_openinghours[${index}].days.tuesday`}
+                                  name={`store_openinghours.${index}.days.tuesday`}
                                   color="secondary"
                                 />
                               }
@@ -365,7 +345,7 @@ export const RegisterForm = () => {
                                       .wednesday
                                   }
                                   onChange={handleChange}
-                                  name={`store_openinghours[${index}].days.wednesday`}
+                                  name={`store_openinghours.${index}.days.wednesday`}
                                   color="secondary"
                                 />
                               }
@@ -380,7 +360,7 @@ export const RegisterForm = () => {
                                       .thursday
                                   }
                                   onChange={handleChange}
-                                  name={`store_openinghours[${index}].days.thursday`}
+                                  name={`store_openinghours.${index}.days.thursday`}
                                   color="secondary"
                                 />
                               }
@@ -394,7 +374,7 @@ export const RegisterForm = () => {
                                     values.store_openinghours[index].days.friday
                                   }
                                   onChange={handleChange}
-                                  name={`store_openinghours[${index}].days.friday`}
+                                  name={`store_openinghours.${index}.days.friday`}
                                   color="secondary"
                                 />
                               }
@@ -409,7 +389,7 @@ export const RegisterForm = () => {
                                       .saturday
                                   }
                                   onChange={handleChange}
-                                  name={`store_openinghours[${index}].days.saturday`}
+                                  name={`store_openinghours.${index}.days.saturday`}
                                   color="secondary"
                                 />
                               }
@@ -423,7 +403,7 @@ export const RegisterForm = () => {
                                     values.store_openinghours[index].days.sunday
                                   }
                                   onChange={handleChange}
-                                  name={`store_openinghours[${index}].days.sunday`}
+                                  name={`store_openinghours.${index}.days.sunday`}
                                   color="secondary"
                                 />
                               }
@@ -435,7 +415,7 @@ export const RegisterForm = () => {
                             <Grid container item xs={12} spacing={3}>
                               <Grid item xs={12} md={5}>
                                 <CustomFormInput
-                                  name={`store_openinghours[${index}].from`}
+                                  name={`store_openinghours.${index}.from`}
                                   placeholder="08:00"
                                   values={values}
                                   errors={errors}
@@ -448,7 +428,7 @@ export const RegisterForm = () => {
                               </Grid>
                               <Grid item xs={12} md={5}>
                                 <CustomFormInput
-                                  name={`store_openinghours[${index}].to`}
+                                  name={`store_openinghours.${index}.to`}
                                   placeholder="16:00"
                                   values={values}
                                   errors={errors}
@@ -785,6 +765,7 @@ export const RegisterForm = () => {
                     handleChange={handleChange}
                     handleBlur={handleBlur}
                     required={true}
+                    setFieldValue={setFieldValue}
                   >
                     Dein Foto
                   </CustomFormInput>
@@ -819,6 +800,7 @@ export const RegisterForm = () => {
                     handleChange={handleChange}
                     handleBlur={handleBlur}
                     required={true}
+                    setFieldValue={setFieldValue}
                   >
                     Foto des Ladens (vorzugsweise die Ladenfront)
                   </CustomFormInput>
@@ -896,39 +878,28 @@ export const RegisterForm = () => {
                           </Grid>
                           <Grid item xs={12}>
                             <CustomFormInput
-                              name={`products[${index}].image`}
+                              name={`products.${index}.image`}
                               placeholder=""
                               type="file"
                               values={values}
                               errors={errors}
                               touched={touched}
-                              handleChange={(e: Event) => {
-                                previewHandler(
-                                  e,
-                                  `products[${index}].image.preview`,
-                                  handleChange
-                                );
+                              handleChange={(
+                                e: React.ChangeEvent<HTMLInputElement>
+                              ) => {
+                                console.log(e, "origin");
+                                //handleChange(e);
                               }}
                               handleBlur={handleBlur}
                               required={true}
+                              setFieldValue={setFieldValue}
                             >
                               Foto
                             </CustomFormInput>
                           </Grid>
                           <Grid item xs={12}>
-                            <div className={classes.productsImagePreview}>
-                              <img
-                                id={`products[${index}].image.preview`}
-                                style={{
-                                  margin: "0 auto",
-                                  height: 150,
-                                }}
-                              />
-                            </div>
-                          </Grid>
-                          <Grid item xs={12}>
                             <CustomFormInput
-                              name={`products[${index}].name`}
+                              name={`products.${index}.name`}
                               placeholder="Handtuch"
                               values={values}
                               errors={errors}
@@ -943,7 +914,7 @@ export const RegisterForm = () => {
 
                           <Grid item xs={12}>
                             <CustomFormInput
-                              name={`products[${index}].description`}
+                              name={`products.${index}.description`}
                               placeholder="..."
                               values={values}
                               errors={errors}
@@ -958,7 +929,7 @@ export const RegisterForm = () => {
                           </Grid>
                           <Grid item xs={12}>
                             <CustomFormInput
-                              name={`products[${index}].price`}
+                              name={`products.${index}.price`}
                               placeholder="9.99"
                               values={values}
                               errors={errors}

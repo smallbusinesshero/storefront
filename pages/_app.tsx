@@ -207,7 +207,7 @@ const SmallBusinessHeroApp = ({ Component, pageProps }) => {
               </Link>
               <CustomButtonHighlight
                 onClick={() => {
-                  window.open("/client/register");
+                  window.open("/client/register", "_self");
                 }}
                 className={classes.register}
               >
