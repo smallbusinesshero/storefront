@@ -71,6 +71,20 @@ export default (props) => {
     reader.readAsDataURL(file);
   };
 
+  const customBlurHandler = (e) => {
+    if (type !== "file") {
+      handleBlur(e);
+      return;
+    }
+
+    if (type === "file" && !!objectPath.get(values, name)) {
+      handleBlur(e);
+      return;
+    }
+
+    return undefined;
+  };
+
   return (
     <FormControl fullWidth={true} required={required} variant="outlined">
       <InputLabel
@@ -95,7 +109,7 @@ export default (props) => {
             handleChange(e);
           }
         }}
-        onBlur={!!objectPath.get(values, name) ? handleBlur : undefined}
+        onBlur={customBlurHandler}
         error={touched[name] && Boolean(errors[name])}
         autoFocus={true}
         placeholder={placeholder}
