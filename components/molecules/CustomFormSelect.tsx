@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   label: {
-    transform: "translate(0, -15px) scale(0.75)",
+    transform: "translate(0, -15px) scale(0.75)!important",
   },
 }));
 
@@ -31,7 +31,6 @@ export default (props) => {
         htmlFor={name}
         variant="outlined"
         className={classes.label}
-        error={touched[name] && Boolean(errors[name])}
         shrink={true}
       >
         {label}

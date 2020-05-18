@@ -6,7 +6,7 @@ const objectPath = require("object-path");
 
 const useStyles = makeStyles((theme) => ({
   label: {
-    transform: "translate(0, -15px) scale(0.75)",
+    transform: "translate(0, -15px) scale(0.75)!important",
   },
   error: {
     marginTop: 5,
@@ -15,15 +15,24 @@ const useStyles = makeStyles((theme) => ({
     display: "inline-block",
   },
   productsImagePreview: {
-    borderColor: "#CCC",
+    borderColor: "#c2cacf",
+    backgroundColor: "#c2cacf",
     borderWidth: 1,
     borderStyle: "solid",
     borderRadius: 4,
     padding: 0,
     overflow: "hidden",
-    margin: "10 auto",
-    maxHeight: 250,
+    margin: "10px auto",
+    height: 250,
     width: "100%",
+    textAlign: "center",
+  },
+  productsImagePreviewHint: {
+    position: "relative",
+    top: "50%",
+    transform: "translateY(-50%)",
+    display: "inline-block",
+    margin: "0 auto",
   },
 }));
 
@@ -57,9 +66,6 @@ export default (props) => {
       // Extend file object with preview data
       fileOrigin.preview = reader.result;
       setFieldValue(name, fileOrigin, false);
-
-      el.style.display = "block";
-      el.style.border = "#CCC 1px solid";
     };
 
     reader.readAsDataURL(file);
@@ -71,7 +77,6 @@ export default (props) => {
         htmlFor={name}
         variant="outlined"
         className={classes.label}
-        error={touched[name] && Boolean(errors[name])}
         shrink={true}
       >
         {children}
@@ -108,11 +113,13 @@ export default (props) => {
               id={`${name}.preview`}
               style={{
                 margin: "0 auto",
-                maxHeight: 150,
+                width: "100%",
               }}
             />
           ) : (
-            "Hier erscheint Ihre Bildvorschau"
+            <span className={classes.productsImagePreviewHint}>
+              Hier erscheint Ihre Bildvorschau
+            </span>
           )}
         </div>
       ) : null}
