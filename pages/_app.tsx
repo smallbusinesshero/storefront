@@ -16,7 +16,6 @@ import "./_app.css";
 
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Container from "@material-ui/core/Container";
 import Link from "../components/atoms/Link";
 import Box from "@material-ui/core/Box";
 import { initializeAnalytics } from "../services/analytics";
@@ -73,9 +72,6 @@ const useStyles = makeStyles((theme) => ({
     color: "black",
     fontSize: "1.1em",
     margin: "0",
-  },
-  container: {
-    marginTop: "3em",
   },
   wevsvirus: {
     lineHeight: "64px",
@@ -218,9 +214,9 @@ const SmallBusinessHeroApp = ({ Component, pageProps }) => {
           <CssBaseline />
           <main className={classes.content}>
             <div className={classes.toolbar} />
-            <Container className={classes.container}>
+            <div>
               <Component {...pageProps} />
-            </Container>
+            </div>
           </main>
         </div>
       </ThemeProvider>
