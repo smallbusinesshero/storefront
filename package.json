@@ -33,7 +33,7 @@
     "@material-ui/icons": "^4.9.1",
     "@types/styled-components": "^5.0.1",
     "babel-plugin-styled-components": "^1.10.7",
-    "next": "^9.3.2",
+    "next": "^10.0.0",
     "next-images": "^1.4.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
