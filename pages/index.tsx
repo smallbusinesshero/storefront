@@ -101,6 +101,16 @@ export default function Home() {
           </CustomButton>
         </form>
       </div>
+      <p className={classes.helpText}>
+        Hast du Fragen?{" "}
+        <a
+          href="mailto:info@smallbusinesshero.de"
+          target="_blank"
+          rel="noopener"
+        >
+          info@smallbusinesshero.de
+        </a>
+      </p>
       {storeData.length > 0 ? (
         <>
           <CardCarousel storeData={storeData} />

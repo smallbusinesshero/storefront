@@ -86,4 +86,7 @@ export default makeStyles((theme: Theme) => ({
     marginTop: 25,
     padding: 10,
   },
+  helpText: {
+    textAlign: "center",
+  },
 }));
